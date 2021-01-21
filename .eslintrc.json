@@ -10,7 +10,10 @@
     "sourceType":"script"
   },
   "rules":{
-    "strict":2,
+    "strict":[
+      "error",
+      "global"
+    ],
     "indent":[
       "error",
       4
@@ -55,7 +58,7 @@
     ],
     "padded-blocks":[
       "error",
-      "always"
+      "never"
     ],
     "prefer-arrow-callback":[
       0,
