@@ -18,5 +18,10 @@
   "homepage": "https://github.com/zakon-technomantow/Sokobanbanban#readme",
   "devDependencies": {
     "eslint": "^7.18.0"
+  },
+  "dependencies": {
+    "electron": "^11.2.0",
+    "phaser": "^3.52.0",
+    "webpack": "^5.16.0"
   }
 }
