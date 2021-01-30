@@ -1,4 +1,3 @@
-"use strict"
 
 test = 0
 
@@ -13,10 +12,10 @@ function test1() {
 }
 
 if (bool) {
-    // eslint-disable-next-line no-console
-    console.log(test)
-    test1()
-    test3()
+  // eslint-disable-next-line no-console
+  console.log(test)
+  test1()
+  test3()
 }
 
-function test3() {}
+function test3() { }
