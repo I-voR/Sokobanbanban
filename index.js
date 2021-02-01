@@ -17,9 +17,7 @@ function createWindow() {
         }
     })
 
-    win.setMenuBarVisibility(false)
     win.loadFile('index.html')
-    win.webContents.openDevTools()
 
     ipcMain.on('display-app-menu', function(e, args) {
         if (win) {
