@@ -75,7 +75,8 @@
                 walls.create(16 + (32 * i), 634, 'wall').setScale(1).refreshBody();
             }
 
-            player = this.physics.add.sprite(60, 60, 'character');
+
+            player = this.physics.add.sprite(64, 64, 'character');
             player.setBounce(0.2);
             player.setCollideWorldBounds(true);
 
