@@ -8,8 +8,8 @@ let win
 function createWindow() {
     win = new BrowserWindow({
         frame: false,
-        width: 800,
-        height: 600,
+        width: 960,
+        height: 640,
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true,
