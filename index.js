@@ -1,17 +1,35 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require('path')
+const { menu } = require('./menu')
 
+let win
+
+// eslint-disable-next-line require-jsdoc
 function createWindow() {
-    const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+    win = new BrowserWindow({
+        frame: false,
+        width: 1600,
+        height: 1200,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            preload: path.join(__dirname, 'preload.js')
         }
     })
 
     win.setMenuBarVisibility(false)
     win.loadFile('index.html')
+    win.webContents.openDevTools()
 }
+
+ipcMain.on('display-app-menu', function(e, args) {
+    if (win) {
+        menu.popup({
+            window: win,
+            x: args.x,
+            y: args.y
+        })
+    }
+})
 
 app.whenReady().then(createWindow)
 

@@ -86,6 +86,9 @@
     "writable":"writable",
     "readonly":"readonly",
     /*------------------*/
-    "process":"readonly"
+    "process":"readonly",
+    "window":"readonly",
+    "document":"readonly",
+    "__dirname":"readonly"
   }
 }
