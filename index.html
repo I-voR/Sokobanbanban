@@ -32,8 +32,8 @@
 
         var config = {
             type: Phaser.AUTO,
-            width: 800,
-            height: 600,
+            width: 960,
+            height: 640,
             physics: {
                 default: 'arcade',
                 arcade: {
@@ -72,17 +72,17 @@
 
             walls = this.physics.add.staticGroup();
 
-            for (i = 0; i < 20; i++) {
-                walls.create(20 + (40 * i), 20, 'wall').setScale(1).refreshBody();
+            for (i = 0; i < 30; i++) {
+                walls.create(16 + (32 * i), 16, 'wall').setScale(1).refreshBody();
             }
-            for (i = 0; i < 20; i++) {
-                walls.create(20 + (40 * i), 580, 'wall').setScale(1).refreshBody();
+            for (i = 0; i < 30; i++) {
+                walls.create(16 + (32 * i), 634, 'wall').setScale(1).refreshBody();
             }
 
 
 
 
-            player = this.physics.add.sprite(60, 60, 'character');
+            player = this.physics.add.sprite(64, 64, 'character');
             player.setBounce(0.2);
             player.setCollideWorldBounds(true);
 
@@ -105,28 +105,28 @@
 
             if (cursors.left.isDown) {
                 if (movementcheck) {
-                    player.body.x += -40;
+                    player.body.x += -32;
                 }
                 movementcheck = false;
                 //player.anims.play('left', true);
             }
             else if (cursors.right.isDown) {
                 if (movementcheck) {
-                    player.body.x += 40;
+                    player.body.x += 32;
                 }
                 movementcheck = false;
                 //player.anims.play('right', true);
             }
             else if (cursors.up.isDown) {
                 if (movementcheck) {
-                    player.body.y += -40;
+                    player.body.y += -32;
                 }
                 movementcheck = false;
                 //player.anims.play('up', true);
             }
             else if (cursors.down.isDown) {
                 if (movementcheck) {
-                    player.body.y += 40;
+                    player.body.y += 32;
                 }
                 movementcheck = false;
                 //player.anims.play('down', true);
