@@ -75,22 +75,13 @@
                 walls.create(16 + (32 * i), 634, 'wall').setScale(1).refreshBody();
             }
 
-<<<<<<< HEAD
-
-
-
-            player = this.physics.add.sprite(64, 64, 'character');
-=======
             player = this.physics.add.sprite(60, 60, 'character');
->>>>>>> 00bfccb3797baa1aaca7f514f5f31e75b25522e0
             player.setBounce(0.2);
             player.setCollideWorldBounds(true);
 
-
             cursors = this.input.keyboard.createCursorKeys();
 
-
-            scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+            scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#FFF' });
 
             this.physics.add.collider(player, walls);
         }
