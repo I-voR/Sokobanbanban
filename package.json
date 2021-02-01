@@ -1,12 +1,12 @@
 {
   "name": "sokobanbanban",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Projekt \"Sokoban\" na Motorola Science Cup 2020/21",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "electron-forge start",
+    "run": "electron-forge make && electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
