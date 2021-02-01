@@ -34,7 +34,7 @@
         <key>dataFormat</key>
         <string>phaser</string>
         <key>textureFileName</key>
-        <filename>sheet.png</filename>
+        <filename></filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -88,9 +88,9 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>1024</int>
+            <int>2048</int>
             <key>height</key>
-            <int>1024</int>
+            <int>2048</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -132,7 +132,7 @@
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>player.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -181,15 +181,10 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../../gfx - robocze/png/Crate.png</key>
-            <key type="filename">../../gfx - robocze/png/Floor.png</key>
-            <key type="filename">../../gfx - robocze/png/Grass.png</key>
-            <key type="filename">../../gfx - robocze/png/Plate.png</key>
-            <key type="filename">../../gfx - robocze/png/Steve_Back.png</key>
-            <key type="filename">../../gfx - robocze/png/Steve_Front.png</key>
-            <key type="filename">../../gfx - robocze/png/Steve_Left.png</key>
-            <key type="filename">../../gfx - robocze/png/Steve_Right.png</key>
-            <key type="filename">../../gfx - robocze/png/Wall_Gray.png</key>
+            <key type="filename">Steve_Back.png</key>
+            <key type="filename">Steve_Front.png</key>
+            <key type="filename">Steve_Left.png</key>
+            <key type="filename">Steve_Right.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -207,15 +202,10 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>../../gfx - robocze/png/Crate.png</filename>
-            <filename>../../gfx - robocze/png/Floor.png</filename>
-            <filename>../../gfx - robocze/png/Grass.png</filename>
-            <filename>../../gfx - robocze/png/Steve_Back.png</filename>
-            <filename>../../gfx - robocze/png/Steve_Front.png</filename>
-            <filename>../../gfx - robocze/png/Steve_Left.png</filename>
-            <filename>../../gfx - robocze/png/Steve_Right.png</filename>
-            <filename>../../gfx - robocze/png/Wall_Gray.png</filename>
-            <filename>../../gfx - robocze/png/Plate.png</filename>
+            <filename>Steve_Back.png</filename>
+            <filename>Steve_Front.png</filename>
+            <filename>Steve_Left.png</filename>
+            <filename>Steve_Right.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -1,11 +1,11 @@
 {
 	"textures": [
 		{
-			"image": "sheet.png",
+			"image": "blocks.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 102,
-				"h": 102
+				"w": 170,
+				"h": 34
 			},
 			"scale": 1,
 			"frames": [
@@ -45,8 +45,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 1,
-						"y": 35,
+						"x": 35,
+						"y": 1,
 						"w": 32,
 						"h": 32
 					}
@@ -66,8 +66,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 1,
-						"y": 69,
+						"x": 69,
+						"y": 1,
 						"w": 32,
 						"h": 32
 					}
@@ -87,92 +87,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 35,
+						"x": 103,
 						"y": 1,
-						"w": 32,
-						"h": 32
-					}
-				},
-				{
-					"filename": "Steve_Back.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 32,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 32,
-						"h": 32
-					},
-					"frame": {
-						"x": 69,
-						"y": 1,
-						"w": 32,
-						"h": 32
-					}
-				},
-				{
-					"filename": "Steve_Front.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 32,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 32,
-						"h": 32
-					},
-					"frame": {
-						"x": 35,
-						"y": 35,
-						"w": 32,
-						"h": 32
-					}
-				},
-				{
-					"filename": "Steve_Left.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 32,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 32,
-						"h": 32
-					},
-					"frame": {
-						"x": 35,
-						"y": 69,
-						"w": 32,
-						"h": 32
-					}
-				},
-				{
-					"filename": "Steve_Right.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 32,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 32,
-						"h": 32
-					},
-					"frame": {
-						"x": 69,
-						"y": 35,
 						"w": 32,
 						"h": 32
 					}
@@ -192,8 +108,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 69,
-						"y": 69,
+						"x": 137,
+						"y": 1,
 						"w": 32,
 						"h": 32
 					}
@@ -204,6 +120,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:227bea2d32b733c54ebaf961c4bafb59:1f526f7d09ec7c512cb71b5731ab865f:9c44ecd7e9a522007eaff2949095bc1d$"
+		"smartupdate": "$TexturePacker:SmartUpdate:c17f141a6073064a03e6c1e188d2aef4:299ee6bc2b566e05ed262fd1248d6322:b1f1a031cef7856acce3e479bba415bf$"
 	}
 }
