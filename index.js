@@ -12,6 +12,7 @@ function createWindow() {
         height: 1200,
         webPreferences: {
             nodeIntegration: true,
+            enableRemoteModule: true,
             preload: path.join(__dirname, 'preload.js')
         }
     })
@@ -19,17 +20,17 @@ function createWindow() {
     win.setMenuBarVisibility(false)
     win.loadFile('index.html')
     win.webContents.openDevTools()
-}
 
-ipcMain.on('display-app-menu', function(e, args) {
-    if (win) {
-        menu.popup({
-            window: win,
-            x: args.x,
-            y: args.y
-        })
-    }
-})
+    ipcMain.on('display-app-menu', function(e, args) {
+        if (win) {
+            menu.popup({
+                window: win,
+                x: args.x,
+                y: args.y
+            })
+        }
+    })
+}
 
 app.whenReady().then(createWindow)
 
