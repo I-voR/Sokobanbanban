@@ -10,16 +10,9 @@ window.addEventListener('DOMContentLoaded', () => {
         window.openMenu(0, 30)
     })
 
-    // minimizeButton.addEventListener('click', () => {
-    //     window.minimizeWindow()
-    // })
-
-    minimizeButton.onclick = () => {
+    minimizeButton.addEventListener('click', () => {
         window.minimizeWindow()
-        let test = document.createElement('DIV')
-        test.innerHTML = 'lolz'
-        document.body.appendChild(test)
-    }
+    })
 
     maxUnmaxButton.addEventListener('click', () => {
         const icon = maxUnmaxButton.querySelector('i.far')
