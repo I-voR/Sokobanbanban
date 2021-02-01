@@ -20,11 +20,9 @@
         </div>
         <div class="right">
             <button class="menubar-btn" id="minimize-btn"><i class="fa fa-window-minimize"></i></button>
-            <button class="menubar-btn" id="max-unmax-btn"><i class="fa fa-square"></i></button>
             <button class="menubar-btn" id="close-btn"><i class="fa fa-close"></i></button>
         </div>
     </div>
-
 
     <script src="renderer.js"></script>
 
@@ -68,8 +66,6 @@
         }
 
         function create() {
-
-
             walls = this.physics.add.staticGroup();
 
             for (i = 0; i < 20; i++) {
@@ -78,9 +74,6 @@
             for (i = 0; i < 20; i++) {
                 walls.create(20 + (40 * i), 580, 'wall').setScale(1).refreshBody();
             }
-
-
-
 
             player = this.physics.add.sprite(60, 60, 'character');
             player.setBounce(0.2);
@@ -101,7 +94,6 @@
             if (win) {
                 return;
             }
-
 
             if (cursors.left.isDown) {
                 if (movementcheck) {
@@ -137,11 +129,8 @@
                 player.setVelocityY(0);
                 //player.anims.play('turn');
             }
-
-
             //asdf
         }
-
 
     </script>
 </body>

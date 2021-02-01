@@ -8,8 +8,8 @@ let win
 function createWindow() {
     win = new BrowserWindow({
         frame: false,
-        width: 1600,
-        height: 1200,
+        width: 800,
+        height: 600,
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true,
@@ -18,6 +18,7 @@ function createWindow() {
     })
 
     win.loadFile('index.html')
+    win.setResizable(false)
 
     ipcMain.on('display-app-menu', function(e, args) {
         if (win) {

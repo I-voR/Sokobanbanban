@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('menu-btn')
     const consoleButton = document.getElementById('console-btn')
     const minimizeButton = document.getElementById('minimize-btn')
-    const maxUnmaxButton = document.getElementById('max-unmax-btn')
     const closeButton = document.getElementById('close-btn')
 
     menuButton.addEventListener('click', () => {
@@ -19,21 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     minimizeButton.addEventListener('click', () => {
         window.minimizeWindow()
-    })
-
-    maxUnmaxButton.addEventListener('click', () => {
-        const icon = maxUnmaxButton.querySelector('i.far')
-    
-        window.maxUnmaxWindow()
-    
-        // Change the middle maximize-unmaximize icons.
-        if (window.isWindowMaximized()) {
-            icon.classList.remove('fa-square')
-            icon.classList.add('fa-clone')
-        } else {
-            icon.classList.add('fa-square')
-            icon.classList.remove('fa-clone')
-        }
     })
 
     closeButton.addEventListener('click', () => {
