@@ -78,11 +78,9 @@
             player.setBounce(0.2);
             player.setCollideWorldBounds(true);
 
-
             cursors = this.input.keyboard.createCursorKeys();
 
-
-            scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+            scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#FFF' });
 
             this.physics.add.collider(player, walls);
         }
