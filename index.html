@@ -67,16 +67,21 @@
         }
 
         function create() {
-            this.add.image(400, 300, 'dirt');
-            this.add.image(400, 300, 'wall');
+
 
             walls = this.physics.add.staticGroup();
-            walls.create(64, 64, 'wall').setScale(2).refreshBody();
-            walls.create(128, 64, 'wall').setScale(2).refreshBody();
-            walls.create(192, 64, 'wall').setScale(2).refreshBody();
+
+            for (i = 0; i < 20; i++) {
+                walls.create(20 + (40 * i), 20, 'wall').setScale(1).refreshBody();
+            }
+            for (i = 0; i < 20; i++) {
+                walls.create(20 + (40 * i), 580, 'wall').setScale(1).refreshBody();
+            }
 
 
-            player = this.physics.add.sprite(100, 450, 'character');
+
+
+            player = this.physics.add.sprite(60, 60, 'character');
             player.setBounce(0.2);
             player.setCollideWorldBounds(true);
 
@@ -89,28 +94,44 @@
             this.physics.add.collider(player, walls);
         }
 
+        movementcheck = false;
+
         function update() {
             if (win) {
                 return;
             }
 
+
             if (cursors.left.isDown) {
-                player.setVelocityX(-160);
+                if (movementcheck) {
+                    player.body.x += -40;
+                }
+                movementcheck = false;
                 //player.anims.play('left', true);
             }
             else if (cursors.right.isDown) {
-                player.setVelocityX(160);
+                if (movementcheck) {
+                    player.body.x += 40;
+                }
+                movementcheck = false;
                 //player.anims.play('right', true);
             }
             else if (cursors.up.isDown) {
-                player.setVelocityY(-160);
+                if (movementcheck) {
+                    player.body.y += -40;
+                }
+                movementcheck = false;
                 //player.anims.play('up', true);
             }
             else if (cursors.down.isDown) {
-                player.setVelocityY(160);
+                if (movementcheck) {
+                    player.body.y += 40;
+                }
+                movementcheck = false;
                 //player.anims.play('down', true);
             }
             else {
+                movementcheck = true;
                 player.setVelocityX(0);
                 player.setVelocityY(0);
                 //player.anims.play('turn');
