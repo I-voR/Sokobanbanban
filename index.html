@@ -5,10 +5,27 @@
     <meta charset="UTF-8">
     <title>Hello World!</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="./style/menu.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body style="background: white;">
+<body>
+    <div id="menu-bar">
+        <div class="left" role="menu">
+            <button class="menubar-btn" id="menu-btn"><i class="fa fa-bars"></i></button>
+            <h5>My Awesome App</h5>
+        </div>
+        <div class="right">
+            <button class="menubar-btn" id="minimize-btn"><i class="fa fa-window-minimize"></i></button>
+            <button class="menubar-btn" id="max-unmax-btn"><i class="fa fa-square"></i></button>
+            <button class="menubar-btn" id="close-btn"><i class="fa fa-close"></i></button>
+        </div>
+    </div>
+    <div class="container">
+        Hello there!
+    </div>
 
+    <script src="./renderer.js"></script>
 
     <script type="text/javascript">
 
@@ -103,7 +120,6 @@
 
 
     </script>
-
 </body>
 
 </html>
