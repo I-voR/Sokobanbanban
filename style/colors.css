@@ -1,0 +1,19 @@
+body * {
+    color: gainsboro;
+}
+
+#menu-bar {
+    background: #34475a;
+}
+
+.menubar-btn {
+    background: transparent;
+}
+
+.menubar-btn:hover {
+    background: rgba(221, 221, 221, 0.2);
+}
+
+#close-btn:hover {
+    background: rgb(255, 0, 0);
+}
