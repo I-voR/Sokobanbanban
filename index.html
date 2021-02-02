@@ -62,13 +62,6 @@
         var game = new Phaser.Game(config);
 
         function preload() {
-            this.load.image('character', 'assets/spritesheet/Steve_Front.png');
-            this.load.image('crate', 'assets/Crate.png');
-            this.load.image('ground', 'assets/Grass.png');
-            this.load.image('wall', 'assets/Wall_Gray.png');
-            this.load.image('plate', 'assets/Plate.png');
-
-
             this.load.tilemapTiledJSON('map0', `assets/maps/map0.json`);
 
         }
@@ -77,74 +70,15 @@
 
             var map = this.add.tilemap('map0')
 
-
-            walls = this.physics.add.staticGroup();
-
-            for (i = 0; i < 30; i++) {
-                walls.create(16 + (32 * i), 16, 'wall').setScale(1).refreshBody();
-            }
-            for (i = 0; i < 30; i++) {
-                walls.create(16 + (32 * i), 624, 'wall').setScale(1).refreshBody();
-            }
-
-
-
-            player = this.physics.add.sprite(80, 80, 'character');
-            player.setBounce(0.2);
-            player.setCollideWorldBounds(true);
-
-
-            cursors = this.input.keyboard.createCursorKeys();
-
-
-            scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#dcdcdc' });
-
-            this.physics.add.collider(player, walls);
         }
 
-        movementcheck = false;
+
 
         function update() {
-            if (win) {
-                return;
-            }
 
-            if (cursors.left.isDown) {
-                if (movementcheck) {
-                    player.body.x += -32;
-                }
-                movementcheck = false;
-                //player.anims.play('left', true);
-            }
-            else if (cursors.right.isDown) {
-                if (movementcheck) {
-                    player.body.x += 32;
-                }
-                movementcheck = false;
-                //player.anims.play('right', true);
-            }
-            else if (cursors.up.isDown) {
-                if (movementcheck) {
-                    player.body.y += -32;
-                }
-                movementcheck = false;
-                //player.anims.play('up', true);
-            }
-            else if (cursors.down.isDown) {
-                if (movementcheck) {
-                    player.body.y += 32;
-                }
-                movementcheck = false;
-                //player.anims.play('down', true);
-            }
-            else {
-                movementcheck = true;
-                player.setVelocityX(0);
-                player.setVelocityY(0);
-                //player.anims.play('turn');
-            }
-            //asdf
         }
+
+
 
     </script>
 </body>
