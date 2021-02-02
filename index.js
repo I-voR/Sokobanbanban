@@ -8,8 +8,8 @@ let win
 function createWindow() {
     win = new BrowserWindow({
         frame: false,
-        width: 960,
-        height: 670,
+        width: 960 + 100,
+        height: 670 + 100,
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true,
@@ -20,7 +20,7 @@ function createWindow() {
     win.loadFile('index.html')
     win.setResizable(false)
 
-    ipcMain.on('display-app-menu', function(e, args) {
+    ipcMain.on('display-app-menu', function (e, args) {
         if (win) {
             menu.popup({
                 window: win,
