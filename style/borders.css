@@ -1,4 +1,14 @@
-.menubar-btn {
+button {
     border: none;
     outline: none;
+}
+
+.flex-item,
+.flex-item * {
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+#button-container {
+    border: none;
 }

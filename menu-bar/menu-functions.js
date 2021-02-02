@@ -19,9 +19,14 @@ function closeWindow(browserWindow = getCurrentWindow()) {
     browserWindow.close()
 }
 
+function home() {
+    document.location.href='../index.html'
+}
+
 module.exports = {
     getCurrentWindow,
     openMenu,
     minimizeWindow,
     closeWindow,
+    home
 }

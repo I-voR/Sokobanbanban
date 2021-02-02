@@ -1,9 +1,7 @@
 body {
     background-image: url("../assets/background.png");
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
 }
+
 #tiles-picker{
     height: 50px;
     width: 500px;

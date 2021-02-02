@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 html,
 body {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    height: 100vh;
+    background-repeat: no-repeat;
 }
 
 body * {
     font-weight: 300;
-    font-family: 'Roboto', 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h5 {
@@ -17,3 +19,35 @@ h5 {
     margin-left: 4px;
 }
 
+.container {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.flex-item {
+    flex: 0 0 auto;
+    margin: 8px;
+    width: 512px;
+}
+
+#button-container {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+#button-container button {
+    width: 248px;
+}
+
+.flex-item,
+.flex-item * {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
