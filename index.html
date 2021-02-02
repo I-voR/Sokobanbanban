@@ -15,7 +15,8 @@
 </head>
 
 <body>
-    <div id="menu-bar">
+    <header>
+    <menu id="menu-bar">
         <div class="left" role="menu">
             <button class="menubar-btn" id="menu-btn"><i class="fa fa-bars"></i></button>
             <button class="menubar-btn" id="console-btn"><i class="fa fa-terminal"></i></button>
@@ -25,11 +26,13 @@
             <button class="menubar-btn" id="minimize-btn"><i class="fa fa-window-minimize"></i></button>
             <button class="menubar-btn" id="close-btn"><i class="fa fa-close"></i></button>
         </div>
-    </div>
+    </menu>
+    </header>
 
     <script src="./menu-bar/menu-buttons.js"></script>
 
-    <div class="container">
+    <main>
+    <nav class="container">
         <button class="flex-item" onclick="location.href='./static/levels.html'">Play</button>
         <button class="flex-item" onclick="location.href='./static/saves.html'">Load/Start new game</button>
         <button class="flex-item" onclick="location.href='./static/levelmaker.html'">Level Maker</button>
@@ -38,6 +41,7 @@
             <button onclick="location.href='./static/credits.html'">Credits</button>
             <button onclick="window.closeWindow()">Quit</button>
         </div>
-    </div>
+    </nav>
+    </main>
 </body>
 </html>

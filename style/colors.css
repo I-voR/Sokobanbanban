@@ -6,7 +6,8 @@ body * {
     color: #E0E2E4;
 }
 
-button {
+button,
+#level-border {
     background-color: #7D8C93;
 }
 
@@ -27,6 +28,8 @@ button {
 }
 
 .flex-item,
-.flex-item * {
+.flex-item *,
+.grid-tile,
+#tiles-picker {
     border-color: #E0E2E4;
 }

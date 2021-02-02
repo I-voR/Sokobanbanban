@@ -1,5 +1,7 @@
 .flex-item,
-.flex-item * {
+.flex-item *,
+.grid-tile,
+#tiles-picker {
     border: 1px solid;
     border-radius: 4px;
 }
@@ -8,4 +10,8 @@
 .menubar-btn {
     border: none;
     outline: none;
+}
+
+.grid-tile {
+    border-radius: 0;
 }
