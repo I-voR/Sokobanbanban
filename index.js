@@ -20,7 +20,7 @@ function createWindow() {
     win.loadFile('index.html')
     win.setResizable(false)
 
-    ipcMain.on('display-app-menu', function (e, args) {
+    ipcMain.on('display-app-menu', function(e, args) {
         if (win) {
             menu.popup({
                 window: win,

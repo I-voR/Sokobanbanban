@@ -6,8 +6,8 @@
   },
   "extends":"eslint:recommended",
   "parserOptions":{
-    "ecmaVersion":12
-	//"sourceType":"script"
+    "ecmaVersion":12,
+    "sourceType":"module"
   },
   "rules":{
     /*"strict":[
@@ -86,6 +86,7 @@
     "writable":"writable",
     "readonly":"readonly",
     /*------------------*/
+    "console":"readonly",
     "process":"readonly",
     "window":"readonly",
     "document":"readonly",
