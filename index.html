@@ -69,12 +69,14 @@
             this.load.image('wall', 'assets/Wall_Gray.png');
             this.load.image('plate', 'assets/Plate.png');
 
-            //this.load.atlas('assets', 'assets/spritesheet/sheet.tiff', 'assets/spritesheet/sheet.json');
-            //this.load.tilemapTiledJSON('level', `assets/maps/map0.json`);
+
+            this.load.tilemapTiledJSON('map0', `assets/maps/map0.json`);
 
         }
 
         function create() {
+
+            var map = this.add.tilemap('map0')
 
 
             walls = this.physics.add.staticGroup();
