@@ -2,32 +2,33 @@ body {
     background-image: url("../assets/background.png");
 }
 
-#tiles-picker{
-    height: 50px;
-    width: 500px;
-    border: 1px red solid;
+#tiles-picker {
     position: absolute;
     bottom: 0px;
     left: 265px;
+    height: 50px;
+    width: 500px;
     box-sizing: border-box;
 }
-.icons{
-    padding: 0px;
+
+.icons {
     display: inline-block;
+    padding: 0px;
     height: 32px;
     width: 32px;
     border: none;
     background: none;
 }
-#level-border{
-    height: 640px;
-    width: 960px;
+
+#level-border {
     position: absolute;
     left: 50px;
     top: 80px;
-    background-color: white;
+    height: 640px;
+    width: 960px;
 }
-.grid-tile{
+
+.grid-tile {
     position:absolute;
     padding: 0px;
     border: 1px red solid;

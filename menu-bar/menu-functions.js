@@ -20,7 +20,7 @@ function closeWindow(browserWindow = getCurrentWindow()) {
 }
 
 function home() {
-    document.location.href='../index.html'
+    window.location.href='../index.html'
 }
 
 module.exports = {
