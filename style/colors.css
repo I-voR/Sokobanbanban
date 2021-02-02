@@ -1,9 +1,17 @@
+body {
+    background-color: darkgray;
+}
+
 body * {
     color: gainsboro;
 }
 
+button {
+    color: black;
+}
+
 #menu-bar {
-    background: #34475a;
+    background: gray;
 }
 
 .menubar-btn {
