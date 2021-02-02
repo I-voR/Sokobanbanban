@@ -1,3 +1,6 @@
+import * as $ from '../node_modules/jquery/dist/jquery.js'
 
-menugen()
+import { MenuGen } from './menugen.js'
+
+MenuGen.menugen()
 
