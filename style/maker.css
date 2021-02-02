@@ -2,7 +2,7 @@ body {
     background-image: url("../assets/background.png");
 }
 
-#tiles-picker{
+#tiles-picker {
     height: 50px;
     width: 500px;
     border: 1px red solid;
@@ -11,7 +11,8 @@ body {
     left: 265px;
     box-sizing: border-box;
 }
-.icons{
+
+.icons {
     padding: 0px;
     display: inline-block;
     height: 32px;
@@ -19,7 +20,8 @@ body {
 border: none;
 background: none;
 }
-#level-border{
+
+#level-border {
     height: 640px;
     width: 960px;
     position: absolute;
@@ -27,7 +29,8 @@ background: none;
     top: 80px;
     background-color: white;
 }
-.grid-tile{
+
+.grid-tile {
     position:absolute;
     padding: 0px;
     border: 1px red solid;
