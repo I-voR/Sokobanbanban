@@ -10,5 +10,30 @@ body {
     border: 1px red solid;
     position: absolute;
     bottom: 0px;
-left: 265px;
+    left: 265px;
+    box-sizing: border-box;
+}
+.icons{
+    padding: 0px;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+border: none;
+background: none;
+}
+#level-border{
+    height: 640px;
+    width: 960px;
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    background-color: white;
+}
+.grid-tile{
+    position:absolute;
+    padding: 0px;
+    border: 1px red solid;
+    box-sizing: border-box;
+    height: 32px;
+    width: 32px;
 }
