@@ -1,5 +1,6 @@
 /* eslint-disable no-empty */
 /* eslint-disable require-jsdoc */
+import * as $ from 'jquery'
 function menugen() {
     let fs = require('fs');
     let files = fs.readdirSync('./assets/map_tiles');
