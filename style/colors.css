@@ -1,17 +1,17 @@
 body {
-    background-color: darkgray;
+    background-color: #293134;
 }
 
 body * {
-    color: gainsboro;
+    color: #E0E2E4;
 }
 
 button {
-    color: black;
+    background-color: #7D8C93;
 }
 
 #menu-bar {
-    background: gray;
+    background: #616161;
 }
 
 .menubar-btn {
@@ -25,3 +25,9 @@ button {
 #close-btn:hover {
     background: rgb(255, 0, 0);
 }
+
+.flex-item,
+.flex-item * {
+    border-color: #E0E2E4;
+}
+
