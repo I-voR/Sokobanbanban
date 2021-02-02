@@ -17,8 +17,8 @@ body {
     display: inline-block;
     height: 32px;
     width: 32px;
-border: none;
-background: none;
+    border: none;
+    background: none;
 }
 
 #level-border {
