@@ -1,6 +1,8 @@
-import * as $ from '../node_modules/jquery/dist/jquery.js'
+global.jQuery   = require('jquery')
+global.$        = global.jQuery
 
 import { MenuGen } from './menugen.js'
 
 MenuGen.menugen()
 
+$('<DIV>')

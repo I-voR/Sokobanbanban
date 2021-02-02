@@ -1,10 +1,11 @@
 /* eslint-disable no-empty */
 /* eslint-disable require-jsdoc */
-import * as $ from '../node_modules/jquery/dist/jquery.js'
 
+global.jQuery = require('jquery')
+global.$ = global.jQuery
 
 export const MenuGen = {
-    menugen: function () {
+    menugen: function() {
         let fs = require('fs')
         let files = fs.readdirSync('./assets/map_tiles')
 
@@ -14,8 +15,7 @@ export const MenuGen = {
 
 
         for (i = 0; files.length > i; i++) {
-            $("tiles-picker").append("<div id='" + files[i].split(".", 1) + "'> <img src='./assets/map_tiles/" + files[i] + "'></div>")
+            $('tiles-picker').append('<div id="" + files[i].split(".", 1) + ""> <img src="./assets/map_tiles/"' + files[i] + '></div>')
         }
     }
 }
-

@@ -91,6 +91,7 @@
     "window":"readonly",
     "document":"readonly",
     "__dirname":"readonly",
+    "$":"readonly",
     /*------------------*/
     "MakerGlobal":"readonly"
   }
