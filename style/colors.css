@@ -33,3 +33,38 @@ button,
 #tiles-picker {
     border-color: #E0E2E4;
 }
+
+.dif-level {
+    color: #293134;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+.difficulty > button {
+    border-color: #E0E2E4 !important;
+    color: gray;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+#easy {
+    background-color: #5E8C32;
+}
+
+#easy > button {
+    background-color: #93C763;
+}
+
+#medium {
+    background-color: #B98F00;
+}
+
+#medium > button {
+    background-color: #FFCD22;
+}
+
+#hard {
+    background-color: #974B00;
+}
+
+#hard > button {
+    background-color: #EC7600;
+}

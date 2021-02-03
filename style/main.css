@@ -27,9 +27,7 @@ nav {
     padding: 0;
 }
 
-main {
-    height: 100%;
-}
+main { height: 100%; }
 
 .container {
     height: 100%;
@@ -52,9 +50,7 @@ main {
     justify-content: space-between;
 }
 
-#button-container button {
-    width: 248px;
-}
+#button-container button { width: 248px; }
 
 .flex-item,
 .flex-item * {

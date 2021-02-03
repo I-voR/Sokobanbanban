@@ -1,7 +1,6 @@
 .flex-item,
-.flex-item *,
-.grid-tile,
-#tiles-picker {
+.flex-item > button,
+.grid-tile {
     border: 1px solid;
     border-radius: 4px;
 }
