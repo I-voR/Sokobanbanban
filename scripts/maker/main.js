@@ -6,7 +6,7 @@ import { TilePainter } from './tilepainter.js'
 
 MenuGen.menugen()
 //TilePainter.tilepaint()
-let lastpicked
+
 $('.icons').click(function () {
     $('.grid-tile').off('mousedown')
     $('.grid-tile').off('mouseup')
