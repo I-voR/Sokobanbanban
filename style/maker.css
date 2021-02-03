@@ -3,16 +3,18 @@ body {
 }
 
 #tiles-picker {
-    position: absolute;
-    bottom: 0px;
-    left: 280px;
-    height: 50px;
-    width: 500px;
     box-sizing: border-box;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    left: calc((100vw - 384px) / 2);
+    bottom: 0px;
+    height: 50px;
+    width: 384px;
 }
 
 .icons {
-    display: inline-block;
     padding: 0px;
     height: 32px;
     width: 32px;
