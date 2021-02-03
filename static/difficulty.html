@@ -14,6 +14,19 @@
     <link rel="stylesheet" href="../style/electronstyles.css" />
 
     <script defer src="../menu-bar/menu-buttons.js"></script>
+    <script type="module">
+        global.jQuery = require('jquery')
+        global.$ = global.jQuery
+
+        function generate_map(e) {
+            let map = e.target.id
+            window.location.href='./level.html?' + map
+        }
+
+        $('.level').on('click', (e) => {
+            generate_map(e)
+        })
+    </script>
 </head>
 
 <body>
@@ -38,71 +51,71 @@
         <div class="flex-item difficulty" id="easy">
             <div class="dif-level">Easy</div>
             <button class="level level01" id="e01">01</button>
-            <button class="level level02">02</button>
-            <button class="level level03">03</button>
-            <button class="level level04">04</button>
-            <button class="level level05">05</button>
-            <button class="level level06">06</button>
-            <button class="level level07">07</button>
-            <button class="level level08">08</button>
-            <button class="level level09">09</button>
-            <button class="level level10">10</button>
-            <button class="level level11">11</button>
-            <button class="level level12">12</button>
-            <button class="level level13">13</button>
-            <button class="level level14">14</button>
-            <button class="level level15">15</button>
-            <button class="level level16">16</button>
-            <button class="level level17">17</button>
-            <button class="level level18">18</button>
-            <button class="level level19">19</button>
-            <button class="level level20">20</button>
+            <button class="level level02" id="e02">02</button>
+            <button class="level level03" id="e03">03</button>
+            <button class="level level04" id="e04">04</button>
+            <button class="level level05" id="e05">05</button>
+            <button class="level level06" id="e06">06</button>
+            <button class="level level07" id="e07">07</button>
+            <button class="level level08" id="e08">08</button>
+            <button class="level level09" id="e09">09</button>
+            <button class="level level10" id="e10">10</button>
+            <button class="level level11" id="e11">11</button>
+            <button class="level level12" id="e12">12</button>
+            <button class="level level13" id="e13">13</button>
+            <button class="level level14" id="e14">14</button>
+            <button class="level level15" id="e15">15</button>
+            <button class="level level16" id="e16">16</button>
+            <button class="level level17" id="e17">17</button>
+            <button class="level level18" id="e18">18</button>
+            <button class="level level19" id="e19">19</button>
+            <button class="level level20" id="e20">20</button>
         </div>
         <div class="flex-item difficulty" id="medium">
             <div class="dif-level">Medium</div>
-            <button class="level level01">01</button>
-            <button class="level level02">02</button>
-            <button class="level level03">03</button>
-            <button class="level level04">04</button>
-            <button class="level level05">05</button>
-            <button class="level level06">06</button>
-            <button class="level level07">07</button>
-            <button class="level level08">08</button>
-            <button class="level level09">09</button>
-            <button class="level level10">10</button>
-            <button class="level level11">11</button>
-            <button class="level level12">12</button>
-            <button class="level level13">13</button>
-            <button class="level level14">14</button>
-            <button class="level level15">15</button>
-            <button class="level level16">16</button>
-            <button class="level level17">17</button>
-            <button class="level level18">18</button>
-            <button class="level level19">19</button>
-            <button class="level level20">20</button>
+            <button class="level level01" id="m01">01</button>
+            <button class="level level02" id="m02">02</button>
+            <button class="level level03" id="m03">03</button>
+            <button class="level level04" id="m04">04</button>
+            <button class="level level05" id="m05">05</button>
+            <button class="level level06" id="m06">06</button>
+            <button class="level level07" id="m07">07</button>
+            <button class="level level08" id="m08">08</button>
+            <button class="level level09" id="m09">09</button>
+            <button class="level level10" id="m10">10</button>
+            <button class="level level11" id="m11">11</button>
+            <button class="level level12" id="m12">12</button>
+            <button class="level level13" id="m13">13</button>
+            <button class="level level14" id="m14">14</button>
+            <button class="level level15" id="m15">15</button>
+            <button class="level level16" id="m16">16</button>
+            <button class="level level17" id="m17">17</button>
+            <button class="level level18" id="m18">18</button>
+            <button class="level level19" id="m19">19</button>
+            <button class="level level20" id="m20">20</button>
         </div>
         <div class="flex-item difficulty" id="hard">
             <div class="dif-level">Hard</div>
-            <button class="level level01">01</button>
-            <button class="level level02">02</button>
-            <button class="level level03">03</button>
-            <button class="level level04">04</button>
-            <button class="level level05">05</button>
-            <button class="level level06">06</button>
-            <button class="level level07">07</button>
-            <button class="level level08">08</button>
-            <button class="level level09">09</button>
-            <button class="level level10">10</button>
-            <button class="level level11">11</button>
-            <button class="level level12">12</button>
-            <button class="level level13">13</button>
-            <button class="level level14">14</button>
-            <button class="level level15">15</button>
-            <button class="level level16">16</button>
-            <button class="level level17">17</button>
-            <button class="level level18">18</button>
-            <button class="level level19">19</button>
-            <button class="level level20">20</button>
+            <button class="level level01" id="h01">01</button>
+            <button class="level level02" id="h02">02</button>
+            <button class="level level03" id="h03">03</button>
+            <button class="level level04" id="h04">04</button>
+            <button class="level level05" id="h05">05</button>
+            <button class="level level06" id="h06">06</button>
+            <button class="level level07" id="h07">07</button>
+            <button class="level level08" id="h08">08</button>
+            <button class="level level09" id="h09">09</button>
+            <button class="level level10" id="h10">10</button>
+            <button class="level level11" id="h11">11</button>
+            <button class="level level12" id="h12">12</button>
+            <button class="level level13" id="h13">13</button>
+            <button class="level level14" id="h14">14</button>
+            <button class="level level15" id="h15">15</button>
+            <button class="level level16" id="h16">16</button>
+            <button class="level level17" id="h17">17</button>
+            <button class="level level18" id="h18">18</button>
+            <button class="level level19" id="h19">19</button>
+            <button class="level level20" id="h20">20</button>
         </div>
     </nav>
     </main>
