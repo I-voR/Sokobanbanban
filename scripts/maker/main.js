@@ -11,6 +11,7 @@ $('.icons').click(function () {
     $('.grid-tile').off('mousedown')
     $('.grid-tile').off('mouseup')
     $('.grid-tile').off('mousemove')
+    $('.grid-tile').off('click')
     TilePainter.tilepaint($(this).attr('id'))
 
     if ($(this).css('outline') === 'rgb(0, 0, 255) solid 0px') {

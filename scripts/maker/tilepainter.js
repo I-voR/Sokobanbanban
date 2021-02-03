@@ -16,6 +16,9 @@ export const TilePainter = {
         if (selectedtile == tile) {
             selectedtile = null
             $('.grid-tile').off('mousedown')
+            $('.grid-tile').off('mouseup')
+            $('.grid-tile').off('mousemove')
+            $('.grid-tile').off('click')
         } else {
             $('.grid-tile').click(function () {
                 $(document.elementFromPoint(window.event.clientX, window.event.clientY)).empty()
@@ -32,6 +35,7 @@ export const TilePainter = {
                     console.log("mysz sie rusza")
                     lastelement = document.elementFromPoint(window.event.clientX, window.event.clientY)
                 })
+                $('.grid-tile').mouseup(function () { $('.grid-tile').off('mousemove') })
             })
 
             selectedtile = tile
