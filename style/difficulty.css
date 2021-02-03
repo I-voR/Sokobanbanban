@@ -1,3 +1,7 @@
+.container { align-items: flex-start !important; }
+
+.container > button { width: 128px !important; }
+
 .difficulty {
     display: grid;
     height: 192px;
@@ -11,7 +15,7 @@
 
 .dif-level {
     grid-area: dif-level;
-    display: inline-block;;
+    display: inline-block;
     margin: 8px;
     margin-right: 0;
     height: 176px;
