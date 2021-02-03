@@ -30,7 +30,7 @@ nav {
 main { height: 100%; }
 
 .container {
-    height: 100%;
+    height: calc(100% - 30px);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

@@ -1,6 +1,6 @@
-.container { align-items: flex-start !important; }
+.container { align-items: flex-start; }
 
-.container > button { width: 128px !important; }
+.container > button { width: 128px; }
 
 .difficulty {
     display: grid;
