@@ -14,6 +14,22 @@ body {
     width: 496px;
 }
 
+#nav-maker {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px 10px 50px;
+    height: 50px;
+}
+
+#nav-maker > button {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    height: 30px;
+    width: 70px;
+}
+
 .icons {
     padding: 0px;
     height: 32px;
@@ -39,7 +55,8 @@ body {
     width: 32px;
     user-select: none;
 }
-img{
+
+img {
     pointer-events: none;
     user-select: none;
 }
