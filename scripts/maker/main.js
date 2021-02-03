@@ -3,6 +3,7 @@ global.$ = global.jQuery
 
 import { MenuGen } from './menugen.js'
 import { TilePainter } from './tilepainter.js'
+import { reset } from './reset.js'
 
 MenuGen.menugen()
 //TilePainter.tilepaint()
@@ -26,3 +27,7 @@ $('.icons').click(function () {
     //outline: 3px red solid
 });
 
+
+$('#reset').click(function () {
+    reset.reset()
+});
