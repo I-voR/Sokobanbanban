@@ -11,6 +11,4 @@
     outline: none;
 }
 
-.grid-tile {
-    border-radius: 0;
-}
+.grid-tile { border-radius: 0; }
