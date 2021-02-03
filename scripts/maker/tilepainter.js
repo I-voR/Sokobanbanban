@@ -32,10 +32,12 @@ export const TilePainter = {
                         $(document.elementFromPoint(window.event.clientX, window.event.clientY)).append('<img src="../assets/map_tiles/' + tilefilename + '">')
                     }
                     $('.grid-tile').mouseup(function () { $('.grid-tile').off('mousemove') })
+                    $('#level-border').mouseleave(function () { $('.grid-tile').off('mousemove') })
                     console.log("mysz sie rusza")
                     lastelement = document.elementFromPoint(window.event.clientX, window.event.clientY)
                 })
                 $('.grid-tile').mouseup(function () { $('.grid-tile').off('mousemove') })
+                $('#level-border').mouseleave(function () { $('.grid-tile').off('mousemove') })
             })
 
             selectedtile = tile
