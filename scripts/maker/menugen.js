@@ -14,12 +14,13 @@ export const MenuGen = {
         for (i = 0; files.length > i; i++) {
             //margin-top: 9px; margin-left:' + (i == 0 ? (((500 - files.length * 32) / files.length) / 2) : ((500 - files.length * 32) / files.length)) + 'px
             $('#tiles-picker').append(
-                '<button class="icons" style=" background: url(../assets/map_tiles/' + files[i] + ');" id="' + files[i].split('.', 2)[0] + (files[i].split('.', 2)[1] == 'col' ? '-' : '') + '"></button>')
+                '<button class="icons" style=" outline: 0px blue solid; background: url(../assets/map_tiles/' + files[i] + ');" id="' + files[i].split('.', 2)[0] + (files[i].split('.', 2)[1] == 'col' ? '-' : '') + '"></button>')
         }
 
         for (i = 0; i < 20; i++) {
             for (l = 0; l < 30; l++) {
-                $('#level-border').append('<div class="grid-tile" id="' + (i + '' + l) + '" style="left:' + l * 32 + 'px; top:' + i * 32 + 'px"> </div>')
+                $('#level-border').append('<div class="grid-tile" id="' + (i + '-' + l) + '" style="left:' + l * 32 + 'px; top:' + i * 32 + 'px"> </div>')
+                $('#' + (i + '-' + l)).append('<img src="../assets/map_tiles/Grass..png">')
             }
         }
     }

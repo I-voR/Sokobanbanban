@@ -5,20 +5,52 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 let selectedtile
 
+async function continuosPainting(tilefilename) {
+    $('.grid-tile').mouseup(function () { coloring = false })
+    let coloring = true
+    while (coloring) {
+        console.log($(this))
+        console.log($(':hover').last().attr('name'))
+        $(this).empty()
+        $(this).append('<img src="../assets/map_tiles/' + tilefilename + '">')
+        await new Promise(r => setTimeout(r, 100));
+    }
+}
+
+
+
 export const TilePainter = {
     tilepaint: function (tile) {
         let tilefilename = (tile.slice(-1) == '-' ? tile.slice(0, -1) : tile) + "." + (tile.slice(-1) == '-' ? 'col' : '') + '.png'
 
         if (selectedtile == tile) {
             selectedtile = null
-            $('.grid-tile').off('click');
+            $('.grid-tile').off('mousedown');
         } else {
-            $('.grid-tile').click(function () {
-                console.log($(this))
-                $(this).empty()
-                $(this).append('<img src="../assets/map_tiles/' + tilefilename + '">')
+            $('.grid-tile').mousedown(function () {
+                continuosPainting(tilefilename)
+
+
             })
             selectedtile = tile
         }
     }
 }
+
+
+
+
+/*
+            async function continuosPainting() {
+                let coloring=true
+                while (coloring) {
+                    if (f%2==0) {
+                        await new Promise(r => setTimeout(r, 100));
+                    }else{
+                        coloring=false
+                    }
+                }
+            }
+
+
+*/
