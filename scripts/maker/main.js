@@ -8,6 +8,9 @@ MenuGen.menugen()
 //TilePainter.tilepaint()
 let lastpicked
 $('.icons').click(function () {
+    $('.grid-tile').off('mousedown')
+    $('.grid-tile').off('mouseup')
+    $('.grid-tile').off('mousemove')
     TilePainter.tilepaint($(this).attr('id'))
 
     if ($(this).css('outline') === 'rgb(0, 0, 255) solid 0px') {
