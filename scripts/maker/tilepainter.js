@@ -17,6 +17,10 @@ export const TilePainter = {
             selectedtile = null
             $('.grid-tile').off('mousedown')
         } else {
+            $('.grid-tile').click(function () {
+                $(document.elementFromPoint(window.event.clientX, window.event.clientY)).empty()
+                $(document.elementFromPoint(window.event.clientX, window.event.clientY)).append('<img src="../assets/map_tiles/' + tilefilename + '">')
+            })
             $('.grid-tile').mousedown(function () {
                 let lastelement
                 $('.grid-tile').mousemove(function () {
@@ -29,6 +33,7 @@ export const TilePainter = {
                     lastelement = document.elementFromPoint(window.event.clientX, window.event.clientY)
                 })
             })
+
             selectedtile = tile
         }
     }
