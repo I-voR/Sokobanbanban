@@ -4,9 +4,9 @@ global.$ = global.jQuery
 import { MenuGen } from './menugen.js'
 import { TilePainter } from './tilepainter.js'
 import { reset } from './reset.js'
+import { save } from './save.js'
 
 MenuGen.menugen()
-//TilePainter.tilepaint()
 
 $('.icons').click(function () {
     $('.grid-tile').off('mousedown')
@@ -17,17 +17,14 @@ $('.icons').click(function () {
 
     if ($(this).css('outline') === 'rgb(0, 0, 255) solid 0px') {
         $('.icons').css('outline', 'rgb(0, 0, 255) solid 0px')
-        console.log($(this))
-        console.log($(this).css('outline'))
         $(this).css('outline', 'rgb(0, 0, 255) solid 2px')
     } else if ($(this).css('outline') === 'rgb(0, 0, 255) solid 2px') {
-        console.log("działa")
         $(this).css('outline', 'rgb(0, 0, 255) solid 0px')
     }
-    //outline: 3px red solid
-});
-
-
+})
 $('#reset').click(function () {
     reset.reset()
-});
+})
+$('#save').click(function () {
+    save.save()
+})

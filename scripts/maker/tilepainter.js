@@ -5,14 +5,10 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 let selectedtile
 
-
-
-
-
 export const TilePainter = {
     tilepaint: function (tile) {
-        let tilefilename = (tile.slice(-1) == '-' ? tile.slice(0, -1) : tile) + "." + (tile.slice(-1) == '-' ? 'col' : '') + '.png'
-
+        let tilefilename = (tile.slice(-1) == '-' ? tile.slice(0, -1) : tile) + '.' + (tile.slice(-1) == '-' ? 'col' : '') + '.png">'
+        let defaultImgLocation = '<img src="../assets/map_tiles/'
         if (selectedtile == tile) {
             selectedtile = null
             $('.grid-tile').off('mousedown')
@@ -22,24 +18,20 @@ export const TilePainter = {
         } else {
             $('.grid-tile').click(function () {
                 $(document.elementFromPoint(window.event.clientX, window.event.clientY)).empty()
-                $(document.elementFromPoint(window.event.clientX, window.event.clientY)).append('<img src="../assets/map_tiles/' + tilefilename + '">')
+                $(document.elementFromPoint(window.event.clientX, window.event.clientY)).append(defaultImgLocation + tilefilename)
             })
             $('.grid-tile').mousedown(function () {
-                let lastelement
+                let lastElement
                 $('.grid-tile').mousemove(function () {
-                    if (lastelement != document.elementFromPoint(window.event.clientX, window.event.clientY)) {
+                    if (lastElement != document.elementFromPoint(window.event.clientX, window.event.clientY)) {
                         $(document.elementFromPoint(window.event.clientX, window.event.clientY)).empty()
-                        $(document.elementFromPoint(window.event.clientX, window.event.clientY)).append('<img src="../assets/map_tiles/' + tilefilename + '">')
+                        $(document.elementFromPoint(window.event.clientX, window.event.clientY)).append(defaultImgLocation + tilefilename)
                     }
                     $('.grid-tile').mouseup(function () { $('.grid-tile').off('mousemove') })
                     $('#level-border').mouseleave(function () { $('.grid-tile').off('mousemove') })
-                    console.log("mysz sie rusza")
-                    lastelement = document.elementFromPoint(window.event.clientX, window.event.clientY)
+                    lastElement = document.elementFromPoint(window.event.clientX, window.event.clientY)
                 })
-                $('.grid-tile').mouseup(function () { $('.grid-tile').off('mousemove') })
-                $('#level-border').mouseleave(function () { $('.grid-tile').off('mousemove') })
             })
-
             selectedtile = tile
         }
     }
@@ -48,17 +40,3 @@ export const TilePainter = {
 
 
 
-/*
-            async function continuosPainting() {
-                let coloring=true
-                while (coloring) {
-                    if (f%2==0) {
-                        await new Promise(r => setTimeout(r, 100));
-                    }else{
-                        coloring=false
-                    }
-                }
-            }
-
-
-*/

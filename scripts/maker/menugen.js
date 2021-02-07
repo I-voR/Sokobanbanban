@@ -10,17 +10,26 @@ export const MenuGen = {
         let files = fs.readdirSync('./assets/map_tiles')
         let i
         let l
-
+        let tileButton
+        let tile
         for (i = 0; files.length > i; i++) {
-            //margin-top: 9px; margin-left:' + (i == 0 ? (((500 - files.length * 32) / files.length) / 2) : ((500 - files.length * 32) / files.length)) + 'px
-            $('#tiles-picker').append(
-                '<button class="icons" style=" outline: 0px blue solid; background: url(../assets/map_tiles/' + files[i] + ');" id="' + files[i].split('.', 2)[0] + (files[i].split('.', 2)[1] == 'col' ? '-' : '') + '"></button>')
+            tileButton = $('<button>')
+            tileButton.attr('class', 'icons')
+            tileButton.css('outline', '0px blue solid')
+            tileButton.css('background', ('url(../assets/map_tiles/' + files[i] + ')'))
+            tileButton.attr('id', files[i].split('.', 2)[0] + (files[i].split('.', 2)[1] == 'col' ? '-' : ''))
+            $('#tiles-picker').append(tileButton)
         }
-
         for (i = 0; i < 20; i++) {
             for (l = 0; l < 30; l++) {
-                $('#level-border').append('<div class="grid-tile" id="' + (i + '-' + l) + '" style="left:' + l * 32 + 'px; top:' + i * 32 + 'px"> </div>')
-                $('#' + (i + '-' + l)).append('<img src="../assets/map_tiles/Grass..png">')
+                tile = $('<div>')
+                tile.attr('id', (i + '-' + l))
+                tile.attr('class', 'grid-tile')
+                tile.css('left', (l * 32) + 'px')
+                tile.css('top', (i * 32) + 'px')
+                tile.css('outline', '0px blue solid')
+                tile.append('<img src="../assets/map_tiles/Grass..png">')
+                $('#level-border').append(tile)
             }
         }
     }
