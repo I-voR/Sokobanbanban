@@ -1,5 +1,6 @@
 .flex-item,
 .flex-item > button,
+#nav-maker > button,
 .grid-tile {
     border: 1px solid;
     border-radius: 4px;

@@ -53,7 +53,7 @@ main { height: 100%; }
 #button-container button { width: 248px; }
 
 .flex-item,
-.flex-item * {
+.flex-item > button {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 32px;
