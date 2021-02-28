@@ -26,5 +26,5 @@ $('#reset').click(function () {
     reset.reset()
 })
 $('#save').click(function () {
-    save.save()
+    save.main()
 })
