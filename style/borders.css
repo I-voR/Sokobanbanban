@@ -1,7 +1,8 @@
 .flex-item,
 .flex-item > button,
 #nav-maker > button,
-.grid-tile {
+.grid-tile,
+.close-infobox {
     border: 1px solid;
     border-radius: 4px;
 }
@@ -12,4 +13,11 @@
     outline: none;
 }
 
-.grid-tile { border-radius: 0; }
+.grid-tile {
+    border-radius: 0;
+}
+
+.infobox {
+    border: 2px solid;
+    border-radius: 4px;
+}

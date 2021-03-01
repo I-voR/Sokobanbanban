@@ -4,34 +4,30 @@
 global.jQuery = require('jquery')
 global.$ = global.jQuery
 
-
-
-
+import { infobox } from '../infobox.js'
 
 export const save = {
-    main: function () {
+    main: function() {
         $('.grid-tile').off('click')
-        alert('Select player starting position.')
+        infobox.createInfobox('info', 'Select player starting position...')
 
         save.playerPlace()
 
-        $('.grid-tile').click(function () {
+        $('.grid-tile').on('click', function() {
             console.log(this)
             let id = this.id
-            if ($(this).children()[0].src.slice(-7, -4) != "col") {
+
+            if ($(this).children()[0].src.slice(-7, -4) != 'col') {
                 $('.grid-tile').off('mouseenter')
                 $('.grid-tile').off('mouseleave')
                 save.mapRead(id)
             } else {
-                alert('Select floor instead of walls')
+                infobox.createInfobox('warn', 'Select floor instead of walls!')
                 save.playerPlace()
             }
         })
-
-
-
     },
-    playerPlace: function () {
+    playerPlace: function() {
         $('.grid-tile').off('mousedown')
         $('.grid-tile').off('mouseup')
         $('.grid-tile').off('mousemove')
@@ -42,17 +38,14 @@ export const save = {
         selectionTile.css('backgroundColor', 'blue').css('opacity', '0.5').css('z-index', '100')
         selectionTile.css('position', 'absolute').css('left', 0).css('top', 0)
 
-        $('.grid-tile').mouseenter(function () {
+        $('.grid-tile').on('mouseenter', function() {
             $(this).append(selectionTile)
-        }).mouseleave(function () {
+        }).on('mouseleave', function() {
             $('selectionTile').remove()
         })
-
     },
-    mapRead: function (playerPos) {
+    mapRead: function(playerPos) {
         console.log(playerPos)
-        let saveName = "name.map"
-
+        let saveName = 'name.map'
     }
-
 }

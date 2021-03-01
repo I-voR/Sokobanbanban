@@ -8,7 +8,7 @@ import { save } from './save.js'
 
 MenuGen.menugen()
 
-$('.icons').click(function () {
+$('.icons').on('click', function() {
     $('.grid-tile').off('mousedown')
     $('.grid-tile').off('mouseup')
     $('.grid-tile').off('mousemove')
@@ -22,9 +22,9 @@ $('.icons').click(function () {
         $(this).css('outline', 'rgb(0, 0, 255) solid 0px')
     }
 })
-$('#reset').click(function () {
+$('#reset').on('click', function() {
     reset.reset()
 })
-$('#save').click(function () {
+$('#save').on('click', function() {
     save.main()
 })
