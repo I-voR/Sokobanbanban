@@ -8,6 +8,7 @@ export const MenuGen = {
     menugen: function () {
         let fs = require('fs')
         let files = fs.readdirSync('./assets/map_tiles')
+        //console.log(files)
         let i
         let l
         let tileButton

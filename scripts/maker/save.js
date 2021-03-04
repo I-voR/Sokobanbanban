@@ -50,8 +50,83 @@ export const save = {
 
     },
     mapRead: function (playerPos) {
-        console.log(playerPos)
-        let saveName = "name.map"
+
+        /* map save structure 30x20 tiles (26 lines):
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,P,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
+        13-3
+        0,filename
+        1,filename
+        2,filename
+        3,filename
+        4,filename
+         */
+        let fs = require('fs')
+        let files = fs.readdirSync('./assets/map_tiles')
+        function translation(filename) {
+            switch (filename) {
+                case files[0]:
+                    return 0;
+                case files[1]:
+                    return 1;
+                case files[2]:
+                    return 2;
+                case files[3]:
+                    return 3;
+                case files[4]:
+                    return 4;
+                default:
+                    return 0;
+            }
+        }
+
+
+
+        let saveName = "name"
+        let mapData = []
+
+
+        for (let y = 0; y < 20; y++) {
+            var saveRow = []
+            for (let x = 0; x < 30; x++) {
+                let temp = $('#' + y + '-' + x).children()[0].src.split("/")
+                //temp = temp[temp.length - 1]
+                saveRow[x] = translation(temp[temp.length - 1])
+            }
+            //console.log(saveRow)
+            mapData[y] = saveRow
+        }
+
+        mapData[20] = playerPos
+
+        for (let i = 0; i < files.length; i++) {
+            mapData[mapData.length] = i + "," + files[i]
+        }
+
+        console.log(mapData)
+
+        var file = fs.createWriteStream('./created-maps/' + saveName + '.map');
+        file.on('error', function (err) { /* error handling */ });
+        mapData.forEach(function (v) { file.write(v + '\n'); });
+        file.end();
 
     }
 
