@@ -1,0 +1,50 @@
+.infobox {
+    position: absolute;
+    top: calc(50% - 75px);
+    height: 150px;
+    width: 400px;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+.heading {
+    position: absolute;
+    background-color: gray;
+    padding: 4px;
+    width: calc(100% - 8px);
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.warn {
+    background-color: rgb(187, 128, 0);
+}
+
+.info {
+    background-color: cornflowerblue;
+}
+
+.input {
+    background-color: gainsboro;
+}
+
+.input > .text-infobox {
+    color: darkgray;
+}
+
+.close-infobox {
+    position: absolute;
+    left: calc(50% - 45px);
+    top: calc(100% - 30px);
+    width: 90px;
+    height: 25px;
+}
+
+.text-infobox {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    padding: 4px;
+}
