@@ -1,3 +1,6 @@
+# maps
+*.map
+
 # compiled output
 /dist
 /tmp

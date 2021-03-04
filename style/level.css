@@ -1,3 +1,43 @@
 body {
     background-image: url("../assets/background.png");
 }
+
+table {
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    border: none;
+    border-collapse: collapse;
+}
+
+tr, td {
+    border: none;
+}
+
+td {
+    height: 30px;
+    width: 30px;
+}
+
+#player,
+.crates,
+.plates {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+}
+
+.crates {
+    z-index: 999;
+    background-image: url("../assets/map_tiles/Crate.col.png");
+}
+
+.plates {
+    z-index: 998;
+    background-image: url("../assets/map_tiles/Plate..png");
+}
+
+#player {
+    z-index: 999;
+    background-image: url("../assets/spritesheet/Steve_Front.png");
+}
