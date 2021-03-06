@@ -86,6 +86,7 @@
     "writable":"writable",
     "readonly":"readonly",
     /*------------------*/
+    "location":"readonly",
     "console":"readonly",
     "process":"readonly",
     "window":"readonly",
