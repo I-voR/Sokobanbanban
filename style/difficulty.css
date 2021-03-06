@@ -1,46 +1,10 @@
-.container { align-items: flex-start; }
-
-.container > button { width: 128px; }
-
 .difficulty {
-    display: grid;
     height: 192px;
-    width: calc(100vw - 40px);
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        "dif-level level01 level02 level03 level04 level05 level06 level07 level08 level09 level10"
-        "dif-level level11 level12 level13 level14 level15 level16 level17 level18 level19 level20";
+    width: calc(25vw - 40px);
 }
 
 .dif-level {
-    grid-area: dif-level;
-    display: inline-block;
-    margin: 8px;
-    margin-right: 0;
-    height: 176px;
-    line-height: 176px;
-    transform: rotate(-90deg);
+    margin: 16px;
+    height: 160px;
+    width: calc(25vw - 72px);
 }
-
-.level { margin: 8px; }
-.level01 { grid-area: level01; }
-.level02 { grid-area: level02; }
-.level03 { grid-area: level03; }
-.level04 { grid-area: level04; }
-.level05 { grid-area: level05; }
-.level06 { grid-area: level06; }
-.level07 { grid-area: level07; }
-.level08 { grid-area: level08; }
-.level09 { grid-area: level09; }
-.level10 { grid-area: level10; }
-.level11 { grid-area: level11; }
-.level12 { grid-area: level12; }
-.level13 { grid-area: level13; }
-.level14 { grid-area: level14; }
-.level15 { grid-area: level15; }
-.level16 { grid-area: level16; }
-.level17 { grid-area: level17; }
-.level18 { grid-area: level18; }
-.level19 { grid-area: level19; }
-.level20 { grid-area: level20; }

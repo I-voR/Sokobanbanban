@@ -5,10 +5,11 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 export const levelgen = {
-    main: function() {
+    main: function(map) {
         let files = global.fs.readdirSync('./assets/map_tiles')
-        let array = global.fs.readFileSync('./created-maps/name.map').toString().split('\n')
-        
+        let map_dir = './maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
+        let array = global.fs.readFileSync(map_dir).toString().split('\n')
+
         let map_bg = []
         let bg_names = []
         let player_pos = []
@@ -26,7 +27,7 @@ export const levelgen = {
             let tr = $('<tr>')
         
             for (let j = 0; j < line.length; j++) {
-                let cell = line[j]
+                let cell = parseInt(line[j])
         
                 let td = $('<td>')
                 td.css('background-image', `url(../assets/map_tiles/${files[cell] === 'Crate.col.png' ? files[1] : files[cell] === 'Plate..png' ? files[1] : files[cell]})`)
