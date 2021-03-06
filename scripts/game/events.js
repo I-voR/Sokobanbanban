@@ -1,5 +1,3 @@
-/* eslint-disable require-jsdoc */
-
 global.jQuery = require('jquery')
 global.$ = global.jQuery
 global.pressCount = 0

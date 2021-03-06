@@ -1,5 +1,3 @@
-/* eslint-disable require-jsdoc */
-
 import { levelgen } from './levelgen.js'
 import { events } from './events.js'
 

@@ -1,5 +1,3 @@
-/* eslint-disable require-jsdoc */
-
 global.fs = require('fs')
 global.jQuery = require('jquery')
 global.$ = global.jQuery
