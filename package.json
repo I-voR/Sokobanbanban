@@ -1,6 +1,6 @@
 {
   "name": "sokobanbanban",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Projekt \"Sokoban\" na Motorola Science Cup 2020/21",
   "main": "index.js",
   "scripts": {
