@@ -14,11 +14,10 @@ export const levelgen = {
         
         let player = $('<div>')
         let table = $('<table>')
-        
+
         for (let i = 0; i < 20; i++) map_bg.push(array[i].split(','))
         for (let i = 21; i < 26; i++) bg_names.push(array[i].split(','))
         player_pos = array[20].split('-')
-        
         
         for (let i = 0; i < map_bg.length; i++) {
             let line = map_bg[i]
@@ -28,7 +27,43 @@ export const levelgen = {
                 let cell = parseInt(line[j])
         
                 let td = $('<td>')
-                td.css('background-image', `url(../assets/map_tiles/${files[cell] === 'Crate.col.png' ? files[1] : files[cell] === 'Plate..png' ? files[1] : files[cell]})`)
+
+                switch (files[cell]) {
+                case 'Crate.col.png':
+                case 'Plate..png':
+                    td.css('background-image', `url(../assets/map_tiles/${files[1]})`)
+                    break
+                
+                case 'Grass..png':
+                    td.css('background-image', 'url(../assets/map_tiles/Grass..png)')
+
+                    switch (map.substring(0, map.indexOf(':'))) {
+                    case 'easy':
+                        td.css('filter', 'opacity(0.5) drop-shadow(0 0 0 green)')
+                        break
+                            
+                    case 'medium':
+                        td.css('filter', 'opacity(0.5) drop-shadow(0 0 0 yellow)')
+                        break
+                            
+                    case 'hard':
+                        td.css('filter', 'opacity(0.5) drop-shadow(0 0 0 red)')
+                        break
+                            
+                    case 'ascending':
+                        td.css('filter', 'opacity(0.5) drop-shadow(0 0 0 blue)')
+                        break
+                            
+                    default:
+                        break
+                    }
+                    
+                    break
+                
+                default:
+                    td.css('background-image', `url(../assets/map_tiles/${files[cell]})`)
+                    break
+                }
         
                 if (files[cell] === 'Crate.col.png') {
                     let crate = $('<div>')
