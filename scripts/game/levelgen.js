@@ -29,9 +29,28 @@ export const levelgen = {
                 let td = $('<td>')
 
                 switch (files[cell]) {
+                case 'Floor..png':
                 case 'Crate.col.png':
                 case 'Plate..png':
                     td.css('background-image', `url(../assets/map_tiles/${files[1]})`)
+
+                    switch (map.substring(0, map.indexOf(':'))) {
+                    case 'easy':
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #90EE90)')
+                        break
+                                    
+                    case 'medium':
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #FFFFE0)')
+                        break
+                                    
+                    case 'hard':
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #E97451)')
+                        break
+                                    
+                    case 'ascending':
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #ADD8E6)')
+                        break
+                    }
                     break
                 
                 case 'Grass..png':
@@ -39,27 +58,26 @@ export const levelgen = {
 
                     switch (map.substring(0, map.indexOf(':'))) {
                     case 'easy':
-                        td.css('filter', 'opacity(0.5) drop-shadow(0 0 0 green)')
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #013220)')
                         break
                             
                     case 'medium':
-                        td.css('filter', 'opacity(0.5) drop-shadow(0 0 0 yellow)')
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #9B870C)')
                         break
                             
                     case 'hard':
-                        td.css('filter', 'opacity(0.5) drop-shadow(0 0 0 red)')
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #8B0000)')
                         break
                             
                     case 'ascending':
-                        td.css('filter', 'opacity(0.5) drop-shadow(0 0 0 blue)')
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #00008B)')
                         break
                             
                     default:
                         break
                     }
-                    
                     break
-                
+
                 default:
                     td.css('background-image', `url(../assets/map_tiles/${files[cell]})`)
                     break
