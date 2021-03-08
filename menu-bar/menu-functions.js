@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 const { remote, ipcRenderer } = require('electron')
 
 function getCurrentWindow() {

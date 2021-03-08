@@ -45,26 +45,26 @@ button,
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
 }
 
-#easy {
+.easy {
     background-color: #5E8C32;
 }
 
-#easy > button {
+.easy > button {
     background-color: #93C763;
 }
 
-#medium {
+.medium {
     background-color: #B98F00;
 }
 
-#medium > button {
+.medium > button {
     background-color: #FFCD22;
 }
 
-#hard {
+.hard {
     background-color: #974B00;
 }
 
-#hard > button {
+.hard > button {
     background-color: #EC7600;
 }

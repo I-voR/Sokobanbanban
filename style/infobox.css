@@ -19,19 +19,15 @@
 }
 
 .warn {
-    background-color: rgb(187, 128, 0);
+    background-color: lightyellow;
 }
 
 .info {
-    background-color: cornflowerblue;
+    background-color: lightblue;
 }
 
-.input {
-    background-color: gainsboro;
-}
-
-.input > .text-infobox {
-    color: darkgray;
+.completed {
+    background-color: lightgreen;
 }
 
 .close-infobox {
@@ -44,6 +40,7 @@
 
 .text-infobox {
     position: absolute;
+    color: gray;
     left: 0;
     top: 30px;
     padding: 4px;
