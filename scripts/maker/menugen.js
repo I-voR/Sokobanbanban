@@ -5,7 +5,7 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 export const MenuGen = {
-    menugen: function() {
+    menugen: function () {
         let fs = require('fs')
         let files = fs.readdirSync('./assets/map_tiles')
         //console.log(files)
@@ -13,6 +13,8 @@ export const MenuGen = {
         let l
         let tileButton
         let tile
+
+        $('#level-border').css("background", ('url(../assets/map_tiles/Floor..png)'))
         for (i = 0; files.length > i; i++) {
             tileButton = $('<button>')
             tileButton.attr('class', 'icons')
