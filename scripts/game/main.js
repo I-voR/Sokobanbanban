@@ -9,3 +9,4 @@ console.log(map)
 
 levelgen.main(map)
 events.main()
+events.game_end_check()

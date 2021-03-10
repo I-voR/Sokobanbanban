@@ -8,7 +8,7 @@ export const events = {
     main: function() {
         $('body').on('keydown', function(e) {
             let bool = false, crate_bool = true
-
+            
             let player = $('#player')
             let player_pos = [(parseInt($('#player').css('left')) - 50) / 32, (parseInt($('#player').css('top')) - 80) / 32]
             let crates_pos = []
@@ -32,7 +32,7 @@ export const events = {
             case 'w':
                 player.css('backgroundImage', 'url("../assets/spritesheet/Steve_Back.png")')
 
-                if (events.cell_includes(map, player_pos, null, -1, 'Wall')) return
+                if (events.cell_includes(map, player_pos, null, -1, 'Wall')) break
 
                 for (let i = 0; i < crates_pos.length; i++) {
                     if (crates_pos[i][0] === player_pos[0] &&
@@ -51,7 +51,7 @@ export const events = {
             case 'a':
                 player.css('backgroundImage', 'url("../assets/spritesheet/Steve_Left.png")')
 
-                if (events.cell_includes(map, player_pos, -1, null, 'Wall')) return
+                if (events.cell_includes(map, player_pos, -1, null, 'Wall')) break
 
                 for (let i = 0; i < crates_pos.length; i++) {
                     if (crates_pos[i][0] === player_pos[0] - 1 &&
@@ -70,7 +70,7 @@ export const events = {
             case 's':
                 player.css('backgroundImage', 'url("../assets/spritesheet/Steve_Front.png")')
 
-                if (events.cell_includes(map, player_pos, null, 1, 'Wall')) return
+                if (events.cell_includes(map, player_pos, null, 1, 'Wall')) break
 
                 for (let i = 0; i < crates_pos.length; i++) {
                     if (crates_pos[i][0] === player_pos[0] &&
@@ -89,7 +89,7 @@ export const events = {
             case 'd':
                 player.css('backgroundImage', 'url("../assets/spritesheet/Steve_Right.png")')
 
-                if (events.cell_includes(map, player_pos, 1, null, 'Wall')) return
+                if (events.cell_includes(map, player_pos, 1, null, 'Wall')) break
 
                 for (let i = 0; i < crates_pos.length; i++) {
                     if (crates_pos[i][0] === player_pos[0] + 1 &&
@@ -112,8 +112,6 @@ export const events = {
             default:
                 break
             }
-            
-            events.is_level_completed()
         })
     },
     cell_includes: function(map, player_pos, x = 0, y = 0, text) {
@@ -138,8 +136,7 @@ export const events = {
     },
     move_crate: function(bool, map, player_pos, crates_pos, x = 0, y = 0) {
         if (bool) {
-            if (!events.is_air(map, player_pos, x, y)) return
-            else {
+            if (events.is_air(map, player_pos, x, y)) {
                 for (let i = 0; i < $('.crates').length; i++) {
                     if ((parseInt($('.crates').eq(i).css('left')) - 50) / 32 === player_pos[0] + (x / 2) &&
                     (parseInt($('.crates').eq(i).css('top')) - 80) / 32 === player_pos[1] + (y / 2)) {
@@ -183,6 +180,18 @@ export const events = {
             }
         }
 
-        if (count === crates_pos.length) infobox.createInfobox('completed', null)
+        console.log(count, crates_pos.length)
+        if (count === crates_pos.length) {
+            infobox.createInfobox('completed', null)
+            return true
+        }
+    },
+    game_end_check: async function() {
+        let bool = false
+
+        while (!bool) {
+            await new Promise(r => global.setTimeout(r, 10))
+            bool = events.is_level_completed()
+        }
     },
 }
