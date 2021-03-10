@@ -3,6 +3,9 @@
 /tmp
 /out-tsc
 /out
+/Output
+
+*.iss
 
 # Runtime data
 pids

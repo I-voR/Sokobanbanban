@@ -8,7 +8,7 @@ let selectedtile
 export const TilePainter = {
     tilepaint: function(tile) {
         let tilefilename = (tile.slice(-1) == '-' ? tile.slice(0, -1) : tile) + '.' + (tile.slice(-1) == '-' ? 'col' : '') + '.png">'
-        let defaultImgLocation = '<img src="../assets/map_tiles/'
+        let defaultImgLocation = `<img src="${location.href.substring(0, location.href.indexOf('Soko'))}Sokobanbanban/assets/map_tiles/`
         if (selectedtile == tile) {
             selectedtile = null
             $('.grid-tile').off('mousedown')
@@ -36,7 +36,3 @@ export const TilePainter = {
         }
     }
 }
-
-
-
-
