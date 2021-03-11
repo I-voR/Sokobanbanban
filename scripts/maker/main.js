@@ -5,10 +5,14 @@ import { MenuGen } from './menugen.js'
 import { TilePainter } from './tilepainter.js'
 import { reset } from './reset.js'
 import { save } from './save.js'
+import { load } from './load.js'
+
 
 MenuGen.menugen()
 
-$('.icons').on('click', function() {
+load.list()
+
+$('.icons').on('click', function () {
     $('.grid-tile').off('mousedown')
     $('.grid-tile').off('mouseup')
     $('.grid-tile').off('mousemove')
@@ -22,9 +26,13 @@ $('.icons').on('click', function() {
         $(this).css('outline', 'rgb(0, 0, 255) solid 0px')
     }
 })
-$('#reset').on('click', function() {
+$('#reset').on('click', function () {
     reset.reset()
 })
-$('#save').on('click', function() {
+$('#save').on('click', function () {
     save.main()
 })
+
+//$('#load').on('click', function () {
+ //   load.load()
+//})
