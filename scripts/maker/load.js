@@ -5,22 +5,19 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 export const load = {
-    load: function () {
+    load: function() {
         console.log(this)
-
-
-
-
+        console.log($('#load option:selected').text())
     },
-    list: function () {
+    list: function() {
         let fs = require('fs')
         let files = fs.readdirSync('./created-maps')
         let select = $('<select>')
         select.attr('name', 'map-load')
         select.attr('id', 'map-load')
         select.attr('form', 'map-load')
-        select.attr('onchange', "load.load(this, event)")
-        var option = $('<option>')
+        
+        let option = $('<option>')
         option.attr('value', 'NEW')
         option.append('NEW')
         select.append(option)
@@ -32,10 +29,7 @@ export const load = {
             select.append(option)
         }
 
-
         console.log(select)
         $('#load').append(select)
     }
-
-
 }

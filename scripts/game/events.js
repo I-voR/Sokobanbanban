@@ -180,7 +180,6 @@ export const events = {
             }
         }
 
-        console.log(count, crates_pos.length)
         if (count === crates_pos.length) {
             infobox.createInfobox('completed', null)
             return true
