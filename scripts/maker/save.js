@@ -9,13 +9,13 @@ global.$ = global.jQuery
 import { infobox } from '../infobox.js'
 
 export const save = {
-    main: function() {
+    main: function () {
         $('.grid-tile').off('click')
         infobox.createInfobox('info', 'Select player starting position...')
 
         save.playerPlace()
 
-        $('.grid-tile').on('click', function() {
+        $('.grid-tile').on('click', function () {
             console.log(this)
             let id = this.id
 
@@ -29,7 +29,7 @@ export const save = {
             }
         })
     },
-    playerPlace: function() {
+    playerPlace: function () {
         $('.grid-tile').off('mousedown')
         $('.grid-tile').off('mouseup')
         $('.grid-tile').off('mousemove')
@@ -40,13 +40,13 @@ export const save = {
         selectionTile.css('backgroundColor', 'blue').css('opacity', '0.5').css('z-index', '100')
         selectionTile.css('position', 'absolute').css('left', 0).css('top', 0)
 
-        $('.grid-tile').on('mouseenter', function() {
+        $('.grid-tile').on('mouseenter', function () {
             $(this).append(selectionTile)
-        }).on('mouseleave', function() {
+        }).on('mouseleave', function () {
             $('selectionTile').remove()
         })
     },
-    mapRead: function(playerPos) {
+    mapRead: function (playerPos) {
         /* map save structure 30x20 tiles (27 lines):
         0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
         0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
@@ -80,18 +80,20 @@ export const save = {
         let files = fs.readdirSync(funcs.cwd() + 'assets/map_tiles')
         function translation(filename) {
             switch (filename) {
-            case files[0]:
-                return 0
-            case files[1]:
-                return 1
-            case files[2]:
-                return 2
-            case files[3]:
-                return 3
-            case files[4]:
-                return 4
-            default:
-                return 0
+                case files[0]:
+                    return 0
+                case files[1]:
+                    return 1
+                case files[2]:
+                    return 2
+                case files[3]:
+                    return 3
+                case files[4]:
+                    return 4
+                case files[5]:
+                    return 5
+                default:
+                    return 0
             }
         }
 
@@ -116,8 +118,8 @@ export const save = {
         console.log(mapData)
 
         let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName + '.map')
-        file.on('error', function(e) { /* error handling */ })
-        mapData.forEach(function(v) { file.write(v + '\n') })
+        file.on('error', function (e) { /* error handling */ })
+        mapData.forEach(function (v) { file.write(v + '\n') })
         file.end()
     }
 }
