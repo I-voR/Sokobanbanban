@@ -118,11 +118,11 @@ export const save = {
         console.log(mapData)
 
         if ($('#load option:selected').text() == "NEW") {
-            saveName = new Date().toISOString().slice(0, 16).replace(':', '-').replace('T', '_')
+            saveName = new Date().toISOString().slice(0, 16).replace(':', '-').replace('T', '_') + '.map'
         } else {
             saveName = $('#load option:selected').text()
         }
-        let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName + '.map')
+        let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName)
         file.on('error', function (e) { /* error handling */ })
         mapData.forEach(function (v) { file.write(v + '\n') })
         file.end()
