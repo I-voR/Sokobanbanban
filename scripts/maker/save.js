@@ -47,7 +47,7 @@ export const save = {
         })
     },
     mapRead: function(playerPos) {
-        /* map save structure 30x20 tiles (26 lines):
+        /* map save structure 30x20 tiles (27 lines):
         0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
         0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
         0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
@@ -74,6 +74,7 @@ export const save = {
         2,filename
         3,filename
         4,filename
+        5,filename
          */
 
         let files = fs.readdirSync(funcs.cwd() + 'assets/map_tiles')

@@ -4,11 +4,11 @@ const fs = require('fs')
 
 export const funcs = {
     cwd: () => {
-        let cwd = process.cwd().replace(/\\/g, '/')
+        let cwd = process.cwd().replace(/\\/g, '/') + '/'
 
         for (const key in fs.readdirSync(cwd)) {
             if (fs.readdirSync(cwd)[key] === 'resources') {
-                cwd += '/resources/app/'
+                cwd += 'resources/app/'
                 break
             }
         }
