@@ -36,7 +36,7 @@ export const levelgen = {
                 switch (files[cell]) {
                 case 'Floor..png':
                 case 'Crate.col.png':
-                case 'ZCratePlate.png':
+                case 'ZCratePlate.col.png':
                 case 'Plate..png':
                     td.css('background-image', 'url("' + assets_path + 'Floor..png")')
 
@@ -89,14 +89,15 @@ export const levelgen = {
                     break
                 }
 
-                if (files[cell] === 'Crate.col.png' || files[cell] === 'ZCratePlate..png') {
+                if (files[cell] === 'Crate.col.png' || files[cell] === 'ZCratePlate.col.png') {
                     let crate = $('<div>')
                     crate
                         .addClass('crates')
                         .css('left', (j * 32 + 50) + 'px')
                         .css('top', (i * 32 + 80) +'px')
                     $('main').append(crate)
-                } else if (files[cell] === 'Plate..png') {
+                }
+                if (files[cell] === 'Plate..png' || files[cell] === 'ZCratePlate.col.png') {
                     let plate = $('<div>')
                     plate
                         .addClass('plates')

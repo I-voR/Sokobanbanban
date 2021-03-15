@@ -4,9 +4,16 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 export const controls = {
+    /**
+     * Re-sets current map and press count to base values
+    */
     reset: () => {
         location.reload()
     },
+    /** 
+    * Undo last move
+    * @summary If player has moved a crate, it will be moved back with player, otherwise only player's position will be reverted. Additionally only one last move can be reverted.
+    */
     undo: () => {
         if (global.lastPlayerPos != null) {
             global.pressCount--
