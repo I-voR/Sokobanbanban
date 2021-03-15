@@ -3,6 +3,8 @@
 global.jQuery = require('jquery')
 global.$ = global.jQuery
 global.pressCount = 0
+global.lastPlayerPos = null
+global.lastCratePos = null
 
 import { infobox } from '../infobox.js'
 
@@ -123,36 +125,45 @@ export const events = {
         return events.cell_includes(map, player_pos, x, y, 'Floor')
     },
     move_player: function(bool, map, player, player_pos, x = 0, y = 0) {
-        global.pressCount++
-
         if (bool) {
             if (!events.is_air(map, player_pos, x * 2, y * 2)) return
             else {
+                global.pressCount++
+                global.lastPlayerPos = player_pos
+        
                 player.css('left', ((player_pos[0] + x) * 32 + 50) + 'px')
                 player.css('top', ((player_pos[1] + y) * 32 + 80) + 'px')
             }
         } else {
+            global.pressCount++
+            global.lastPlayerPos = player_pos
+            global.lastCratePos = null
+    
             player.css('left', ((player_pos[0] + x) * 32 + 50) + 'px')
             player.css('top', ((player_pos[1] + y) * 32 + 80) + 'px')
         }
     },
     move_crate: function(bool, map, player_pos, crates_pos, x = 0, y = 0) {
-        if (bool) {
-            if (events.is_air(map, player_pos, x, y)) {
-                for (let i = 0; i < $('.crates').length; i++) {
-                    if ((parseInt($('.crates').eq(i).css('left')) - 50) / 32 === player_pos[0] + (x / 2) &&
-                    (parseInt($('.crates').eq(i).css('top')) - 80) / 32 === player_pos[1] + (y / 2)) {
-                        for (let j = 0; j < crates_pos.length; j++) {
-                            if ((player_pos[0] + x === crates_pos[j][0]) &&
-                            (player_pos[1] + y === crates_pos[j][1])) return false
+        if (bool && events.is_air(map, player_pos, x, y)) {
+            for (let i = 0; i < $('.crates').length; i++) {
+                if ((parseInt($('.crates').eq(i).css('left')) - 50) / 32 === player_pos[0] + (x / 2) &&
+                (parseInt($('.crates').eq(i).css('top')) - 80) / 32 === player_pos[1] + (y / 2)) {
+                    for (let j = 0; j < crates_pos.length; j++) {
+                        if ((player_pos[0] + x === crates_pos[j][0]) &&
+                        (player_pos[1] + y === crates_pos[j][1])) {
+                            global.lastCratePos = null
+                            return false
                         }
-                        
-                        $('.crates').eq(i).css('left', ((player_pos[0] + x) * 32 + 50) + 'px')
-                        $('.crates').eq(i).css('top', ((player_pos[1] + y) * 32 + 80) + 'px')
-                        break
                     }
+                        
+                    global.lastCratePos = [(parseInt($('.crates').eq(i).css('left')) - 50) / 32, (parseInt($('.crates').eq(i).css('top')) - 80) / 32, i]
+                    $('.crates').eq(i).css('left', ((player_pos[0] + x) * 32 + 50) + 'px')
+                    $('.crates').eq(i).css('top', ((player_pos[1] + y) * 32 + 80) + 'px')
+                    break
                 }
             }
+        } else {
+            global.lastCratePos = null
         }
         return true
     },

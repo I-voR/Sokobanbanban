@@ -1,3 +1,4 @@
+import { controls } from './controls.js'
 import { levelgen } from './levelgen.js'
 import { events } from './events.js'
 
@@ -10,3 +11,10 @@ console.log(map)
 levelgen.main(map)
 events.main()
 events.game_end_check()
+
+$('#reset').on('click', function() {
+    controls.reset()
+})
+$('#undo').on('click', function() {
+    controls.undo()
+})

@@ -25,9 +25,6 @@ export const levelgen = {
         for (let i = 21; i < array.length; i++) bg_names.push(array[i].split(','))
         player_pos = array[20].split('-')
 
-        let temp = files.splice(1, 1)
-        files.push(temp)
-        
         for (let i = 0; i < map_bg.length; i++) {
             let line = map_bg[i]
             let tr = $('<tr>')
@@ -39,7 +36,7 @@ export const levelgen = {
                 switch (files[cell]) {
                 case 'Floor..png':
                 case 'Crate.col.png':
-                case 'Crate_on_Plate.png':
+                case 'ZCratePlate.png':
                 case 'Plate..png':
                     td.css('background-image', 'url("' + assets_path + 'Floor..png")')
 
@@ -91,8 +88,8 @@ export const levelgen = {
                     td.css('background-image', 'url("' + assets_path + files[cell] + '")')
                     break
                 }
-        
-                if (files[cell] === 'Crate.col.png') {
+
+                if (files[cell] === 'Crate.col.png' || files[cell] === 'ZCratePlate..png') {
                     let crate = $('<div>')
                     crate
                         .addClass('crates')

@@ -1,6 +1,7 @@
 .flex-item,
 .flex-item > button,
 #nav-maker > button,
+#nav-level > button,
 .grid-tile,
 .close-infobox {
     border: 1px solid;
