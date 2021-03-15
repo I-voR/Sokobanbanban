@@ -17,7 +17,7 @@ export const TilePainter = {
             $('.grid-tile').off('mousemove')
             $('.grid-tile').off('click')
         } else {
-            $('.grid-tile').on('click', function () {
+            $('.grid-tile').on('click', function() {
                 $(document.elementFromPoint(window.event.clientX, window.event.clientY)).empty()
                 $(document.elementFromPoint(window.event.clientX, window.event.clientY)).append(defaultImgLocation + tilefilename)
             })
@@ -28,7 +28,7 @@ export const TilePainter = {
                         $(document.elementFromPoint(window.event.clientX, window.event.clientY)).empty()
                         $(document.elementFromPoint(window.event.clientX, window.event.clientY)).append(defaultImgLocation + tilefilename)
                     }
-                    $('.grid-tile').on('mouseup', function () { $('.grid-tile').off('mousemove') })
+                    $('.grid-tile').on('mouseup', function() { $('.grid-tile').off('mousemove') })
                     $('#level-border').on('mouseleave', function() { $('.grid-tile').off('mousemove') })
                     lastElement = document.elementFromPoint(window.event.clientX, window.event.clientY)
                 })
