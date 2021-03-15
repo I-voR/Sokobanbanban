@@ -97,7 +97,7 @@ export const save = {
             }
         }
 
-        let saveName = 'name'
+        var saveName
         let mapData = []
 
         for (let y = 0; y < 20; y++) {
@@ -117,6 +117,11 @@ export const save = {
 
         console.log(mapData)
 
+        if ($('#load option:selected').text() == "NEW") {
+            saveName = new Date().toISOString().slice(0, 10)
+        } else {
+            saveName = $('#load option:selected').text()
+        }
         let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName + '.map')
         file.on('error', function (e) { /* error handling */ })
         mapData.forEach(function (v) { file.write(v + '\n') })
