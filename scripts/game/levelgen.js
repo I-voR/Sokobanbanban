@@ -8,8 +8,8 @@ global.$ = global.jQuery
 
 export const levelgen = {
     main: function(map) {
-        let assets_path = funcs.cwd() + '/assets/map_tiles/'
-        let map_path = funcs.cwd() + '/maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
+        let assets_path = funcs.cwd() + 'assets/map_tiles/'
+        let map_path = funcs.cwd() + 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
 
         let files = fs.readdirSync(assets_path)
         let array = fs.readFileSync(map_path).toString().split('\n')
@@ -22,8 +22,11 @@ export const levelgen = {
         let table = $('<table>')
 
         for (let i = 0; i < 20; i++) map_bg.push(array[i].split(','))
-        for (let i = 21; i < 26; i++) bg_names.push(array[i].split(','))
+        for (let i = 21; i < array.length; i++) bg_names.push(array[i].split(','))
         player_pos = array[20].split('-')
+
+        let temp = files.splice(1, 1)
+        files.push(temp)
         
         for (let i = 0; i < map_bg.length; i++) {
             let line = map_bg[i]
@@ -36,8 +39,9 @@ export const levelgen = {
                 switch (files[cell]) {
                 case 'Floor..png':
                 case 'Crate.col.png':
+                case 'Crate_on_Plate.png':
                 case 'Plate..png':
-                    td.css('background-image', 'url("' + assets_path + files[1] + '")')
+                    td.css('background-image', 'url("' + assets_path + 'Floor..png")')
 
                     switch (map.substring(0, map.indexOf(':'))) {
                     case 'easy':
