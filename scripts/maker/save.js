@@ -124,8 +124,10 @@ export const save = {
         }
 
         let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName)
-        file.on('error', function(e) { console.log(e) })
+        file.on('error', function(e) { console.log(e) ; infobox.createInfobox('error', 'Map ' + saveName + ' could not be saved') })
         mapData.forEach(function(v) { file.write(v + '\n') })
         file.end()
+
+        infobox.createInfobox('info', 'Map succesfully saved as: ' + saveName)
     }
 }
