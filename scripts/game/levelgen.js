@@ -1,13 +1,18 @@
-global.fs = require('fs')
+/* eslint-disable require-jsdoc */
+
+import { funcs } from '../funcs.js'
+
+const fs = require('fs')
 global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 export const levelgen = {
     main: function(map) {
-        let path = location.href.substring(0, location.href.indexOf('Soko')) + 'Sokobanbanban/assets/map_tiles/'
-        let files = global.fs.readdirSync(process.cwd() + '/assets/map_tiles')
-        let map_dir = process.cwd() + '/maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
-        let array = global.fs.readFileSync(map_dir).toString().split('\n')
+        let assets_path = funcs.cwd() + '/assets/map_tiles/'
+        let map_path = funcs.cwd() + '/maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
+
+        let files = fs.readdirSync(assets_path)
+        let array = fs.readFileSync(map_path).toString().split('\n')
 
         let map_bg = []
         let bg_names = []
@@ -32,7 +37,7 @@ export const levelgen = {
                 case 'Floor..png':
                 case 'Crate.col.png':
                 case 'Plate..png':
-                    td.css('background-image', 'url("' + path + files[1] + '")')
+                    td.css('background-image', 'url("' + assets_path + files[1] + '")')
 
                     switch (map.substring(0, map.indexOf(':'))) {
                     case 'easy':
@@ -54,7 +59,7 @@ export const levelgen = {
                     break
                 
                 case 'Grass..png':
-                    td.css('background-image', 'url("' + path + 'Grass..png")')
+                    td.css('background-image', 'url("' + assets_path + 'Grass..png")')
 
                     switch (map.substring(0, map.indexOf(':'))) {
                     case 'easy':
@@ -79,7 +84,7 @@ export const levelgen = {
                     break
 
                 default:
-                    td.css('background-image', 'url("' + path + files[cell] + '")')
+                    td.css('background-image', 'url("' + assets_path + files[cell] + '")')
                     break
                 }
         
