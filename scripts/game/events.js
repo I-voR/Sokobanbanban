@@ -167,7 +167,7 @@ export const events = {
         }
         return true
     },
-    is_level_completed: function() {
+    is_level_completed: function(map) {
         let crates_pos = []
         let plates_pos = []
         let count = 0
@@ -194,16 +194,16 @@ export const events = {
         }
 
         if (count === crates_pos.length) {
-            infobox.createInfobox('completed', null)
+            infobox.createInfobox('completed', map)
             return true
         }
     },
-    game_end_check: async function() {
+    game_end_check: async function(map) {
         let bool = false
 
         while (!bool) {
             await new Promise(r => global.setTimeout(r, 10))
-            bool = events.is_level_completed()
+            bool = events.is_level_completed(map)
         }
     },
 }

@@ -10,7 +10,7 @@ console.log(map)
 
 levelgen.main(map)
 events.main()
-events.game_end_check()
+events.game_end_check(map)
 
 $('#reset').on('click', function() {
     controls.reset()
