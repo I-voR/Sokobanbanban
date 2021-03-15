@@ -9,13 +9,12 @@ export const MenuGen = {
         let fs = require('fs')
         let files = fs.readdirSync('./assets/map_tiles')
         //console.log(files)
-        let i
-        let l
+
         let tileButton
         let tile
 
         $('#level-border').css("background", ('url(../assets/map_tiles/Floor..png)'))
-        for (i = 0; files.length > i; i++) {
+        for (let i = 0; files.length > i; i++) {
             tileButton = $('<button>')
             tileButton.attr('class', 'icons')
             tileButton.css('outline', '0px blue solid')
@@ -23,8 +22,8 @@ export const MenuGen = {
             tileButton.attr('id', files[i].split('.', 2)[0] + (files[i].split('.', 2)[1] == 'col' ? '-' : ''))
             $('#tiles-picker').append(tileButton)
         }
-        for (i = 0; i < 20; i++) {
-            for (l = 0; l < 30; l++) {
+        for (let i = 0; i < 20; i++) {
+            for (let l = 0; l < 30; l++) {
                 tile = $('<div>')
                 tile.attr('id', (i + '-' + l))
                 tile.attr('class', 'grid-tile')
