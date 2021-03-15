@@ -118,7 +118,7 @@ export const save = {
         console.log(mapData)
 
         if ($('#load option:selected').text() == "NEW") {
-            saveName = new Date().toISOString().slice(0, 10)
+            saveName = new Date().toISOString().slice(0, 16).replace(':', '-').replace('T', '_')
         } else {
             saveName = $('#load option:selected').text()
         }
