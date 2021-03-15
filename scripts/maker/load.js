@@ -1,6 +1,8 @@
-/* eslint-disable no-empty */
 /* eslint-disable require-jsdoc */
 
+import { funcs } from '../funcs.js'
+
+const fs = require('fs')
 global.jQuery = require('jquery')
 global.$ = global.jQuery
 
@@ -10,8 +12,9 @@ export const load = {
         console.log($('#load option:selected').text())
     },
     list: function() {
-        let fs = require('fs')
-        let files = fs.readdirSync('./created-maps')
+        let path = funcs.cwd() + 'maps/created/'
+        
+        let files = fs.readdirSync(path)
         let select = $('<select>')
         select.attr('name', 'map-load')
         select.attr('id', 'map-load')

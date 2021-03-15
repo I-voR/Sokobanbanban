@@ -1,12 +1,15 @@
 /* eslint-disable require-jsdoc */
 
+import { funcs } from '../funcs.js'
+
+const fs = require('fs')
 global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 import { infobox } from '../infobox.js'
 
 export const save = {
-    main: function () {
+    main: function() {
         $('.grid-tile').off('click')
         infobox.createInfobox('info', 'Select player starting position...')
 
@@ -43,7 +46,7 @@ export const save = {
             $('selectionTile').remove()
         })
     },
-    mapRead: function (playerPos) {
+    mapRead: function(playerPos) {
         /* map save structure 30x20 tiles (26 lines):
         0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
         0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
@@ -73,8 +76,7 @@ export const save = {
         4,filename
          */
 
-        let fs = require('fs')
-        let files = fs.readdirSync('./assets/map_tiles')
+        let files = fs.readdirSync(funcs.cwd() + 'assets/map_tiles')
         function translation(filename) {
             switch (filename) {
             case files[0]:
@@ -95,7 +97,6 @@ export const save = {
         let saveName = 'name'
         let mapData = []
 
-
         for (let y = 0; y < 20; y++) {
             let saveRow = []
             for (let x = 0; x < 30; x++) {
@@ -113,7 +114,7 @@ export const save = {
 
         console.log(mapData)
 
-        let file = fs.createWriteStream('./created-maps/' + saveName + '.map')
+        let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName + '.map')
         file.on('error', function(e) { /* error handling */ })
         mapData.forEach(function(v) { file.write(v + '\n') })
         file.end()
