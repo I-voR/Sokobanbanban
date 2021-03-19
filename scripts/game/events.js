@@ -125,7 +125,7 @@ export const events = {
         })
     },
     cell_includes: function(map, player_pos, x = 0, y = 0, text) {
-        return map[player_pos[1] + y].children[player_pos[0] + x].style.backgroundImage.includes(text)
+        try { return map[player_pos[1] + y].children[player_pos[0] + x].style.backgroundImage.includes(text) } catch { return true }
     },
     is_air: function(map, player_pos, x = 0, y = 0) {
         return events.cell_includes(map, player_pos, x, y, 'Floor')
