@@ -1,4 +1,10 @@
-/* eslint-disable require-jsdoc */
+/*
+ * Sokoban game
+ * © Copyright 2021 Zakon Technomantów
+ * Published under WTFPLv2
+ * Languages: HTML5, CSS3, JavaScript (ES 2020)
+ * Map generator for GAME module
+*/
 
 import { funcs } from '../funcs.js'
 

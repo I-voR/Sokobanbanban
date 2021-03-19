@@ -1,4 +1,10 @@
-/* eslint-disable require-jsdoc */
+/*
+ * Sokoban game
+ * © Copyright 2021 Zakon Technomantów
+ * Published under WTFPLv2
+ * Languages: HTML5, CSS3, JavaScript (ES 2020)
+ * Functions used by specific buttons in in-game buttton bar
+*/
 
 global.jQuery = require('jquery')
 global.$ = global.jQuery

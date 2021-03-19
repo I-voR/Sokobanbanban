@@ -30,6 +30,14 @@
     background-color: lightgreen;
 }
 
+.text-infobox {
+    position: absolute;
+    color: gray;
+    left: 0;
+    top: 30px;
+    padding: 4px;
+}
+
 .close-infobox {
     position: absolute;
     left: calc(50% - 45px);
@@ -38,10 +46,17 @@
     height: 25px;
 }
 
-.text-infobox {
+.remove-map-infobox {
     position: absolute;
-    color: gray;
-    left: 0;
-    top: 30px;
-    padding: 4px;
+    top: calc(100% - 30px);
+    width: 90px;
+    height: 25px;
+}
+
+#yes-remove {
+    left: 50px;
+}
+
+#no-remove {
+    right: 50px;
 }

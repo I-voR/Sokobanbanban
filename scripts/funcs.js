@@ -1,4 +1,10 @@
-/* eslint-disable require-jsdoc */
+/*
+ * Sokoban game
+ * © Copyright 2021 Zakon Technomantów
+ * Published under WTFPLv2
+ * Languages: HTML5, CSS3, JavaScript (ES 2020)
+ * Special functions
+*/
 
 const fs = require('fs')
 
@@ -14,5 +20,11 @@ export const funcs = {
         }
 
         return cwd
+    },
+    initFuncWithRemboxBool: (func) => {
+        $('.remove-map-infobox').on('click', function() {
+            $('.remove-map-infobox').off()
+            func($(this).attr('value'))
+        })
     }
 }
