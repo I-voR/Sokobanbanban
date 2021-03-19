@@ -7,6 +7,9 @@
 
 *.iss
 
+# Custom maps
+/maps/created/*
+
 # Runtime data
 pids
 *.pid
