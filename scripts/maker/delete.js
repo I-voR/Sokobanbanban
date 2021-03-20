@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 
-import { funcs } from '../funcs.js'
 import { infobox } from '../infobox.js'
+import { funcs } from '../funcs.js'
 
 const fs = require('fs')
 
@@ -15,18 +15,18 @@ export const deleteMap = {
             return
         }
         infobox.createInfobox('remove', $('#load option:selected').text())
-        funcs.initFuncWithRemboxBool(deleteMap.deleting)
+        $('#yes-remove').on('click', function() {
+            deleteMap.delete()
+        })
     },
-    deleting: () => {
-        //wstaw pytanie czy na pewno
-        let path = './maps/created/' + $('#load option:selected').text()
-        fs.unlink(path, (err) => {
+    delete: () => {
+        let e = document.getElementById('map-load')
+        fs.unlink(funcs.cwd() + 'maps/created/' + e.options[e.selectedIndex].text, (err) => {
             if (err) {
                 console.error(err)
                 return
             }
         })
-
         location.reload()
     },
 }

@@ -3,7 +3,7 @@
 #nav-maker > button,
 #nav-level > button,
 .grid-tile,
-.close-infobox {
+.infobox > button {
     border: 1px solid;
     border-radius: 4px;
 }

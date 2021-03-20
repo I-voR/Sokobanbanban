@@ -8,6 +8,7 @@
 
 global.jQuery = require('jquery')
 global.$ = global.jQuery
+
 global.pressCount = 0
 global.lastPlayerPos = null
 global.lastCratePos = null
@@ -15,7 +16,7 @@ global.lastCratePos = null
 import { infobox } from '../infobox.js'
 
 export const events = {
-    main: function() {
+    main: () => {
         $('body').on('keydown', function(e) {
             let bool = false, crate_bool = true
             
@@ -124,13 +125,13 @@ export const events = {
             }
         })
     },
-    cell_includes: function(map, player_pos, x = 0, y = 0, text) {
+    cell_includes: (map, player_pos, x = 0, y = 0, text) => {
         try { return map[player_pos[1] + y].children[player_pos[0] + x].style.backgroundImage.includes(text) } catch { return true }
     },
-    is_air: function(map, player_pos, x = 0, y = 0) {
+    is_air: (map, player_pos, x = 0, y = 0) => {
         return events.cell_includes(map, player_pos, x, y, 'Floor')
     },
-    move_player: function(bool, map, player, player_pos, x = 0, y = 0) {
+    move_player: (bool, map, player, player_pos, x = 0, y = 0) => {
         if (bool) {
             if (!events.is_air(map, player_pos, x * 2, y * 2)) return
             else {
@@ -149,7 +150,7 @@ export const events = {
             player.css('top', ((player_pos[1] + y) * 32 + 80) + 'px')
         }
     },
-    move_crate: function(bool, map, player_pos, crates_pos, x = 0, y = 0) {
+    move_crate: (bool, map, player_pos, crates_pos, x = 0, y = 0) => {
         if (bool && events.is_air(map, player_pos, x, y)) {
             for (let i = 0; i < $('.crates').length; i++) {
                 if ((parseInt($('.crates').eq(i).css('left')) - 50) / 32 === player_pos[0] + (x / 2) &&
@@ -173,7 +174,7 @@ export const events = {
         }
         return true
     },
-    is_level_completed: function(map) {
+    is_level_completed: (map) => {
         let crates_pos = []
         let plates_pos = []
         let count = 0
@@ -204,7 +205,7 @@ export const events = {
             return true
         }
     },
-    game_end_check: async function(map) {
+    game_end_check: async(map) => {
         let bool = false
 
         while (!bool) {

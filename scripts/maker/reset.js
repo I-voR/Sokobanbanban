@@ -5,7 +5,7 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 export const reset = {
-    reset: function() {
+    reset: () => {
         /*
         let tilearray = $('.grid-tile')
         let i

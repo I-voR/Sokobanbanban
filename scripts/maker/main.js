@@ -8,12 +8,11 @@ import { save } from './save.js'
 import { load } from './load.js'
 import { deleteMap } from './delete.js'
 
-
 MenuGen.menugen()
 
 load.list()
 
-$('.icons').on('click', function () {
+$('.icons').on('click', function() {
     $('.grid-tile').off('mousedown')
     $('.grid-tile').off('mouseup')
     $('.grid-tile').off('mousemove')
@@ -27,16 +26,16 @@ $('.icons').on('click', function () {
         $(this).css('outline', 'rgb(0, 0, 255) solid 0px')
     }
 })
-$('#reset').on('click', function () {
+$('#reset').on('click', () => {
     reset.reset()
 })
-$('#save').on('click', function () {
+$('#save').on('click', () => {
     save.main()
 })
-$('#load').on('change', function () {
+$('#load').on('change', () => {
     load.load()
 })
-$('#deleteMap').on('click', function () {
+$('#deleteMap').on('click', () => {
     deleteMap.core()
 })
 

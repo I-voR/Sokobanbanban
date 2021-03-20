@@ -13,7 +13,7 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 export const levelgen = {
-    main: function(map) {
+    main: (map) => {
         let assets_path = funcs.cwd() + 'assets/map_tiles/'
         let map_path = funcs.cwd() + 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
 

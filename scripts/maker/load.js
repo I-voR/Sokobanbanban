@@ -3,32 +3,32 @@
 import { funcs } from '../funcs.js'
 
 const fs = require('fs')
+
 global.jQuery = require('jquery')
 global.$ = global.jQuery
-global.fs = require('fs')
 
 export const load = {
-    load: function () {
+    load: () => {
         //console.log(this)
         //console.log($('#load option:selected').text())
-        if ($('#load option:selected').text() == "NEW") { return }
-        var map = global.fs.readFileSync('./maps/created/' + $('#load option:selected').text()).toString().split('\n')
+        if ($('#load option:selected').text() === 'NEW') { return }
+        let map = fs.readFileSync(funcs.cwd() + 'maps/created/' + $('#load option:selected').text()).toString().split('\n')
 
         map.forEach((element, index) => {
-            map[index] = map[index].split(",")
+            map[index] = map[index].split(',')
         })
 
         console.log(map)
         $('#level-border').empty()
-        var tile
+        let tile, tileType
+
         for (let i = 0; i < 20; i++) {
             for (let l = 0; l < 30; l++) {
-
                 for (let m = 21; m < map.length; m++) {
                     //console.log(map[m].slice(0, 1) + " " + map[i][l])
                     if (map[m][0] == map[i][l]) {
                         console.log(map[m][1])
-                        var tileType = map[m][1]
+                        tileType = map[m][1]
                         continue
                     }
                 }
@@ -42,14 +42,10 @@ export const load = {
                 console.log('<img src="../assets/map_tiles/' + tileType + '">')
                 tile.append('<img src="../assets/map_tiles/' + tileType + '">')
                 $('#level-border').append(tile)
-
             }
         }
-
-
-
     },
-    list: function () {
+    list: () => {
         let path = funcs.cwd() + 'maps/created/'
 
         let files = fs.readdirSync(path)

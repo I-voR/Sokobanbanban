@@ -54,8 +54,8 @@ export const infobox = {
             dialog
                 .append('<span class="heading">Attention!</span>')
                 .append('<div class="text-infobox">Are you sure you want to remove level ' + text + '?</div>')
-                .append('<button class="remove-map-infobox" id="yes-remove" value="true" onclick="document.getElementsByClassName(\'infobox\')[0].remove()">Yes</button>')
-                .append('<button class="remove-map-infobox" id="no-remove" value="false" onclick="document.getElementsByClassName(\'infobox\')[0].remove()">Cancel</button>')
+                .append('<button class="remove-map-infobox" id="yes-remove" onclick="document.getElementsByClassName(\'infobox\')[0].remove()">Yes</button>')
+                .append('<button class="remove-map-infobox" id="no-remove" onclick="document.getElementsByClassName(\'infobox\')[0].remove()">Cancel</button>')
             break
         
         default:

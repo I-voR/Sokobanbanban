@@ -20,11 +20,5 @@ export const funcs = {
         }
 
         return cwd
-    },
-    initFuncWithRemboxBool: (func) => {
-        $('.remove-map-infobox').on('click', function() {
-            $('.remove-map-infobox').off()
-            func($(this).attr('value'))
-        })
     }
 }

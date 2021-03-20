@@ -7,7 +7,7 @@ global.jQuery = require('jquery')
 global.$ = global.jQuery
 
 export const MenuGen = {
-    menugen: function() {
+    menugen: () => {
         let path = funcs.cwd() + 'assets/map_tiles/'
         let files = fs.readdirSync(path)
 
