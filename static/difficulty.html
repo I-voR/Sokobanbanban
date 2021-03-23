@@ -23,9 +23,7 @@
 
     <script defer src="../menu-bar/menu-buttons.js"></script>
     <script type="module">
-        global.jQuery = require('jquery')
-        global.$ = global.jQuery
-
+        const $ = require('jquery')
         const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1))
 
         function generate_map(e) {

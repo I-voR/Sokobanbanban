@@ -6,13 +6,6 @@
  * Keyboard key event handler
 */
 
-global.jQuery = require('jquery')
-global.$ = global.jQuery
-
-global.pressCount = 0
-global.lastPlayerPos = null
-global.lastCratePos = null
-
 import { infobox } from '../infobox.js'
 
 export const events = {

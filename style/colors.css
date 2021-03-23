@@ -68,3 +68,12 @@ button,
 .hard > button {
     background-color: #EC7600;
 }
+
+#timer {
+    color: rgb(0, 255, 65);
+    background-color: black;
+    border-top-color: #808080;
+    border-right-color: #202020;
+    border-bottom-color: #202020;
+    border-left-color: #808080;
+}

@@ -6,8 +6,7 @@
  * Infobox creator
 */
 
-global.jQuery = require('jquery')
-global.$ = global.jQuery
+import { timer } from './game/timer.js'
 
 export const infobox = {
     /** 
@@ -46,7 +45,7 @@ export const infobox = {
         case 'completed':
             dialog
                 .append('<span class="heading">Congratulations!</span>')
-                .append('<div class="text-infobox">You completed level ' + text + '<br>' +  'Move count: ' + global.pressCount + '</div>')
+                .append('<div class="text-infobox">You completed level ' + text + '<br>Move count: ' + global.pressCount + '<br>Time: ' + timer.get_end_time() + '</div>')
                 .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove();location.href=\'../index.html\'">OK</button>')
             break
 

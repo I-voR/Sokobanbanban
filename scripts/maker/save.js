@@ -1,11 +1,8 @@
 /* eslint-disable require-jsdoc */
 
-import { funcs } from '../funcs.js'
-
 const fs = require('fs')
-global.jQuery = require('jquery')
-global.$ = global.jQuery
 
+import { funcs } from '../funcs.js'
 import { infobox } from '../infobox.js'
 import { load } from './load.js'
 

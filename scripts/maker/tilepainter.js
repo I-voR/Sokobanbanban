@@ -2,15 +2,13 @@
 
 import { funcs } from '../funcs.js'
 
-global.jQuery = require('jquery')
-global.$ = global.jQuery
 let selectedtile
 
 export const TilePainter = {
     tilepaint: function(tile) {
         let tilefilename = (tile.slice(-1) == '-' ? tile.slice(0, -1) : tile) + '.' + (tile.slice(-1) == '-' ? 'col' : '') + '.png">'
         let defaultImgLocation = `<img src="${funcs.cwd()}assets/map_tiles/`
-        if (selectedtile == tile) {
+        if (selectedtile === tile) {
             selectedtile = null
             $('.grid-tile').off('mousedown')
             $('.grid-tile').off('mouseup')

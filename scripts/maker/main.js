@@ -1,12 +1,11 @@
-global.jQuery = require('jquery')
-global.$ = global.jQuery
-
 import { MenuGen } from './menugen.js'
 import { TilePainter } from './tilepainter.js'
 import { reset } from './reset.js'
 import { save } from './save.js'
 import { load } from './load.js'
 import { deleteMap } from './delete.js'
+
+global.$ = require('jquery')
 
 MenuGen.menugen()
 
@@ -26,16 +25,19 @@ $('.icons').on('click', function() {
         $(this).css('outline', 'rgb(0, 0, 255) solid 0px')
     }
 })
+
 $('#reset').on('click', () => {
     reset.reset()
 })
+
 $('#save').on('click', () => {
     save.main()
 })
+
 $('#load').on('change', () => {
     load.load()
 })
+
 $('#deleteMap').on('click', () => {
     deleteMap.core()
 })
-

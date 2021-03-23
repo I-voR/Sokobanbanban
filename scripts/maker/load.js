@@ -4,9 +4,6 @@ import { funcs } from '../funcs.js'
 
 const fs = require('fs')
 
-global.jQuery = require('jquery')
-global.$ = global.jQuery
-
 export const load = {
     load: () => {
         //console.log(this)

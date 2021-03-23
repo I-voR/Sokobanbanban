@@ -6,9 +6,6 @@
  * Functions used by specific buttons in in-game buttton bar
 */
 
-global.jQuery = require('jquery')
-global.$ = global.jQuery
-
 export const controls = {
     /**
      * Re-sets current map and press count to base values
