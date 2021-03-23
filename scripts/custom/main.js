@@ -1,18 +1,28 @@
-import { funcs } from '../scripts/funcs.js'
+import { funcs } from '../funcs.js'
 
 const $ = require('jquery')
 const fs = require('fs')
-const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1))
 
+/** 
+* Function used to generate list of maps
+*/
 function load_maps() {
-    console.log(fs.readdirSync())
+    fs.readdirSync(funcs.cwd() + 'maps/created').forEach(map => {
+        $('.container').append('<button class="flex-item custom-level">' + map.replace('.map', '') + '</button>')
+    })
 }
 
+/** 
+* Function used to redirect selected map to map loader
+* @param {Event} e - Brief description of the parameter here. Note: For other notations of data types, please refer to JSDocs: DataTypes command.
+*/
 function generate_map(e) {
-    let map = e.target.id + ':0' + randomBetween(1, 7)
+    let map = 'created/' + e.target.innerText
     window.location.href = './level.html?' + map
 }
 
-$('.dif-level').on('click', (e) => {
+load_maps()
+
+$('.custom-level').on('click', (e) => {
     generate_map(e)
 })
