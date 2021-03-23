@@ -1,9 +1,11 @@
 .flex-item,
 .flex-item > button,
+.save,
+.save > button,
 #nav-maker > button,
 #nav-level > button,
-.grid-tile,
-.infobox > button {
+.infobox > button,
+.grid-tile {
     border: 1px solid;
     border-radius: 4px;
 }

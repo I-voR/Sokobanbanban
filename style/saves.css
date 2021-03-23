@@ -1,0 +1,10 @@
+.save {
+    width: 160px;
+    height: 160px;
+}
+
+.save > button {
+    margin: 16px;
+    width: 128px !important;
+    height: 128px !important;
+}
