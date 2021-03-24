@@ -28,7 +28,7 @@
 
         function generate_map(e) {
             let map = e.target.id + ':0' + randomBetween(1, 7)
-            window.location.href = './level.html?' + map
+            window.location.href = './level.html?' + '0' + map
         }
 
         $('.dif-level').on('click', (e) => {
@@ -39,33 +39,33 @@
 
 <body>
     <header>
-    <menu id="menu-bar">
-        <div class="left" role="menu">
-            <button class="menubar-btn" id="menu-btn"><i class="fa fa-bars"></i></button>
-            <button class="menubar-btn" id="home-btn"><i class="fa fa-home"></i></button>
-            <button class="menubar-btn" id="console-btn"><i class="fa fa-terminal"></i></button>
-            <h5>Sokobanbanban</h5>
-        </div>
-        <div class="right">
-            <button class="menubar-btn" id="minimize-btn"><i class="fa fa-window-minimize"></i></button>
-            <button class="menubar-btn" id="close-btn"><i class="fa fa-close"></i></button>
-        </div>
-    </menu>
+        <menu id="menu-bar">
+            <div class="left" role="menu">
+                <button class="menubar-btn" id="menu-btn"><i class="fa fa-bars"></i></button>
+                <button class="menubar-btn" id="home-btn"><i class="fa fa-home"></i></button>
+                <button class="menubar-btn" id="console-btn"><i class="fa fa-terminal"></i></button>
+                <h5>Sokobanbanban</h5>
+            </div>
+            <div class="right">
+                <button class="menubar-btn" id="minimize-btn"><i class="fa fa-window-minimize"></i></button>
+                <button class="menubar-btn" id="close-btn"><i class="fa fa-close"></i></button>
+            </div>
+        </menu>
     </header>
 
     <main>
-    <nav class="container">
-        <button class="flex-item" onclick="location.href='../index.html'">Back</button>
-        <div class="flex-item difficulty easy">
-            <button class="dif-level" id="easy">Easy</button>
-        </div>
-        <div class="flex-item difficulty medium">
-            <button class="dif-level" id="medium">Medium</button>
-        </div>
-        <div class="flex-item difficulty hard">
-            <button class="dif-level" id="hard">Hard</button>
-        </div>
-    </nav>
+        <nav class="container">
+            <button class="flex-item" onclick="location.href='../index.html'">Back</button>
+            <div class="flex-item difficulty easy">
+                <button class="dif-level" id="easy">Easy</button>
+            </div>
+            <div class="flex-item difficulty medium">
+                <button class="dif-level" id="medium">Medium</button>
+            </div>
+            <div class="flex-item difficulty hard">
+                <button class="dif-level" id="hard">Hard</button>
+            </div>
+        </nav>
     </main>
 </body>
 

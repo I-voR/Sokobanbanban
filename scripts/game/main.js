@@ -16,19 +16,32 @@ global.$ = require('jquery')
 global.pressCount = 0
 global.lastPlayerPos = null
 global.lastCratePos = null
+if ((window.location.href.substr(window.location.href.indexOf('?') + 1))[0] == 0) {
 
-let map = window.location.href.substr(window.location.href.indexOf('?') + 1)
-console.log(map)
+    let map = window.location.href.substr(window.location.href.indexOf('?') + 2)
+    console.log(map)
 
-levelgen.main(map)
-events.main()
-events.game_end_check(map)
+    levelgen.main(map)
+    events.main()
+    events.game_end_check(map)
+
+} else if ((window.location.href.substr(window.location.href.indexOf('?') + 1))[0] == 1) {
+
+    let map = window.location.href.substr(window.location.href.indexOf('?') + 2)
+    console.log(map)
+
+    levelgen.main(map)
+    events.main()
+    events.game_end_check(map)
+
+}
+
 timer.main()
 
-$('#reset').on('click', function() {
+$('#reset').on('click', function () {
     controls.reset()
 })
 
-$('#undo').on('click', function() {
+$('#undo').on('click', function () {
     controls.undo()
 })

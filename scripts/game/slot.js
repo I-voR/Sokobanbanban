@@ -16,9 +16,10 @@ export const slots = {
         let path = funcs.cwd() + './saves/'
         let saves = fs.readdirSync(path)
         //let save = fs.readFileSync(path + '/' + saves[selected]).toString().split('\n')
+        window.location.href = funcs.cwd() + './static/level.html?' + '1' + saves[selected]
+    },
+    generateButtons: () => {
 
-        window.location.href = funcs.cwd() + './static/level.html?' + saves[selected]
-        console.log('redirect')
     }
 }
 
