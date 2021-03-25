@@ -7,6 +7,7 @@
 */
 
 import { infobox } from '../infobox.js'
+import { timer } from './timer.js'
 
 export const events = {
     main: () => {
@@ -194,16 +195,24 @@ export const events = {
         }
 
         if (count === crates_pos.length) {
-            infobox.createInfobox('completed', map)
             return true
+        } else {
+            return false
         }
     },
-    game_end_check: async(map) => {
-        let bool = false
-
-        while (!bool) {
+    game_end_check: async(map, req) => {
+        while (!events.is_level_completed(map)) {
             await new Promise(r => global.setTimeout(r, 10))
-            bool = events.is_level_completed(map)
         }
+
+        if (map.includes('sav')) {
+            global.score++
+            if (global.pressCount <= req[0]) global.score++
+            if (timer.get_end_time() <= req[1]) global.score++
+
+            console.log(global.score)
+        }
+        
+        infobox.createInfobox('completed', map)
     },
 }

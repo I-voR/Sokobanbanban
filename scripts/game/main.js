@@ -13,35 +13,29 @@ import { timer } from './timer.js'
 
 global.$ = require('jquery')
 
+global.score = 0
 global.pressCount = 0
 global.lastPlayerPos = null
 global.lastCratePos = null
-if ((window.location.href.substr(window.location.href.indexOf('?') + 1))[0] == 0) {
 
-    let map = window.location.href.substr(window.location.href.indexOf('?') + 2)
-    console.log(map)
+let map = window.location.href.substr(window.location.href.indexOf('?') + 1)
+console.log(map)
 
-    levelgen.main(map)
-    events.main()
-    events.game_end_check(map)
-
-} else if ((window.location.href.substr(window.location.href.indexOf('?') + 1))[0] == 1) {
-
-    let map = window.location.href.substr(window.location.href.indexOf('?') + 2)
-    console.log(map)
-
-    levelgen.main(map)
-    events.main()
-    events.game_end_check(map)
-
+if (map.includes('sav')) {
+    $('main').append('<button id="save">Save</button><button id="surrender">Surrender</button>')
+    global.score = map.split(',')[2]
 }
 
-timer.main()
+let requirements = levelgen.main(map)
+events.main()
+events.game_end_check(map, requirements)
 
-$('#reset').on('click', function () {
+timer.main(map)
+
+$('#reset').on('click', function() {
     controls.reset()
 })
 
-$('#undo').on('click', function () {
+$('#undo').on('click', function() {
     controls.undo()
 })

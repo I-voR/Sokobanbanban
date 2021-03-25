@@ -31,13 +31,16 @@ export const load = {
                 }
 
                 tile = $('<div>')
-                tile.attr('id', (i + '-' + l))
-                tile.attr('class', 'grid-tile')
-                tile.css('left', (l * 32) + 'px')
-                tile.css('top', (i * 32) + 'px')
-                tile.css('outline', '0px blue solid')
+
+                tile
+                    .attr('id', (i + '-' + l))
+                    .attr('class', 'grid-tile')
+                    .css('left', (l * 32) + 'px')
+                    .css('top', (i * 32) + 'px')
+                    .css('outline', '0px blue solid')
+                    .append('<img src="../assets/map_tiles/' + tileType + '">')
+
                 console.log('<img src="../assets/map_tiles/' + tileType + '">')
-                tile.append('<img src="../assets/map_tiles/' + tileType + '">')
                 $('#level-border').append(tile)
             }
         }
@@ -47,13 +50,15 @@ export const load = {
 
         let files = fs.readdirSync(path)
         let select = $('<select>')
-        select.attr('name', 'map-load')
-        select.attr('id', 'map-load')
-        select.attr('form', 'map-load')
+        select
+            .attr('name', 'map-load')
+            .attr('id', 'map-load')
+            .attr('form', 'map-load')
 
         let option = $('<option>')
-        option.attr('value', 'NEW')
-        option.append('NEW')
+        option
+            .attr('value', 'NEW')
+            .append('NEW')
         select.append(option)
 
         for (let i = 0; i < files.length; i++) {

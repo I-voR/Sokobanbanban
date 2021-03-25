@@ -76,3 +76,23 @@ td {
     height: 32px;
     width: 144px;
 }
+
+#save,
+#surrender {
+    position: absolute;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    height: 30px;
+    width: 95px;
+    top: 38px;
+}
+
+#save {
+    left: calc(50% - 187px);
+}
+
+#surrender {
+    left: calc(50% + 92px);
+}

@@ -5,7 +5,9 @@
 #nav-maker > button,
 #nav-level > button,
 .infobox > button,
-.grid-tile {
+.grid-tile,
+#save,
+#surrender {
     border: 1px solid;
     border-radius: 4px;
 }

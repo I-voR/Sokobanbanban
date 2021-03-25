@@ -34,9 +34,15 @@ export const save = {
 
         let selectionTile = $('<div>')
         selectionTile.id = 'selectionTile'
-        selectionTile.css('width', '32px').css('height', '32px')
-        selectionTile.css('backgroundColor', 'blue').css('opacity', '0.5').css('z-index', '100')
-        selectionTile.css('position', 'absolute').css('left', 0).css('top', 0)
+        selectionTile
+            .css('width', '32px')
+            .css('height', '32px')
+            .css('backgroundColor', 'blue')
+            .css('opacity', '0.5')
+            .css('z-index', '100')
+            .css('position', 'absolute')
+            .css('left', 0)
+            .css('top', 0)
 
         $('.grid-tile').on('mouseenter', function() {
             $(this).append(selectionTile)

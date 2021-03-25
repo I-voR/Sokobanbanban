@@ -10,8 +10,11 @@ import { events } from './events.js'
 
 export const timer = {
     main: async( map ) => {
-        let start = Date.now()
-
+        let offset = map.includes('sav') ?
+            timer.convert_hms_to_milis(map.substring(map.indexOf(':') + 7, map.length - 4)) : 0
+                
+        let start = Date.now() - offset
+        
         while ( !events.is_level_completed(map) ) {
             await timer.sleep(0.1)
             await timer.set_time( await timer.time_diff(start) )
@@ -26,5 +29,8 @@ export const timer = {
     },
     get_end_time: () => {
         return $('#timer').text()
+    },
+    convert_hms_to_milis: (hms) => {
+        return hms.split('-').reduce((acc,time) => (60 * acc) + +time) * 1000
     }
 }

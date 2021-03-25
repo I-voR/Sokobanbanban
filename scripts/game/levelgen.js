@@ -12,20 +12,17 @@ const fs = require('fs')
 
 export const levelgen = {
     main: (map) => {
-        console.log(map)
         let assets_path = funcs.cwd() + 'assets/map_tiles/'
+        let map_path = funcs.cwd()
+        map_path += map.includes('.sav') ? 'saves/' + map : 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
 
-        if (map.slice(-4) == '.sav') {
-            var map_path = funcs.cwd() + 'saves/' + map
-        } else {
-            var map_path = funcs.cwd() + 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
-        }
         let files = fs.readdirSync(assets_path)
         let array = fs.readFileSync(map_path).toString().split('\n')
 
         let map_bg = []
         let bg_names = []
         let player_pos = []
+        let requirements = array[27].split(':')
 
         let player = $('<div>')
         let table = $('<table>')
@@ -43,59 +40,59 @@ export const levelgen = {
                 let td = $('<td>')
 
                 switch (files[cell]) {
-                    case 'Floor..png':
-                    case 'Crate.col.png':
-                    case 'ZCratePlate.col.png':
-                    case 'Plate..png':
-                        td.css('background-image', 'url("' + assets_path + 'Floor..png")')
+                case 'Floor..png':
+                case 'Crate.col.png':
+                case 'ZCratePlate.col.png':
+                case 'Plate..png':
+                    td.css('background-image', 'url("' + assets_path + 'Floor..png")')
 
-                        switch (map.substring(0, map.indexOf(':'))) {
-                            case 'easy':
-                                td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #90EE90)')
-                                break
+                    if (map.includes('sav')) {
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #ADD8E6)')
+                    }
 
-                            case 'medium':
-                                td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #FFFFE0)')
-                                break
-
-                            case 'hard':
-                                td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #E97451)')
-                                break
-
-                            case 'ascending':
-                                td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #ADD8E6)')
-                                break
-                        }
+                    switch (map.substring(0, map.indexOf(':'))) {
+                    case 'easy':
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #90EE90)')
                         break
 
-                    case 'Grass..png':
-                        td.css('background-image', 'url("' + assets_path + 'Grass..png")')
+                    case 'medium':
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #FFFFE0)')
+                        break
 
-                        switch (map.substring(0, map.indexOf(':'))) {
-                            case 'easy':
-                                td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #013220)')
-                                break
+                    case 'hard':
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #E97451)')
+                        break
+                    }
+                    break
 
-                            case 'medium':
-                                td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #9B870C)')
-                                break
+                case 'Grass..png':
+                    td.css('background-image', 'url("' + assets_path + 'Grass..png")')
 
-                            case 'hard':
-                                td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #8B0000)')
-                                break
+                    if (map.includes('sav')) {
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #00008B)')
+                    }
 
-                            case 'ascending':
-                                td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #00008B)')
-                                break
+                    switch (map.substring(0, map.indexOf(':'))) {
+                    case 'easy':
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #013220)')
+                        break
 
-                            default:
-                                break
-                        }
+                    case 'medium':
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #9B870C)')
+                        break
+
+                    case 'hard':
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #8B0000)')
                         break
 
                     default:
-                        td.css('background-image', 'url("' + assets_path + files[cell] + '")')
                         break
+                    }
+                    break
+
+                default:
+                    td.css('background-image', 'url("' + assets_path + files[cell] + '")')
+                    break
                 }
 
                 if (files[cell] === 'Crate.col.png' || files[cell] === 'ZCratePlate.col.png') {
@@ -128,5 +125,7 @@ export const levelgen = {
         $('main')
             .append(table)
             .append(player)
+
+        return requirements
     }
 }

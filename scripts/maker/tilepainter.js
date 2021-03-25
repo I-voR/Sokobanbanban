@@ -10,10 +10,13 @@ export const TilePainter = {
         let defaultImgLocation = `<img src="${funcs.cwd()}assets/map_tiles/`
         if (selectedtile === tile) {
             selectedtile = null
+            $('.grid-tile').off()
+            /*
             $('.grid-tile').off('mousedown')
             $('.grid-tile').off('mouseup')
             $('.grid-tile').off('mousemove')
             $('.grid-tile').off('click')
+            */
         } else {
             $('.grid-tile').on('click', function() {
                 $(document.elementFromPoint(window.event.clientX, window.event.clientY)).empty()

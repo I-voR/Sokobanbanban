@@ -45,8 +45,16 @@ export const infobox = {
         case 'completed':
             dialog
                 .append('<span class="heading">Congratulations!</span>')
-                .append('<div class="text-infobox">You completed level ' + text + '<br>Move count: ' + global.pressCount + '<br>Time: ' + timer.get_end_time() + '</div>')
-                .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove();location.href=\'../index.html\'">OK</button>')
+            
+            if (text.includes('sav')) {
+                dialog
+                    .append('<div class="text-infobox">You completed level ascending:' + text.split(',')[1] + '<br>Score: ' + global.score + ' ⭐</div>')
+                    .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove();location.href=\'../index.html\'">OK</button>')
+            } else {
+                dialog
+                    .append('<div class="text-infobox">You completed level ' + text + '<br>Move count: ' + global.pressCount + '<br>Time: ' + timer.get_end_time() + '</div>')
+                    .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove();location.href=\'../index.html\'">OK</button>')
+            }
             break
 
         case 'remove':
