@@ -44,7 +44,9 @@ $('#undo').on('click', function () {
 $('#save').on('click', function () {
     //(saveName, level, stars, moves, time)
     console.log(map)
-    //global score - score tej mapy ale to Iwo musisz zrobić ty bo nie wiem jak ty przechowujesz sobie score mapy
+    //global score - [score tej mapy] ale to Iwo musisz zrobić ty bo nie wiem jak ty przechowujesz sobie score mapy
+    //w przypadku przejścia na następny lvl:  
+    //save.game(map, nr następnego pooziomu, global.score - [utracone gwiazdki czy jak to tam masz rozwiązane, bo jak odejmujesz w locie przy przekroczeniu czasu itp to po prostu global.score], 0, 00-00-00)
     save.game(map, map.charAt(0), global.score, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
 })
 
