@@ -11,7 +11,7 @@ import { events } from './events.js'
 export const timer = {
     main: async( map ) => {
         let offset = map.includes('sav') ?
-            timer.convert_hms_to_milis(map.substring(map.indexOf(':') + 7, map.length - 4)) : 0
+            timer.convert_hms_to_milis(map.substring(map.indexOf(':') + 9, map.length - 4)) : 0
                 
         let start = Date.now() - offset
         

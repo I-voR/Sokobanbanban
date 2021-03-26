@@ -9,103 +9,68 @@ const fs = require('fs')
 
 
 export const save = {
-    game: (save, level, stars, time) => {
-        let path = funcs.cwd() + './saves/'
-        let saves = fs.readdirSync(path)
-        //let save = fs.readFileSync(path + '/' + saves[selected]).toString().split('\n')
-        window.location.href = funcs.cwd() + './static/level.html?' + '1' + saves[selected]
-
-
-
-    },
-    mapRead: () => {
-        /* map save structure 30x20 tiles (27 lines):
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,P,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/
-        13-3
-        0,filename
-        1,filename
-        2,filename
-        3,filename
-        4,filename
-        5,filename
-         */
-
-        let files = fs.readdirSync(funcs.cwd() + 'assets/map_tiles')
-
-        function translation(filename) {
-            switch (filename) {
-                case files[0]:
-                    return 0
-                case files[1]:
-                    return 1
-                case files[2]:
-                    return 2
-                case files[3]:
-                    return 3
-                case files[4]:
-                    return 4
-                case files[5]:
-                    return 5
-                default:
-                    return 0
+    game: (saveName, level, stars, moves, time) => {
+        let saveFile = funcs.cwd() + './saves/' + saveName
+        //let saves = fs.readdirSync(path)
+        //window.location.href = funcs.cwd() + './static/level.html?' + '1' + saves[selected]
+        fs.unlink(saveFile, (err) => {
+            if (err) {
+                console.error(err)
+                return
             }
-        }
+        })
+        console.log(saveName)
+        saveName = saveName.charAt(0) + ',' + level + ',' + stars + '' + moves + ',' + time + '.sav'
+        saveFile = funcs.cwd() + './saves/' + saveName
 
-        let saveName
-        let mapData = []
+        let saveData = save.mapRead(level)
 
-        for (let y = 0; y < 20; y++) {
-            let saveRow = []
-            for (let x = 0; x < 30; x++) {
-                let temp = $('#' + y + '-' + x).children()[0].src.split('/')
-                saveRow[x] = translation(temp[temp.length - 1])
-            }
-            mapData[y] = saveRow
-        }
 
-        mapData[20] = playerPos
 
-        for (let i = 0; i < files.length; i++) {
-            mapData[mapData.length] = i + ',' + files[i]
-        }
-
-        console.log(mapData)
-
-        if ($('#load option:selected').text() === 'NEW') {
-            saveName = new Date().toISOString().slice(0, -5).replace(/:/g, '-').replace('T', '_') + '.map'
-        } else {
-            saveName = $('#load option:selected').text()
-        }
-
-        let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName)
-        file.on('error', (e) => { console.error(e); infobox.createInfobox('error', 'Map ' + saveName + ' could not be saved') })
-        mapData.forEach((v) => { file.write(v + '\n') })
+        let file = fs.createWriteStream(saveFile)
+        file.on('error', (e) => {
+            console.error(e);
+            //infobox.createInfobox('error', 'Map ' + saveName + ' could not be saved')
+        })
+        saveData.forEach((v) => { file.write(v + '\n') })
         file.end()
 
-        infobox.createInfobox('info', 'Map succesfully saved as: ' + saveName)
+        //infobox.createInfobox('info', 'Succesfully saved game on slot ' + saveName.charAt(0))
+    },
+    mapRead: (baseMapNumber) => {
 
-        $('#load').empty()
-        load.list()
+        let baseMapName = (baseMapNumber.length == 1 ? '0' + baseMapNumber : baseMapNumber) + '.map'
+        let map = fs.readFileSync(funcs.cwd() + 'maps/ascending/' + baseMapName).toString().split('\n')
 
+        
+        console.log(map)
+        map.forEach((element, index) => {
+            map[index] = map[index].split(',')
+        })
+
+        for (let i = 0; i < 20; i++) {
+            for (let l = 0; l < 30; l++) {
+                if (map[i][l] == 0) { map[i][l] = 1 }
+
+                for (let crateClass = 0; crateClass < $('.crates').length; crateClass++) {
+                    let left = ($('.crates')[crateClass].style.left.slice(0, -2) - 50) / 32
+                    let top = ($('.crates')[crateClass].style.top.slice(0, -2) - 80) / 32
+                    if (left == l && top == i) { map[i][l] = 0 }
+                }
+            }
+            map[i].join()
+        }
+
+
+        map[20][0] = ($('#player')[0].style.top.slice(0, -2) - 80) / 32 + '-' + ($('#player')[0].style.left.slice(0, -2) - 50) / 32
+
+
+
+
+
+        console.log(map)
+
+        return map
     }
 }
 

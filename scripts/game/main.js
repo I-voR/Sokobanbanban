@@ -10,6 +10,7 @@ import { controls } from './controls.js'
 import { levelgen } from './levelgen.js'
 import { events } from './events.js'
 import { timer } from './timer.js'
+import { save } from './save.js'
 
 global.$ = require('jquery')
 
@@ -32,10 +33,21 @@ events.game_end_check(map, requirements)
 
 timer.main(map)
 
-$('#reset').on('click', function() {
+$('#reset').on('click', function () {
     controls.reset()
 })
 
-$('#undo').on('click', function() {
+$('#undo').on('click', function () {
     controls.undo()
+})
+
+$('#save').on('click', function () {
+    //(saveName, level, stars, moves, time)
+    console.log(map)
+    //global score - score tej mapy ale to Iwo musisz zrobić ty bo nie wiem jak ty przechowujesz sobie score mapy
+    save.game(map, map.charAt(0), global.score, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
+})
+
+$('#surrender').on('click', function () {
+
 })
