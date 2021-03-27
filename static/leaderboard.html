@@ -22,6 +22,12 @@
     <link rel="stylesheet" href="../style/electronstyles.css" />
 
     <script defer src="../menu-bar/menu-buttons.js"></script>
+    <script defer>
+    if(location.href.includes('?')) {
+        let name = location.href.substr(location.href.indexOf('?') + 1)
+        console.log(name)
+    }
+    </script>
 </head>
 
 <body>

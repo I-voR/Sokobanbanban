@@ -90,3 +90,8 @@ button,
     border-bottom-color: #202020;
     border-left-color: #808080;
 }
+
+.text-infobox span,
+form * {
+    color: gray;
+}

@@ -15,15 +15,17 @@ export const save = {
         saveName = saveName.charAt(0) + ',' + level + ',' + stars + ',' + moves + ',' + time + '.sav'
         saveFile = funcs.cwd() + './saves/' + saveName
 
-        let saveData = save.mapRead(level, savingInGame)
+        if (level <= 21) {
+            let saveData = save.mapRead(level, savingInGame)
 
-        let file = fs.createWriteStream(saveFile)
-        file.on('error', (err) => {
-            if (err) throw err
-            //infobox.createInfobox('error', 'Map ' + saveName + ' could not be saved')
-        })
-        saveData.forEach((v) => { file.write(v + '\n') })
-        file.end()
+            let file = fs.createWriteStream(saveFile)
+            file.on('error', (err) => {
+                if (err) throw err
+                //infobox.createInfobox('error', 'Map ' + saveName + ' could not be saved')
+            })
+            saveData.forEach((v) => { file.write(v + '\n') })
+            file.end()
+        }
 
         //infobox.createInfobox('info', 'Succesfully saved game on slot ' + saveName.charAt(0))
     },
@@ -52,7 +54,7 @@ export const save = {
             map[i].join()
         }
         if (savingInGame) {
-        map[20][0] = ($('#player')[0].style.top.slice(0, -2) - 80) / 32 + '-' + ($('#player')[0].style.left.slice(0, -2) - 50) / 32
+            map[20][0] = ($('#player')[0].style.top.slice(0, -2) - 80) / 32 + '-' + ($('#player')[0].style.left.slice(0, -2) - 50) / 32
         }
         return map
     }

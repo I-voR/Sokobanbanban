@@ -51,9 +51,35 @@ export const infobox = {
                 .append('<span class="heading">Congratulations!</span>')
             
             if (text.length === 2) {
+                let totalScore = parseInt(text[0].split(',')[2]) + text[1]
                 dialog
-                    .append('<div class="text-infobox">You completed level ascending:' + text[0].split(',')[1] + '<br>Score: ' + text[1] + ' ⭐</div>')
+                    .append('<div class="text-infobox">You completed level ascending:' + 
+                            text[0].split(',')[1] +
+                            '<br>Score: ' +
+                            text[1] +
+                            ' ⭐<br>Total score: ' +
+                            '<span id="total-score">' + totalScore + '</span>' +
+                            ' ⭐</div>')
                     .append('<button class="close-infobox">OK</button>')
+
+                if (parseInt(text[0].split(',')[1]) === 21) {
+                    let form = $('<form>')
+                    let input = $('<input>')
+                    let label = $('<label>')
+
+                    input
+                        .attr('type', 'text')
+                        .attr('id', 'name')
+                        .attr('name', 'name')
+
+                    label.attr('for', 'name')
+
+                    label.append('Your name:')
+                    form
+                        .append(label)
+                        .append(input)
+                    dialog.append(form)
+                }
             } else {
                 dialog
                     .append('<div class="text-infobox">You completed level ' + text + '<br>Move count: ' + global.pressCount + '<br>Time: ' + timer.get_end_time() + '</div>')
@@ -92,7 +118,7 @@ export const infobox = {
                 if (parseInt(map[1]) < 21) {
                     window.location.href = window.location.href.substring(0, window.location.href.indexOf('?') + 1) + saves[save - 1]
                 } else {
-                    window.location.href = '../index.html'
+                    if ($('input').val().length > 0) window.location.href = './leaderboard.html?' + $('input').val() + ':' + $('#total-score').text()
                 }
             })
         } else if ((type === 'completed' && text.length > 2) || (type === 'saved')) {

@@ -218,7 +218,6 @@ export const events = {
             } else {
                 nextMap = parseInt(map.split(',')[1], 10) + 1
             }
-            console.log(map + '----' + nextMap + ',' + parseInt(map.split(',')[2]) + score + ',' + 0 + ',' + '00-00-00')
 
             save.game(map, nextMap, parseInt(map.split(',')[2]) + score, 0, '00-00-00', false)
 

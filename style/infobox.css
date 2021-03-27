@@ -61,3 +61,9 @@
 #no-remove {
     right: 50px;
 }
+
+form {
+    position: absolute;
+    top: 94px;
+    left: calc(50% - 120px);
+}
