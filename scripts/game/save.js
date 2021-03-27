@@ -47,7 +47,10 @@ export const save = {
                 for (let crateClass = 0; crateClass < $('.crates').length; crateClass++) {
                     let left = ($('.crates')[crateClass].style.left.slice(0, -2) - 50) / 32
                     let top = ($('.crates')[crateClass].style.top.slice(0, -2) - 80) / 32
-                    if (left == l && top == i) { map[i][l] = 0 }
+                    if (left == l && top == i) {
+                        if (map[i][l] == 3) { map[i][l] = 5 } else { map[i][l] = 0 }
+
+                    }
                 }
             }
             map[i].join()
