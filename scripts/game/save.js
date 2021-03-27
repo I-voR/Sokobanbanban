@@ -2,15 +2,11 @@
 
 import { funcs } from '../funcs.js'
 
-global.$ = require('jquery')
-
 const fs = require('fs')
-
-
 
 export const save = {
     game: (saveName, level, stars, moves, time) => {
-        let saveFile = funcs.cwd() + './saves/' + saveName
+        let saveFile = funcs.cwd() + 'saves/' + saveName
         //let saves = fs.readdirSync(path)
         //window.location.href = funcs.cwd() + './static/level.html?' + '1' + saves[selected]
         fs.unlink(saveFile, (err) => {
@@ -20,16 +16,14 @@ export const save = {
             }
         })
         console.log(saveName)
-        saveName = saveName.charAt(0) + ',' + level + ',' + stars + '' + moves + ',' + time + '.sav'
+        saveName = saveName.charAt(0) + ',' + level + ',' + stars + ',' + moves + ',' + time + '.sav'
         saveFile = funcs.cwd() + './saves/' + saveName
 
         let saveData = save.mapRead(level)
 
-
-
         let file = fs.createWriteStream(saveFile)
         file.on('error', (e) => {
-            console.error(e);
+            console.error(e)
             //infobox.createInfobox('error', 'Map ' + saveName + ' could not be saved')
         })
         saveData.forEach((v) => { file.write(v + '\n') })
@@ -38,11 +32,9 @@ export const save = {
         //infobox.createInfobox('info', 'Succesfully saved game on slot ' + saveName.charAt(0))
     },
     mapRead: (baseMapNumber) => {
-
         let baseMapName = (baseMapNumber.length == 1 ? '0' + baseMapNumber : baseMapNumber) + '.map'
         let map = fs.readFileSync(funcs.cwd() + 'maps/ascending/' + baseMapName).toString().split('\n')
 
-        
         console.log(map)
         map.forEach((element, index) => {
             map[index] = map[index].split(',')
@@ -61,12 +53,7 @@ export const save = {
             map[i].join()
         }
 
-
         map[20][0] = ($('#player')[0].style.top.slice(0, -2) - 80) / 32 + '-' + ($('#player')[0].style.left.slice(0, -2) - 50) / 32
-
-
-
-
 
         console.log(map)
 
