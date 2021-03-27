@@ -45,8 +45,7 @@ $('#save').on('click', function() {
     //global score - [score tej mapy] ale to Iwo musisz zrobić ty bo nie wiem jak ty przechowujesz sobie score mapy
     //w przypadku przejścia na następny lvl:  
     //save.game(map, nr następnego pooziomu, global.score - [utracone gwiazdki czy jak to tam masz rozwiązane, bo jak odejmujesz w locie przy przekroczeniu czasu itp to po prostu global.score], 0, 00-00-00)
-    save.game(map, map.split(',')[1], events.get_score(map, levelgen.get_map_reqs()), global.pressCount, $('#timer').html().replace(': ', ' - ').replace(': ', ' - '))
-    save.game(map, map.charAt(0), 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
+    save.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
 })
 
 $('#surrender').on('click', function() {
