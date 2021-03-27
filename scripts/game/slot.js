@@ -19,7 +19,7 @@ export const slots = {
 $(function () {
     let path = funcs.cwd() + './saves/'
     let saves = fs.readdirSync(path)
-    let saveDefault = ',0,0,0,00-00-00.sav'
+    let saveDefault = ',01,0,0,00-00-00.sav'
     switch (saves.length) {
         case 0:
             fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err });
