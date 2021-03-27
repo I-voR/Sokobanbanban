@@ -28,6 +28,46 @@
         style.type = 'text/css'
         style.appendChild(document.createTextNode(css))
         document.head.appendChild(style)
+
+    import { funcs } from './scripts/funcs.js'
+    const $ = require('jquery')
+    const fs = require('fs')
+    let path = funcs.cwd() + 'saves/'
+    let saves = fs.readdirSync(path)
+    let saveDefault = ',01,0,0,00-00-00.sav'
+    switch (saves.length) {
+        case 0:
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
+            break
+        case 1:
+            if (saves[0].charAt(0) == '1') {
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
+            }
+            if (saves[0].charAt(0) == '2') {
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
+            } else {
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
+            }
+            break
+        case 2:
+            if (saves[0].charAt(0) == '2') {
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
+            }
+            if (saves[1].charAt(0) == '2') {
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
+            } else {
+                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
+            }
+
+            break
+    }
+
+
     </script>
 </head>
 
