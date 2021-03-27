@@ -51,9 +51,9 @@ export const save = {
             }
             map[i].join()
         }
-    
+        if (savingInGame) {
         map[20][0] = ($('#player')[0].style.top.slice(0, -2) - 80) / 32 + '-' + ($('#player')[0].style.left.slice(0, -2) - 50) / 32
-
+        }
         return map
     }
 }
