@@ -8,44 +8,44 @@ const fs = require('fs')
 
 export const slots = {
     loadSelected: (selected) => {
-        let path = funcs.cwd() + './saves/'
+        let path = funcs.cwd() + 'saves/'
         let saves = fs.readdirSync(path)
         //let save = fs.readFileSync(path + '/' + saves[selected]).toString().split('\n')
-        window.location.href = funcs.cwd() + './static/level.html?' + saves[selected]
+        window.location.href = funcs.cwd() + 'static/level.html?' + saves[selected]
     },
 }
 
 $(function() {
-    let path = funcs.cwd() + './saves/'
+    let path = funcs.cwd() + 'saves/'
     let saves = fs.readdirSync(path)
     let saveDefault = ',01,0,0,00-00-00.sav'
     switch (saves.length) {
     case 0:
-        fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
-        fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
-        fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
+        fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
+        fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
+        fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
         break
     case 1:
         if (saves[0].charAt(0) == '1') {
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
         }
         if (saves[0].charAt(0) == '2') {
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
         } else {
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
         }
         break
     case 2:
         if (saves[0].charAt(0) == '2') {
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
         }
         if (saves[1].charAt(0) == '2') {
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
         } else {
-            fs.copyFile(funcs.cwd() + './maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
         }
 
         break

@@ -210,16 +210,17 @@ export const events = {
         let score = events.get_score(map, levelgen.get_map_reqs(map))
         
         if (score !== 0) {
-
             let nextMap
+
             if (map.split(',')[1].charAt(0) == 0) {
                 nextMap = parseInt(map.split(',')[1].charAt(1), 10) + 1
                 nextMap = '0' + nextMap
             } else {
                 nextMap = parseInt(map.split(',')[1], 10) + 1
             }
-            console.log(map + ',' + nextMap + ',' + map.split(',')[2] + 0 + ',' + 0 + ',' + '00-00-00')
-            save.game(map, nextMap, map.split(',')[2] + 0, 0, '00-00-00')
+            console.log(map + '----' + nextMap + ',' + parseInt(map.split(',')[2]) + score + ',' + 0 + ',' + '00-00-00')
+
+            save.game(map, nextMap, parseInt(map.split(',')[2]) + score, 0, '00-00-00')
 
             infobox.createInfobox('completed', [map, score])
         } else { infobox.createInfobox('completed', map) }

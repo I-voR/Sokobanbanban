@@ -22,7 +22,8 @@
     background-color: lightyellow;
 }
 
-.info {
+.info,
+.saved {
     background-color: lightblue;
 }
 

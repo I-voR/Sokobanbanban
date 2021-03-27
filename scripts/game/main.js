@@ -11,6 +11,7 @@ import { levelgen } from './levelgen.js'
 import { events } from './events.js'
 import { timer } from './timer.js'
 import { save } from './save.js'
+import { infobox } from '../infobox.js'
 
 global.$ = require('jquery')
 
@@ -41,6 +42,7 @@ $('#undo').on('click', function() {
 $('#save').on('click', function() {
     //(saveName, level, stars, moves, time)
     save.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
+    infobox.createInfobox('saved')
 })
 
 $('#surrender').on('click', function() {

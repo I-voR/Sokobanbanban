@@ -6,7 +6,10 @@
  * Infobox creator
 */
 
+import { funcs } from './funcs.js'
 import { timer } from './game/timer.js'
+
+const fs = require('fs')
 
 export const infobox = {
     /** 
@@ -18,6 +21,7 @@ export const infobox = {
         * "error" (infobox with a description of an error; errbox);
         * "completed" (level completion information; endbox);
         * "remove" (alert informing about removing a map; rembox)
+        * "saved" (information about manually saved game; savebox)
     * @param {String} text - Custom text that will be displayed in the infobox.
     */
     createInfobox: function(type, text = '') {
@@ -32,14 +36,14 @@ export const infobox = {
             dialog
                 .append('<span class="heading">Info</span>')
                 .append('<div class="text-infobox">' + text + '</div>')
-                .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove()">OK</button>')
+                .append('<button class="close-infobox">OK</button>')
             break
 
         case 'warn':
             dialog
                 .append('<span class="heading">Warning!</span>')
                 .append('<div class="text-infobox">' + text + '</div>')
-                .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove()">OK</button>')
+                .append('<button class="close-infobox">OK</button>')
             break
 
         case 'completed':
@@ -49,11 +53,11 @@ export const infobox = {
             if (text.length === 2) {
                 dialog
                     .append('<div class="text-infobox">You completed level ascending:' + text[0].split(',')[1] + '<br>Score: ' + text[1] + ' ⭐</div>')
-                    .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove();location.reload()">OK</button>')
+                    .append('<button class="close-infobox">OK</button>')
             } else {
                 dialog
                     .append('<div class="text-infobox">You completed level ' + text + '<br>Move count: ' + global.pressCount + '<br>Time: ' + timer.get_end_time() + '</div>')
-                    .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove();location.href=\'../index.html\'">OK</button>')
+                    .append('<button class="close-infobox">OK</button>')
             }
             break
 
@@ -61,8 +65,15 @@ export const infobox = {
             dialog
                 .append('<span class="heading">Attention!</span>')
                 .append('<div class="text-infobox">Are you sure you want to remove level ' + text + '?</div>')
-                .append('<button class="remove-map-infobox" id="yes-remove" onclick="document.getElementsByClassName(\'infobox\')[0].remove()">Yes</button>')
-                .append('<button class="remove-map-infobox" id="no-remove" onclick="document.getElementsByClassName(\'infobox\')[0].remove()">Cancel</button>')
+                .append('<button class="remove-map-infobox" id="yes-remove">Yes</button>')
+                .append('<button class="remove-map-infobox" id="no-remove">Cancel</button>')
+            break
+
+        case 'saved':
+            dialog
+                .append('<span class="heading">Info</span>')
+                .append('<div class="text-infobox">Current progress has been successfully saved</div>')
+                .append('<button class="close-infobox">OK</button>')
             break
         
         default:
@@ -70,5 +81,24 @@ export const infobox = {
         }
 
         $('main').append(dialog)
+
+        if (type === 'completed' && text.length === 2) {
+            $('.close-infobox').on('click', function() {
+                let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                let save = map[0]
+                let path = funcs.cwd() + 'saves/'
+                let saves = fs.readdirSync(path)
+
+                if (parseInt(map[1]) < 21) {
+                    window.location.href = window.location.href.substring(0, window.location.href.indexOf('?') + 1) + saves[save - 1]
+                } else {
+                    window.location.href = '../index.html'
+                }
+            })
+        } else if ((type === 'completed' && text.length > 2) || (type === 'saved')) {
+            $('.close-infobox').on('click', function() { location.href = '../index.html' })
+        } else {
+            $('.close-infobox').on('click', function() { document.getElementsByClassName('infobox')[0].remove() })
+        }
     }
 }
