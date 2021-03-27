@@ -9,6 +9,7 @@
 import { infobox } from '../infobox.js'
 import { timer } from './timer.js'
 import { levelgen } from './levelgen.js'
+import { save } from './save.js'
 
 export const events = {
     main: () => {
@@ -208,8 +209,20 @@ export const events = {
 
         let score = events.get_score(map, levelgen.get_map_reqs(map))
         
-        if (score !== 0) { infobox.createInfobox('completed', [map, score] ) }
-        else { infobox.createInfobox('completed', map ) }
+        if (score !== 0) {
+
+            let nextMap
+            if (map.split(',')[1].charAt(0) == 0) {
+                nextMap = parseInt(map.split(',')[1].charAt(1), 10) + 1
+                nextMap = '0' + nextMap
+            } else {
+                nextMap = parseInt(map.split(',')[1], 10) + 1
+            }
+            console.log(map + ',' + nextMap + ',' + map.split(',')[2] + 0 + ',' + 0 + ',' + '00-00-00')
+            save.game(map, nextMap, map.split(',')[2] + 0, 0, '00-00-00')
+
+            infobox.createInfobox('completed', [map, score])
+        } else { infobox.createInfobox('completed', map) }
     },
     get_score: function(map, req) {
         let localScore = 0
