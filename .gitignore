@@ -8,7 +8,10 @@
 *.iss
 
 # Custom maps
-/maps/created/*
+/maps/created
+
+# Saves
+#/saves/*
 
 # Runtime data
 pids
