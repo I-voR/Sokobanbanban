@@ -23,7 +23,7 @@ console.log(map)
 
 if (map.includes('sav')) {
     $('main').append('<button id="save">Save</button><button id="surrender">Surrender</button>')
-    global.score = map.split(',')[2]
+    global.pressCount = map.split(',')[3]
 }
 
 levelgen.main(map)
@@ -46,6 +46,7 @@ $('#save').on('click', function() {
     //w przypadku przejścia na następny lvl:  
     //save.game(map, nr następnego pooziomu, global.score - [utracone gwiazdki czy jak to tam masz rozwiązane, bo jak odejmujesz w locie przy przekroczeniu czasu itp to po prostu global.score], 0, 00-00-00)
     save.game(map, map.split(',')[1], events.get_score(map, levelgen.get_map_reqs()), global.pressCount, $('#timer').html().replace(': ', ' - ').replace(': ', ' - '))
+    save.game(map, map.charAt(0), 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
 })
 
 $('#surrender').on('click', function() {
