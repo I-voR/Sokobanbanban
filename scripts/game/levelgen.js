@@ -127,7 +127,7 @@ export const levelgen = {
     },
     get_map_reqs: (map) => {
         let map_path = funcs.cwd()
-        map_path += map.includes('.sav') ? 'saves/' + map : 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
+        map_path += map.includes('sav') ? 'saves/' + map : 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
 
         return fs.readFileSync(map_path).toString().split('\n')[27].split(':')
     }
