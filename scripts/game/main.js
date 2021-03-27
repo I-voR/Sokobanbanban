@@ -12,6 +12,7 @@ import { events } from './events.js'
 import { timer } from './timer.js'
 import { save } from './save.js'
 import { infobox } from '../infobox.js'
+import { hall } from './toHall.js'
 
 global.$ = require('jquery')
 
@@ -46,5 +47,7 @@ $('#save').on('click', function() {
 })
 
 $('#surrender').on('click', function() {
+
+    hall.send(map, 'Test')
 
 })
