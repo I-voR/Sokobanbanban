@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../style/electronstyles.css" />
 
     <script defer src="../menu-bar/menu-buttons.js"></script>
+    <script defer type="module" src="../scripts/datatable.js"></script>
     <script defer>
     if(location.href.includes('?')) {
         let name = location.href.substr(location.href.indexOf('?') + 1)
@@ -50,6 +51,7 @@
         <nav class="container">
             <button class="flex-item" onclick="location.href='../index.html'">Back</button>
         </nav>
+        <div id="leaderboard"></div>
     </main>
 </body>
 

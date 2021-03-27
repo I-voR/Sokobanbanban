@@ -47,7 +47,7 @@ $('#save').on('click', function() {
 })
 
 $('#surrender').on('click', function() {
-
+//iwo dodaj tu infoboxa który przyjmuje nick jako input i przekierowuje potem do menu
     hall.send(map, 'Test')
-
+    
 })

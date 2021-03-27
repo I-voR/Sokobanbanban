@@ -25,8 +25,8 @@ export const hall = {
         })
 
         save = save.split(',')
-        let timeStamp = saveName = new Date().toISOString().slice(0, -5).replace(/:/g, '-').replace('T', '_')
-        let line = userName + ',' + map[2] + ',' + map[1] + ',' + timeStamp + '\n'
+        let timeStamp = new Date().toISOString().slice(0, -5).replace(/:/g, '-').replace('T', '_')
+        let line = userName + ',' + save[2] + ',' + save[1] + ',' + timeStamp + '\n'
         console.log(line)
 
 
