@@ -14,7 +14,7 @@ export const MenuGen = {
         let tileButton
         let tile
 
-        $('#level-border').css('background', (`url(${path}Floor..png)`))
+        // $('#level-border').css('background-image', (`url(${path}Floor..png)`))
         for (i = 0; files.length > i; i++) {
             tileButton = $('<button>')
             tileButton

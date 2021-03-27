@@ -60,3 +60,16 @@ img {
     pointer-events: none;
     user-select: none;
 }
+
+#load {
+    max-height: 20px;
+    margin-top: 5px;
+}
+
+#load > select {
+    margin-left: 8px;
+}
+
+#load * {
+    color: gray;
+}

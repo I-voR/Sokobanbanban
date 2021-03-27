@@ -19,7 +19,6 @@ global.lastPlayerPos = null
 global.lastCratePos = null
 
 let map = window.location.href.substr(window.location.href.indexOf('?') + 1)
-console.log(map)
 
 if (map.includes('sav')) {
     $('main').append('<button id="save">Save</button><button id="surrender">Surrender</button>')
@@ -41,10 +40,6 @@ $('#undo').on('click', function() {
 
 $('#save').on('click', function() {
     //(saveName, level, stars, moves, time)
-    console.log(map)
-    //global score - [score tej mapy] ale to Iwo musisz zrobić ty bo nie wiem jak ty przechowujesz sobie score mapy
-    //w przypadku przejścia na następny lvl:  
-    //save.game(map, nr następnego pooziomu, global.score - [utracone gwiazdki czy jak to tam masz rozwiązane, bo jak odejmujesz w locie przy przekroczeniu czasu itp to po prostu global.score], 0, 00-00-00)
     save.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
 })
 

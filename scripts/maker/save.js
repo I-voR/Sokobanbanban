@@ -14,7 +14,6 @@ export const save = {
         save.playerPlace()
 
         $('.grid-tile').on('click', function() {
-            console.log(this)
             let id = this.id
 
             if ($(this).children()[0].src.slice(-7, -4) != 'col') {
@@ -120,8 +119,6 @@ export const save = {
             mapData[mapData.length] = i + ',' + files[i]
         }
 
-        console.log(mapData)
-
         if ($('#load option:selected').text() === 'NEW') {
             saveName = new Date().toISOString().slice(0, -5).replace(/:/g, '-').replace('T', '_') + '.map'
         } else {
@@ -129,7 +126,7 @@ export const save = {
         }
 
         let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName)
-        file.on('error', (e) => { console.error(e); infobox.createInfobox('error', 'Map ' + saveName + ' could not be saved') })
+        file.on('error', (err) => { if (err) throw err; infobox.createInfobox('error', 'Map ' + saveName + ' could not be saved') })
         mapData.forEach((v) => { file.write(v + '\n') })
         file.end()
 

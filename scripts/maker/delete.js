@@ -19,10 +19,7 @@ export const deleteMap = {
     delete: () => {
         let e = document.getElementById('map-load')
         fs.unlink(funcs.cwd() + 'maps/created/' + e.options[e.selectedIndex].text, (err) => {
-            if (err) {
-                console.error(err)
-                return
-            }
+            if (err) throw err
         })
         location.reload()
     },

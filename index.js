@@ -1,6 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-const path = require('path')
 const { menu } = require('./menu-bar/menu')
+const path = require('path')
 
 let win
 
@@ -11,6 +11,7 @@ function createWindow() {
         width: 960 + 100,
         height: 670 + 100,
         webPreferences: {
+            contextIsolation: false,
             nodeIntegration: true,
             enableRemoteModule: true,
             preload: path.join(__dirname, '/menu-bar/menu-preload.js')
