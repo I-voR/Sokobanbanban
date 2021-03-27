@@ -41,7 +41,7 @@ $('#undo').on('click', function() {
 
 $('#save').on('click', function() {
     //(saveName, level, stars, moves, time)
-    save.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
+    save.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'), true)
     infobox.createInfobox('saved')
 })
 

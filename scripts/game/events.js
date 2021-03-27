@@ -220,7 +220,7 @@ export const events = {
             }
             console.log(map + '----' + nextMap + ',' + parseInt(map.split(',')[2]) + score + ',' + 0 + ',' + '00-00-00')
 
-            save.game(map, nextMap, parseInt(map.split(',')[2]) + score, 0, '00-00-00')
+            save.game(map, nextMap, parseInt(map.split(',')[2]) + score, 0, '00-00-00', false)
 
             infobox.createInfobox('completed', [map, score])
         } else { infobox.createInfobox('completed', map) }
