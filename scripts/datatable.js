@@ -1,7 +1,8 @@
 /* eslint-disable require-jsdoc */
 
-import { table } from 'console'
 import { funcs } from '../funcs.js'
+import 'datatables.net';
+import 'datatables.net-dt/css/jquery.dataTables.css';
 
 const $ = require('jquery')
 const fs = require('fs')
