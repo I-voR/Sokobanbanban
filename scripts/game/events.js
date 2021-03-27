@@ -8,6 +8,7 @@
 
 import { infobox } from '../infobox.js'
 import { timer } from './timer.js'
+import { levelgen } from './levelgen.js'
 
 export const events = {
     main: () => {
@@ -168,7 +169,7 @@ export const events = {
         }
         return true
     },
-    is_level_completed: (map) => {
+    is_level_completed: () => {
         let crates_pos = []
         let plates_pos = []
         let count = 0
@@ -200,19 +201,25 @@ export const events = {
             return false
         }
     },
-    game_end_check: async(map, req) => {
+    game_end_check: async(map) => {
         while (!events.is_level_completed(map)) {
             await new Promise(r => global.setTimeout(r, 10))
         }
 
-        if (map.includes('sav')) {
-            global.score++
-            if (global.pressCount <= req[0]) global.score++
-            if (timer.get_end_time() <= req[1]) global.score++
-
-            console.log(global.score)
-        }
+        let score = events.get_score(map, levelgen.get_map_reqs(map))
         
-        infobox.createInfobox('completed', map)
+        if (score !== 0) { infobox.createInfobox('completed', [map, score] ) }
+        else { infobox.createInfobox('completed', map ) }
     },
+    get_score: function(map, req) {
+        let localScore = 0
+        
+        if (map.includes('sav')) {
+            localScore++
+            if (global.pressCount <= req[0]) localScore++
+            if (timer.get_end_time() <= req[1]) localScore++
+        }
+
+        return localScore
+    }
 }

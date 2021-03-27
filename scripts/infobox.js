@@ -46,10 +46,10 @@ export const infobox = {
             dialog
                 .append('<span class="heading">Congratulations!</span>')
             
-            if (text.includes('sav')) {
+            if (text.length === 2) {
                 dialog
-                    .append('<div class="text-infobox">You completed level ascending:' + text.split(',')[1] + '<br>Score: ' + global.score + ' ⭐</div>')
-                    .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove();location.href=\'../index.html\'">OK</button>')
+                    .append('<div class="text-infobox">You completed level ascending:' + text[0].split(',')[1] + '<br>Score: ' + text[1] + ' ⭐</div>')
+                    .append('<button class="close-infobox" onclick="document.getElementsByClassName(\'infobox\')[0].remove();location.reload()">OK</button>')
             } else {
                 dialog
                     .append('<div class="text-infobox">You completed level ' + text + '<br>Move count: ' + global.pressCount + '<br>Time: ' + timer.get_end_time() + '</div>')

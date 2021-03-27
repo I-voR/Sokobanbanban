@@ -22,7 +22,6 @@ export const levelgen = {
         let map_bg = []
         let bg_names = []
         let player_pos = []
-        let requirements = array[27].split(':')
 
         let player = $('<div>')
         let table = $('<table>')
@@ -125,7 +124,11 @@ export const levelgen = {
         $('main')
             .append(table)
             .append(player)
+    },
+    get_map_reqs: (map) => {
+        let map_path = funcs.cwd()
+        map_path += map.includes('.sav') ? 'saves/' + map : 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
 
-        return requirements
+        return fs.readFileSync(map_path).toString().split('\n')[27].split(':')
     }
 }

@@ -14,7 +14,6 @@ import { save } from './save.js'
 
 global.$ = require('jquery')
 
-global.score = 0
 global.pressCount = 0
 global.lastPlayerPos = null
 global.lastCratePos = null
@@ -27,29 +26,28 @@ if (map.includes('sav')) {
     global.score = map.split(',')[2]
 }
 
-let requirements = levelgen.main(map)
+levelgen.main(map)
 events.main()
-events.game_end_check(map, requirements)
-
+events.game_end_check(map)
 timer.main(map)
 
-$('#reset').on('click', function () {
+$('#reset').on('click', function() {
     controls.reset()
 })
 
-$('#undo').on('click', function () {
+$('#undo').on('click', function() {
     controls.undo()
 })
 
-$('#save').on('click', function () {
+$('#save').on('click', function() {
     //(saveName, level, stars, moves, time)
     console.log(map)
     //global score - [score tej mapy] ale to Iwo musisz zrobić ty bo nie wiem jak ty przechowujesz sobie score mapy
     //w przypadku przejścia na następny lvl:  
     //save.game(map, nr następnego pooziomu, global.score - [utracone gwiazdki czy jak to tam masz rozwiązane, bo jak odejmujesz w locie przy przekroczeniu czasu itp to po prostu global.score], 0, 00-00-00)
-    save.game(map, map.charAt(0), global.score, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
+    save.game(map, map.charAt(0), events.get_score(map, levelgen.get_map_reqs()), global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'))
 })
 
-$('#surrender').on('click', function () {
+$('#surrender').on('click', function() {
 
 })
