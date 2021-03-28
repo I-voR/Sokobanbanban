@@ -17,7 +17,7 @@ function load_maps() {
 * @param {Event} e - Brief description of the parameter here. Note: For other notations of data types, please refer to JSDocs: DataTypes command.
 */
 function generate_map(e) {
-    let map = 'created/' + e.target.innerText
+    let map = 'created:' + e.target.innerText
     window.location.href = './level.html?' + map
 }
 
