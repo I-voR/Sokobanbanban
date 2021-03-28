@@ -93,7 +93,10 @@ button,
 .text-infobox span,
 form *,
 .text-infobox,
-.dif-level {
+.dif-level,
+#leaderboard_length label select,
+#leaderboard_length label select *,
+#leaderboard_filter label input {
     color: #808080;
 }
 

@@ -4,12 +4,31 @@
     overflow: auto;
 }
 
-#leaderboard * {
+#leaderboard_wrapper {
+    padding: 4px;
+}
+
+#leaderboard_wrapper * {
     font-size: 16px;
     font-weight: normal;
     font-family: 'Roboto', sans-serif;
 }
 
+#leaderboard {
+    margin: 16px 0;
+    width: 100%;
+}
+
 #leaderboard thead * {
     font-weight: bold;
+}
+
+#leaderboard_paginate * {
+    margin: 4px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.paginate_button {
+    cursor: pointer;
 }
