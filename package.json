@@ -32,7 +32,7 @@
   "dependencies": {
     "datatables.net": "^1.10.24",
     "electron-squirrel-startup": "^1.0.0",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
     "jsdom": "^16.5.1",
     "webpack": "^5.28.0"
   },
