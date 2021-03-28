@@ -40,7 +40,6 @@ button,
 
 .dif-level {
     border-color: #E0E0E0 !important;
-    color: gray;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
 }
 
@@ -92,6 +91,25 @@ button,
 }
 
 .text-infobox span,
-form * {
-    color: gray;
+form *,
+.text-infobox,
+.dif-level {
+    color: #808080;
+}
+
+.warn {
+    background-color: #ffffe0;
+}
+
+.info,
+.saved {
+    background-color: #add8e6;
+}
+
+.completed {
+    background-color: #90ee90;
+}
+
+.heading {
+    background-color: #808080;
 }
