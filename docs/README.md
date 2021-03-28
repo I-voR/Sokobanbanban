@@ -10,9 +10,9 @@ Dokumentacja Techniczna jest w pliku /
 Technical Documentation is in
 [TECH-DOC.md](./TECH-DOC.md)
 
-## Najnowsza stabilna wersja / Newest stable version: <u style="font-size: 2.5rem">3.0.0</u>
+## 1. Najnowsza stabilna wersja / Newest stable version: <u style="font-size: 2.5rem">3.0.0</u>
 
-## Zakon Technomantów
+## 2. Zakon Technomantów
 
 * Wielki Mistrz (Kapitan) / Grand Master (Team Leader): **Iwo Strzeboński**
 * i pozostali Bracia (Członkowie) / and other Brethren (Members):
@@ -21,7 +21,7 @@ Technical Documentation is in
   * **Zbyszko Sobecki**
   * **Wojciech Orłowski**
 
-## Autorzy / Authors
+## 3. Autorzy / Authors
 
 * **Iwo Strzeboński**:
   * Projektowanie wyglądu interfejsu graficznego / GUI Design
@@ -33,17 +33,17 @@ Technical Documentation is in
   * Hala Sław / Hall of Fame
   * Zapisy gier / Save Slots
 
-## Licencja
+## 4. Licencja
 
 [WTFPL by Sam Hocevar](./LICENSE)
 
-## Podziękowania / Credits
+## 5. Podziękowania / Credits
 
 * **Laura Wheeler** -
 twórczyni *Sokoban Junior 1*, skąd pochodzą mapy /
 author of *Sokoban Junior 1*, from which maps in this game are from
 
-## Praca na kodzie źródłowym / Working on the source code
+## 6. Praca na kodzie źródłowym / Working on the source code
 
 1. Zainstaluj / Install [Node.js]
 2. Pobierz wymagane pakiety za pomocą polecenia: / Download required packages using:
@@ -58,7 +58,7 @@ npm install
 npm start
 ```
 
-## Budowanie Projektu / Building the Project
+## 7. Budowanie Projektu / Building the Project
 
 Do zbudowania projektu należy użyć pakietu ElectronForge, który także jest pobierany jako wymagany pakiet.  
 To build the project you should use the ElectronForge package, which is also downloaded as a required dependency.

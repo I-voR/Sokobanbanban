@@ -10,7 +10,7 @@ Dokumentacja Użytkownika jest w pliku /
 User Documentation is in file
 [README.md](./README.md)
 
-## Środowisko / Environment
+## 1. Środowisko / Environment
 
 * JavaScript ES 6
 * HTML 5
@@ -20,7 +20,7 @@ User Documentation is in file
 * [jQuery](https://jquery.com/)
 * [DataTables.net](https://datatables.net/)
 
-## Struktura Projektu / Project's Structure
+## 2. Struktura Projektu / Project's Structure
 
 ```txt
 📦Sokobanbanban
@@ -75,7 +75,7 @@ Plik `package-lock.json` przechowuje informacje o wszystkich wymaganych pakietac
 Plik `package.json` przechowuje ogólne informacje o projekcie oraz informacje o wymaganych pakietach.  
 `package.json` file stores overall information about the project and requirements.
 
-## Struktura folderu assets / Assets directory strucure
+## 3. Struktura folderu assets / Assets directory strucure
 
 ```txt
 📦Sokobanbanban
