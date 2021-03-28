@@ -74,3 +74,9 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 Building the Project is **NOT** required in order to launch it!
 
 [Node.js]:https://nodejs.org/en/download/
+
+## 9. Rozgrywka / Game
+
+### 1. Główne Menu / Main Menu
+
+![Main Menu](./screenshots/main-menu.png)
