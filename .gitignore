@@ -13,6 +13,9 @@
 # Saves
 /saves
 
+# Hall of Fame
+/hall
+
 # Runtime data
 pids
 *.pid

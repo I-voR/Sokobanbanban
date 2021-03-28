@@ -23,12 +23,6 @@
 
     <script defer src="../menu-bar/menu-buttons.js"></script>
     <script defer type="module" src="../scripts/datatable.js"></script>
-    <script defer>
-    if(location.href.includes('?')) {
-        let name = location.href.substr(location.href.indexOf('?') + 1)
-        console.log(name)
-    }
-    </script>
 </head>
 
 <body>
@@ -47,13 +41,13 @@
     </menu>
     </header>
 
-    <main>
-        <nav class="container">
+    <main class="container">
+        <nav>
             <button class="flex-item" onclick="location.href='../index.html'">Back</button>
-            <div class="flex-item">
-                <table id="leaderboard"></table>
-            </div>
         </nav>
+        <div class="flex-item">
+            <table id="leaderboard"></table>
+        </div>
     </main>
 </body>
 

@@ -12,10 +12,10 @@ import { events } from './events.js'
 import { timer } from './timer.js'
 import { save } from './save.js'
 import { infobox } from '../infobox.js'
-import { hall } from './toHall.js'
 
 global.$ = require('jquery')
 
+global.pauseGame = false
 global.pressCount = 0
 global.lastPlayerPos = null
 global.lastCratePos = null
@@ -41,13 +41,12 @@ $('#undo').on('click', function() {
 })
 
 $('#save').on('click', function() {
-    //(saveName, level, stars, moves, time)
+    global.pauseGame = true
     save.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'), true)
     infobox.createInfobox('saved')
 })
 
 $('#surrender').on('click', function() {
-//iwo dodaj tu infoboxa który przyjmuje nick jako input i przekierowuje potem do menu
-    hall.send(map, 'Test')
-    
+    global.pauseGame = true
+    infobox.createInfobox('surrender', map)
 })

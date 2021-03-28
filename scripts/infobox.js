@@ -8,6 +8,7 @@
 
 import { funcs } from './funcs.js'
 import { timer } from './game/timer.js'
+import { hall } from './game/toHall.js'
 
 const fs = require('fs')
 
@@ -18,14 +19,33 @@ export const infobox = {
     * @param {String} type - Infobox type. Allowed types:
         * "info" (normal infobox);
         * "warn" (infobox with a warning; warnbox);
-        * "error" (infobox with a description of an error; errbox);
         * "completed" (level completion information; endbox);
         * "remove" (alert informing about removing a map; rembox)
         * "saved" (information about manually saved game; savebox)
+        * "surrender" (alert informing about surrendering a Ascending Mode game; surrbox)
     * @param {String} text - Custom text that will be displayed in the infobox.
     */
     createInfobox: function(type, text = '') {
         let dialog = $('<dialog>')
+        let heading = $('<span>')
+        let span = $('<span>')
+        let textInfobox = $('<div>')
+
+        let closeInfobox = $('<button>')
+        let yesRemove = $('<button>')
+        let noRemove = $('<button>')
+        
+        let form = $('<form>')
+        let input = $('<input>')
+        let label = $('<label>')
+
+        let totalScore = 0
+
+        heading.addClass('heading')
+        textInfobox.addClass('text-infobox')
+        closeInfobox
+            .addClass('close-infobox')
+            .append('OK')
 
         dialog
             .attr('open', '')
@@ -33,40 +53,48 @@ export const infobox = {
 
         switch (type) {
         case 'info':
+            heading.append('Info')
+            textInfobox.append(text)
             dialog
-                .append('<span class="heading">Info</span>')
-                .append('<div class="text-infobox">' + text + '</div>')
-                .append('<button class="close-infobox">OK</button>')
+                .append(heading)
+                .append(textInfobox)
+                .append(closeInfobox)
             break
 
         case 'warn':
+            heading.append('Warning!')
+            textInfobox.append(text)
             dialog
-                .append('<span class="heading">Warning!</span>')
-                .append('<div class="text-infobox">' + text + '</div>')
-                .append('<button class="close-infobox">OK</button>')
+                .append(heading)
+                .append(textInfobox)
+                .append(closeInfobox)
             break
 
         case 'completed':
+            heading.append('Congratulations!!')
+
             dialog
-                .append('<span class="heading">Congratulations!</span>')
+                .append(heading)
+                .append(textInfobox)
+                .append(closeInfobox)
             
             if (text.length === 2) {
-                let totalScore = parseInt(text[0].split(',')[2]) + text[1]
-                dialog
-                    .append('<div class="text-infobox">You completed level ascending:' + 
-                            text[0].split(',')[1] +
-                            '<br>Score: ' +
-                            text[1] +
-                            ' ⭐<br>Total score: ' +
-                            '<span id="total-score">' + totalScore + '</span>' +
-                            ' ⭐</div>')
-                    .append('<button class="close-infobox">OK</button>')
+                totalScore = parseInt(text[0].split(',')[2]) + text[1]
+
+                span
+                    .attr('id', 'total-score')
+                    .append(totalScore)
+
+                textInfobox
+                    .append('You completed level ascending:' + text[0].split(',')[1])
+                    .append($('<br>'))
+                    .append('Score: ' + text[1] + ' ⭐')
+                    .append($('<br>'))
+                    .append('Total score: ')
+                    .append(span)
+                    .append(' ⭐')
 
                 if (parseInt(text[0].split(',')[1]) === 21) {
-                    let form = $('<form>')
-                    let input = $('<input>')
-                    let label = $('<label>')
-
                     input
                         .attr('type', 'text')
                         .attr('id', 'name')
@@ -78,30 +106,86 @@ export const infobox = {
                     form
                         .append(label)
                         .append(input)
+
                     dialog.append(form)
                 }
             } else {
-                dialog
-                    .append('<div class="text-infobox">You completed level ' + text + '<br>Move count: ' + global.pressCount + '<br>Time: ' + timer.get_end_time() + '</div>')
-                    .append('<button class="close-infobox">OK</button>')
+                textInfobox
+                    .append('You completed level ' + text)
+                    .append($('<br>'))
+                    .append('Move count: ' + global.pressCount)
+                    .append($('<br>'))
+                    .append('Time: ' + timer.get_end_time())
             }
             break
 
         case 'remove':
+            yesRemove
+                .attr('id', 'yes-remove')
+                .addClass('remove-map-infobox')
+                .append('Yes')
+
+            noRemove
+                .attr('id', 'no-remove')
+                .addClass('remove-map-infobox')
+                .append('No')
+
+            heading.append('Attention!')
+            textInfobox.append('Are you sure you want to remove level ' + text + '?')
             dialog
-                .append('<span class="heading">Attention!</span>')
-                .append('<div class="text-infobox">Are you sure you want to remove level ' + text + '?</div>')
-                .append('<button class="remove-map-infobox" id="yes-remove">Yes</button>')
-                .append('<button class="remove-map-infobox" id="no-remove">Cancel</button>')
+                .append(heading)
+                .append(textInfobox)
+                .append(yesRemove)
+                .append(noRemove)
             break
 
         case 'saved':
+            heading.append('Info')
+            textInfobox.append('Current progress has been successfully saved')
             dialog
-                .append('<span class="heading">Info</span>')
-                .append('<div class="text-infobox">Current progress has been successfully saved</div>')
-                .append('<button class="close-infobox">OK</button>')
+                .append(heading)
+                .append(textInfobox)
+                .append(closeInfobox)
             break
         
+        case 'surrender':
+            totalScore = parseInt(text.split(',')[2])
+
+            span
+                .attr('id', 'total-score')
+                .append(totalScore)
+
+            heading.append('Surrender')
+
+            textInfobox
+                .append('You surrendered on level ascending:' + text.split(',')[1])
+                .append($('<br>'))
+                .append('Score: 0 ⭐')
+                .append($('<br>'))
+                .append('Total score: ')
+                .append(span)
+                .append(' ⭐')
+
+            input
+                .attr('type', 'text')
+                .attr('id', 'name')
+                .attr('name', 'name')
+
+            label.attr('for', 'name')
+
+            label.append('Your name:')
+            form
+                .append(label)
+                .append(input)
+                
+            dialog
+                .append(heading)
+                .append(textInfobox)
+                .append(closeInfobox)
+                .append(form)
+
+            break
+
         default:
             break
         }
@@ -118,11 +202,31 @@ export const infobox = {
                 if (parseInt(map[1]) < 21) {
                     window.location.href = window.location.href.substring(0, window.location.href.indexOf('?') + 1) + saves[save - 1]
                 } else {
-                    if ($('input').val().length > 0) window.location.href = './leaderboard.html?' + $('input').val() + ':' + $('#total-score').text()
+                    let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                    map[2] = $('#total-score').text()
+                    map = map.join(',')
+
+                    if ($('input').val().length > 0) {
+                        hall.send(map, $('input').val())
+                        window.location.href = './leaderboard.html'
+                    }
                 }
             })
         } else if ((type === 'completed' && text.length > 2) || (type === 'saved')) {
-            $('.close-infobox').on('click', function() { location.href = '../index.html' })
+            $('.close-infobox').on('click', function() { window.location.href = '../index.html' })
+        } else if (type === 'remove') {
+            $('.remove-map-infobox').on('click', function() { document.getElementsByClassName('infobox')[0].remove() })
+        } else if (type === 'surrender') {
+            $('.close-infobox').on('click', function() {
+                let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                map[2] = $('#total-score').text()
+                map = map.join(',')
+
+                if ($('input').val().length > 0) {
+                    hall.send(map, $('input').val())
+                    window.location.href = './leaderboard.html'
+                }
+            })
         } else {
             $('.close-infobox').on('click', function() { document.getElementsByClassName('infobox')[0].remove() })
         }

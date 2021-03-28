@@ -15,10 +15,12 @@ export const timer = {
                 
         let start = Date.now() - offset
         
-        while ( !events.is_level_completed(map) ) {
+        while ( !(events.is_level_completed(map) || global.pauseGame) ) {
             await timer.sleep(0.1)
             await timer.set_time( await timer.time_diff(start) )
         }
+        
+        $('body').off('keydown')
     },
     time_diff: async( start ) => { return Date.now() - start },
     sleep: async( time ) => {

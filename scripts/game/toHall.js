@@ -15,8 +15,6 @@ export const hall = {
             fs.createWriteStream(funcs.cwd() + './hall/data.csv').end()
         }
 
-
-
         let saveFile = funcs.cwd() + 'saves/' + save
         //let saves = fs.readdirSync(path)
         //window.location.href = funcs.cwd() + './static/level.html?' + '1' + saves[selected]
@@ -29,11 +27,7 @@ export const hall = {
         let line = userName + ',' + save[2] + ',' + save[1] + ',' + timeStamp + '\n'
         console.log(line)
 
-
-        fs.appendFileSync(funcs.cwd() + './hall/data.csv', line);
-
-
-
+        fs.appendFileSync(funcs.cwd() + './hall/data.csv', line)
     }
 }
 
