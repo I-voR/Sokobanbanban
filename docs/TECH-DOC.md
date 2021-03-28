@@ -117,11 +117,17 @@ The `assets/background.png` file is Levels' and Map Editor's background.
 
 ```txt
 📂docs
+ ┣ 📂screenshots
+ ┃ ┗ 📜*.png
  ┣ 📜LICENSE
  ┣ 📜MSC_Zadanie_Sokoban.pdf
  ┣ 📜README.md
  ┗ 📜TECH-DOC.md
 ```
+
+W folderze `docs/screenshots/` są przechowywane wszystkie
+zrzuty ekranu wykorzystywane w Dokumentacji.  
+In the `docs/screenshots/` directory are stored all screenshots used in the Documentation.  
 
 Plik `docs/LICENSE` jest [Licencją](./LICENSE) projektu.  
 The `docs/LICENSE` file is the [Licence](./LICENSE) of the project.  
