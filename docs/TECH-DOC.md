@@ -64,43 +64,121 @@ W folderze `style/` przechowywane są wszystkie arkusze stylów wpływające na 
 In the `style/` directory are stored all stylesheets which are influencing the GUI design.  
 
 Plik `index.html` jest głównym menu aplikacji.  
-`index.js` file is the application's main menu.  
+The `index.js` file is the application's main menu.  
 
 Plik `index.js` jest skryptem inicjującym Electrona.  
-`index.js` file is an initializing script for Electron.  
+The `index.js` file is an initializing script for Electron.  
 
 Plik `package-lock.json` przechowuje informacje o wszystkich wymaganych pakietach, które mają być pobrane po wykonaniu polecenia `npm install`.  
-`package-lock.json` file stores names and versions of all packages required by the project.  
+The `package-lock.json` file stores names and versions of all packages required by the project.  
 
 Plik `package.json` przechowuje ogólne informacje o projekcie oraz informacje o wymaganych pakietach.  
-`package.json` file stores overall information about the project and requirements.
+The `package.json` file stores overall information about the project and requirements.
 
 ## 3. Struktura folderu assets / Assets directory strucure
 
 ```txt
-📦Sokobanbanban
- ┗ 📂assets
-   ┣ 📂bg
-   ┃ ┣ 📜1.png
-   ┃ ┣ 📜2.png
-   ┃ ┣ 📜3.png
-   ┃ ┣ 📜4.png
-   ┃ ┗ 📜5.png
-   ┣ 📂map_tiles
-   ┃ ┣ 📜Crate.col.png
-   ┃ ┣ 📜Floor..png
-   ┃ ┣ 📜Grass..png
-   ┃ ┣ 📜Plate..png
-   ┃ ┣ 📜Wall.col.png
-   ┃ ┗ 📜ZCratePlate.col.png
-   ┣ 📂spritesheet
-   ┃ ┣ 📜player.png
-   ┃ ┣ 📜Steve_Back.png
-   ┃ ┣ 📜Steve_Front.png
-   ┃ ┣ 📜Steve_Left.png
-   ┃ ┗ 📜Steve_Right.png
-   ┗ 📜background.png
+📂assets
+ ┣ 📂bg
+ ┃ ┣ 📜1.png
+ ┃ ┣ 📜2.png
+ ┃ ┣ 📜3.png
+ ┃ ┣ 📜4.png
+ ┃ ┗ 📜5.png
+ ┣ 📂map_tiles
+ ┃ ┣ 📜Crate.col.png
+ ┃ ┣ 📜Floor..png
+ ┃ ┣ 📜Grass..png
+ ┃ ┣ 📜Plate..png
+ ┃ ┣ 📜Wall.col.png
+ ┃ ┗ 📜ZCratePlate.col.png
+ ┣ 📂spritesheet
+ ┃ ┣ 📜player.png
+ ┃ ┣ 📜Steve_Back.png
+ ┃ ┣ 📜Steve_Front.png
+ ┃ ┣ 📜Steve_Left.png
+ ┃ ┗ 📜Steve_Right.png
+ ┗ 📜background.png
 ```
 
-W folderze `assets/bg/` znajdują się tła, które są używane w menu głównym.  
-In the `assets/bg/` directory there are backgrounds which are used in the main menu.
+W folderze `assets/bg/` przechowywane są tła używane w menu głównym.  
+In the `assets/bg/` directory are stored backgrounds used in the main menu.  
+
+W folderze `assets/map-tiles/` przechowywane są wszystkie grafiki wykorzystywane jako pola w grze.  
+In the `assets/map-tiles/` directory are stored all graphics used as tiles in the game.  
+
+W folderze `assets/spritesheet/` przechowywane są wszystkie grafiki wykorzystywane jako tekstury gracza.  
+In the `assets/spritesheet/` directory are stored all graphics used as player sprite.  
+
+Plik `assets/background.png` jest tłem Poziomów oraz Edytora Map.  
+The `assets/background.png` file is Levels' and Map Editor's background.  
+
+## 4. Struktura folderu docs / Docs directory structure
+
+```txt
+📂docs
+ ┣ 📜LICENSE
+ ┣ 📜MSC_Zadanie_Sokoban.pdf
+ ┣ 📜README.md
+ ┗ 📜TECH-DOC.md
+```
+
+Plik `docs/LICENSE` jest [Licencją](./LICENSE) projektu.  
+The `docs/LICENSE` file is the [Licence](./LICENSE) of the project.  
+
+Plik `docs/MSC_Zadanie_Sokoban.pdf` jest plikiem zawierającym instrukcje dotyczące tego projektu.  
+The `docs/MSC_Zadanie_Sokoban.pdf` file is a file containing instructions concerning this project.  
+
+Plik `docs/README.md` jest [Dokumentacją Użytkownika](./README.md) Projektu.  
+The `docs/README.md` file is the Project's [User Documentation](./README.md).  
+
+Plik `docs/TECH-DOC.md` jest [Dokumentacją Techniczną](./TECH-DOC.md) Projektu.  
+The `docs/TECH-DOC.md` file is the Project's [Technical Documentation](./TECH-DOC.md).  
+
+## 5. Struktura folderu hall / Hall directory structure
+
+```txt
+📂hall
+ ┗ 📜data.csv
+```
+
+Plik `hall/data.csv` jest plikiem przechowującym dane o graczach i ich wynikach.  
+The `hall/data.csv` file is a file which stores data about players and their scores.  
+
+## 6. Struktura folderu maps / Maps directory structure
+
+```txt
+📂maps
+ ┣ 📂ascending
+ ┃ ┗ 📜01...21.map
+ ┣ 📂created
+ ┣ 📂easy
+ ┃ ┗ 📜01...07.map
+ ┣ 📂hard
+ ┃ ┗ 📜01...07.map
+ ┗ 📂medium
+   ┗ 📜01...07.map
+```
+
+W folderze `maps/ascending/` przechowywane są mapy (o numerach od `01` do `21`),
+które są wykorzystywane w Drugim Module projektu.  
+In the `maps/ascending/` are stored maps (with numbers from `01` to `21`)
+which are used by the project's Second Module.  
+
+W folderze `maps/created/` przechowywane są mapy utworzone przez gracza.  
+In the `maps/ascending/` are stored maps wchich were created by the player.  
+
+W folderze `maps/easy/` przechowywane są Proste mapy (o numerach od `01` do `07`),
+które są wykorzystywane w Pierwszym Module projektu.  
+In the `maps/easy/` are stored Easy maps (with numbers from `01` to `07`)
+which are used by the project's Second Module.  
+
+W folderze `maps/medium/` przechowywane są Średnio Trudne mapy (o numerach od `01` do `07`),
+które są wykorzystywane w Pierwszym Module projektu.  
+In the `maps/medium/` are stored Medium maps (with numbers from `01` to `07`)
+which are used by the project's Second Module.  
+
+W folderze `maps/hard/` przechowywane są Trudne mapy (o numerach od `01` do `07`),
+które są wykorzystywane w Pierwszym Module projektu.  
+In the `maps/hard/` are stored Hard maps (with numbers from `01` to `07`)
+which are used by the project's Second Module.  

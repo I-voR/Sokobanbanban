@@ -40,10 +40,10 @@ Technical Documentation is in
 ## 5. Podziękowania / Credits
 
 * **Laura Wheeler** -
-twórczyni *Sokoban Junior 1*, skąd pochodzą mapy /
-author of *Sokoban Junior 1*, from which maps in this game are from
+twórczyni gry *Sokoban Junior 1*, skąd pochodzą mapy /
+author of the *Sokoban Junior 1* game, from which maps in this game are from
 
-## 6. Praca na kodzie źródłowym / Working on the source code
+## 6. Przygotowywanie środowiska do pracy / Preparing the environment to work
 
 1. Zainstaluj / Install [Node.js]
 2. Pobierz wymagane pakiety za pomocą polecenia: / Download required packages using:
@@ -52,13 +52,15 @@ author of *Sokoban Junior 1*, from which maps in this game are from
 npm install
 ```
 
-3. Aby uruchomić program, należy w konsoli wpisać polecenie: / To start the program, you need to use that command in the command line:
+## 7. Praca na kodzie źródłowym / Working on the source code
+
+Aby uruchomić program, należy w konsoli wpisać polecenie: / To start the program, you need to use that command in the command line:
 
 ```cmd
 npm start
 ```
 
-## 7. Budowanie Projektu / Building the Project
+## 8. Budowanie Projektu / Building the Project
 
 Do zbudowania projektu należy użyć pakietu ElectronForge, który także jest pobierany jako wymagany pakiet.  
 To build the project you should use the ElectronForge package, which is also downloaded as a required dependency.
@@ -67,5 +69,8 @@ To build the project you should use the ElectronForge package, which is also dow
 npx @electron-forge/cli import
 npm run make
 ```
+
+Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!  
+Building the Project is **NOT** required in order to launch it!
 
 [Node.js]:https://nodejs.org/en/download/
