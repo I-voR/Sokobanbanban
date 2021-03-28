@@ -32,7 +32,19 @@
     import { funcs } from './scripts/funcs.js'
     const $ = require('jquery')
     const fs = require('fs')
-    let path = funcs.cwd() + 'saves/'
+
+    let path = funcs.cwd() + './'
+    let dirList = fs.readdirSync(path)
+    if (dirList.find(element => element == 'hall') == undefined) {
+        console.log("hall missing!")
+        fs.mkdirSync(path + 'hall')
+    }
+    if (dirList.find(element => element == 'saves') == undefined) {
+        console.log("saves missing!")
+        fs.mkdirSync(path + 'saves')
+    }
+    path = funcs.cwd() + 'saves/'
+
     let saves = fs.readdirSync(path)
     let saveDefault = ',01,0,0,00-00-00.sav'
     switch (saves.length) {
