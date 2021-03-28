@@ -77,6 +77,30 @@ Building the Project is **NOT** required in order to launch it!
 
 ## 9. Rozgrywka / Game
 
-### 1. Główne Menu / Main Menu
+### 1. Menu Główne / Main Menu
 
 ![Main Menu](./screenshots/main-menu.png)
+
+* Pasek Narzędzi / Menu Bar:  
+  Przycisk w lewym górnym rogu oznaczony trzema poziomymi
+  kreskami jest dodatkowym menu programu.  
+
+  Przycisk oznaczony pojedynczą poziomą kreską służy do minimalizowania programu.  
+
+  Przycisk oznaczony symbolem krzyżyka służy do zamykania programu.  
+
+  Przycisk "Play" służy do uruchamiania Modułu I - map podzielonych na poziomy trudności.  
+
+  Przycisk "Load/Start new game" służy do uruchamiania Modułu II -
+  map o rosnącym poziomie trudności
+
+  Przycisk "Custom game" służy do uruchamiania Modułu III - mapy stworzonej w Edytorze Map.  
+
+  Przycisk "Create level" służy do uruchamiania Modułu III - edytora map.  
+
+  Przycisk "Hall of Fame" służy do uruchamiania Modułu II -
+  sprawdzania listy wyników trybu o rosnącym poziomie trudności.
+
+  Przycisk "Credits" przenosi do strony z informacjami o Autorach oraz podziękowaniach.  
+
+  Przycisk "Quit" zamyka grę.  
