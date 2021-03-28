@@ -6,6 +6,10 @@
 Dokumentacja Użytkownika  
 User Documentation
 
+Dokumentacja Techniczna jest w pliku /
+Technical Documentation is in
+[TECH-DOC.md](./TECH-DOC.md)
+
 ## Zakon Technomantów
 
 * Wielki Mistrz (Kapitan) / Grand Master (Team Leader): **Iwo Strzeboński**
@@ -27,11 +31,14 @@ User Documentation
   * Hala Sław / Hall of Fame
   * Zapisy gier / Save Slots
 
+## Licencja
+[WTFPL by Sam Hocevar](./LICENSE)
+
 ## Podziękowania / Credits
 
 * **Laura Wheeler** -
 twórczyni *Sokoban Junior 1*, skąd pochodzą mapy /
-author of *Sokoban Junior 1*, from maps in this game are from
+author of *Sokoban Junior 1*, from which maps in this game are from
 
 ## Praca na kodzie źródłowym / Working on the source code
 
@@ -51,7 +58,7 @@ npm start
 ## Budowanie Projektu / Building the Project
 
 Do zbudowania projektu należy użyć pakietu ElectronForge, który także jest pobierany jako wymagany pakiet.  
-To build the project you should use ElectronForge, which is also downloaded as a required dependency.
+To build the project you should use the ElectronForge package, which is also downloaded as a required dependency.
 
 ```cmd
 npx @electron-forge/cli import
