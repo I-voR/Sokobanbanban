@@ -10,6 +10,8 @@ Dokumentacja Techniczna jest w pliku /
 Technical Documentation is in
 [TECH-DOC.md](./TECH-DOC.md)
 
+## Najnowsza stabilna wersja / Newest stable version: <u style="font-size: 2.5rem">3.0.0</u>
+
 ## Zakon Technomantów
 
 * Wielki Mistrz (Kapitan) / Grand Master (Team Leader): **Iwo Strzeboński**
@@ -32,6 +34,7 @@ Technical Documentation is in
   * Zapisy gier / Save Slots
 
 ## Licencja
+
 [WTFPL by Sam Hocevar](./LICENSE)
 
 ## Podziękowania / Credits
