@@ -1,7 +1,6 @@
 const { remote } = require('electron')
 
 window.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.getElementById('menu-btn')
     const consoleButton = document.getElementById('console-btn')
     const minimizeButton = document.getElementById('minimize-btn')
     const closeButton = document.getElementById('close-btn')
@@ -12,10 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
             window.home()
         })
     }
-
-    menuButton.addEventListener('click', () => {
-        window.openMenu(0, 30)
-    })
 
     consoleButton.addEventListener('click', () => {
         remote.getCurrentWindow().webContents.openDevTools()
