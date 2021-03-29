@@ -8,7 +8,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 
 ## 1. Najnowsza stabilna wersja
 
-<u style="font-size: 2.5rem">3.1.0</u>
+<u style="font-size: 2.5rem">3.1.1</u>
 
 ## 2. Spis Treści
 
