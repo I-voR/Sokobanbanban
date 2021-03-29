@@ -6,37 +6,37 @@ const fs = require('fs')
 export const slots = {
     main: function() {
         let path = funcs.cwd() + 'saves/'
-        let saves = fs.readdirSync(escape(path).replace(/%3A/g, ':'))
+        let saves = fs.readdirSync(encodeURI(path))
         let saveDefault = ',01,0,0,00-00-00.sav'
-        let asc = 'maps/ascending/01.map'
+        let asc = funcs.cwd() + 'maps/ascending/01.map'
         
         switch (saves.length) {
         case 0:
-            fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 1 + saveDefault, (err) => { if (err) throw err })
-            fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 2 + saveDefault, (err) => { if (err) throw err })
-            fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 3 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(encodeURI(asc), path + 1 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(encodeURI(asc), path + 2 + saveDefault, (err) => { if (err) throw err })
+            fs.copyFile(encodeURI(asc), path + 3 + saveDefault, (err) => { if (err) throw err })
             break
         case 1:
             if (saves[0].charAt(0) == '1') {
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 2 + saveDefault, (err) => { if (err) throw err })
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 3 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 2 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 3 + saveDefault, (err) => { if (err) throw err })
             }
             if (saves[0].charAt(0) == '2') {
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 1 + saveDefault, (err) => { if (err) throw err })
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 3 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 1 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 3 + saveDefault, (err) => { if (err) throw err })
             } else {
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 2 + saveDefault, (err) => { if (err) throw err })
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 1 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 2 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 1 + saveDefault, (err) => { if (err) throw err })
             }
             break
         case 2:
             if (saves[0].charAt(0) == '2') {
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 1 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 1 + saveDefault, (err) => { if (err) throw err })
             }
             if (saves[1].charAt(0) == '2') {
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 3 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 3 + saveDefault, (err) => { if (err) throw err })
             } else {
-                fs.copyFile(escape(funcs.cwd() + asc).replace(/%3A/g, ':'), path + 2 + saveDefault, (err) => { if (err) throw err })
+                fs.copyFile(encodeURI(asc), path + 2 + saveDefault, (err) => { if (err) throw err })
             }
     
             break
@@ -60,9 +60,9 @@ export const slots = {
     },
     loadSelected: (selected) => {
         let path = funcs.cwd() + 'saves/'
-        let saves = fs.readdirSync(escape(path).replace(/%3A/g, ':'))
+        let saves = fs.readdirSync(encodeURI(path))
         //let save = fs.readFileSync(path + '/' + saves[selected]).toString().split('\n')
-        window.location.href = funcs.cwd() + 'static/level.html?' + saves[selected]
+        window.location.href = encodeURI(funcs.cwd() + 'static/level.html?' + saves[selected])
     },
 }
 

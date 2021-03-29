@@ -194,37 +194,37 @@ export const infobox = {
 
         if (type === 'completed' && text.length === 2) {
             $('.close-infobox').on('click', function() {
-                let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                let map = location.href.substr(location.href.indexOf('?') + 1).split(',')
                 let save = map[0]
                 let path = funcs.cwd() + 'saves/'
                 let saves = fs.readdirSync(path)
 
                 if (parseInt(map[1]) < 21) {
-                    window.location.href = window.location.href.substring(0, window.location.href.indexOf('?') + 1) + saves[save - 1]
+                    location.href = encodeURI(location.href.substring(0, location.href.indexOf('?') + 1) + saves[save - 1])
                 } else {
-                    let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                    let map = location.href.substr(location.href.indexOf('?') + 1).split(',')
                     map[2] = $('#total-score').text()
                     map = map.join(',')
 
                     if ($('input').val().length > 0) {
                         hall.send(map, $('input').val())
-                        window.location.href = './leaderboard.html'
+                        location.href = encodeURI('./leaderboard.html')
                     }
                 }
             })
         } else if ((type === 'completed' && text.length > 2) || (type === 'saved')) {
-            $('.close-infobox').on('click', function() { window.location.href = '../index.html' })
+            $('.close-infobox').on('click', function() { location.href = encodeURI('../index.html') })
         } else if (type === 'remove') {
             $('.remove-map-infobox').on('click', function() { document.getElementsByClassName('infobox')[0].remove() })
         } else if (type === 'surrender') {
             $('.close-infobox').on('click', function() {
-                let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                let map = location.href.substr(location.href.indexOf('?') + 1).split(',')
                 map[2] = $('#total-score').text()
                 map = map.join(',')
 
                 if ($('input').val().length > 0) {
                     hall.send(map, $('input').val())
-                    window.location.href = './leaderboard.html'
+                    location.href = encodeURI('./leaderboard.html')
                 }
             })
         } else {
