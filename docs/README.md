@@ -20,14 +20,14 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 ## 3. Autorzy
 
 * **Iwo Strzeboński**:
-  * Projektowanie wyglądu interfejsu graficznego / GUI Design
-  * Różne tryby / Level Modes
-  * Poziomy trudności map / Map Difficulty
-  * Dokumentacja / Documentation
+  * Projektowanie wyglądu interfejsu graficznego
+  * Różne tryby
+  * Poziomy trudności map
+  * Dokumentacja
 * **Igor Kaliciński**:
-  * Edytor poziomów / Level Editor
-  * Hala Sław / Hall of Fame
-  * Zapisy gier / Save Slots
+  * Edytor poziomów
+  * Hala Sław
+  * Zapisy gier
 
 ## 4. Licencja
 
@@ -35,9 +35,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 
 ## 5. Podziękowania
 
-* **Laura Wheeler** -
-twórczyni gry *Sokoban Junior 1*, skąd pochodzą mapy /
-author of the *Sokoban Junior 1* game, from which maps in this game are from
+* **Laura Wheeler** - twórczyni gry *Sokoban Junior 1*, skąd pochodzą mapy
 
 ## 6. Przygotowywanie środowiska do pracy
 
