@@ -1,7 +1,7 @@
-const { remote } = require('electron')
+// const { remote } = require('electron')
 
 window.addEventListener('DOMContentLoaded', () => {
-    const consoleButton = document.getElementById('console-btn')
+    // const consoleButton = document.getElementById('console-btn')
     const minimizeButton = document.getElementById('minimize-btn')
     const closeButton = document.getElementById('close-btn')
 
@@ -12,9 +12,9 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    consoleButton.addEventListener('click', () => {
-        remote.getCurrentWindow().webContents.openDevTools()
-    })
+    // consoleButton.addEventListener('click', () => {
+    //     remote.getCurrentWindow().webContents.openDevTools()
+    // })
 
     minimizeButton.addEventListener('click', () => {
         window.minimizeWindow()

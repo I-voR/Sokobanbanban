@@ -370,7 +370,7 @@ na stronie z zapisami (`saves.html`).
 ## 12. Struktura folderu scripts
 
 ```txt
-📦scripts
+📂scripts
  ┣ 📂custom
  ┃ ┗ 📜main.js
  ┣ 📂game
@@ -589,7 +589,7 @@ na stronie z zapisami (`saves.html`).
 
 * Służy do pobierania wymagań na poszczególne gwiazdki na wybranej mapie.  
 * Argumenty:
-  * `map`: Nazwa wczytanej mapy. 
+  * `map`: Nazwa wczytanej mapy.  
 * Zwraca: `{Array}` - Lista wymagań ruchów i czasu
   na poszczególne gwiazdki danego poziomu.  
 * Pochodzenie: `levelgen.js`.  
