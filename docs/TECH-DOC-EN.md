@@ -1,16 +1,13 @@
 # Sokobanbanban
 
-*Projekt "Sokoban" na Motorola Science Cup 2020*  
 *"Sokoban" Project for Motorola Science Cup 2020*
-
-Dokumentacja Techniczna  
 Technical Documentation
 
-Dokumentacja Użytkownika jest w pliku /
-User Documentation is in file
-[README.md](./README.md)
+The User Documentation is in the [README-EN.md](./README-EN.md) file.  
+Polska wersja Dokumentacji Technicznej
+jest w pliku [TECH-DOC-PL.md](./TECH-DOC-PL.md) file.  
 
-## 1. Środowisko / Environment
+## 1. Environment
 
 * JavaScript ES 6
 * HTML 5
@@ -20,7 +17,7 @@ User Documentation is in file
 * [jQuery](https://jquery.com/)
 * [DataTables.net](https://datatables.net/)
 
-## 2. Struktura Projektu / Project's Structure
+## 2. Project's Structure
 
 ```txt
 📦Sokobanbanban
@@ -75,7 +72,7 @@ The `package-lock.json` file stores names and versions of all packages required 
 Plik `package.json` przechowuje ogólne informacje o projekcie oraz informacje o wymaganych pakietach.  
 The `package.json` file stores overall information about the project and requirements.
 
-## 3. Struktura folderu assets / Assets directory strucure
+## 3. Assets directory strucure
 
 ```txt
 📂assets
@@ -113,7 +110,7 @@ In the `assets/spritesheet/` directory are stored all graphics used as player sp
 Plik `assets/background.png` jest tłem Poziomów oraz Edytora Map.  
 The `assets/background.png` file is Levels' and Map Editor's background.  
 
-## 4. Struktura folderu docs / Docs directory structure
+## 4. Docs directory structure
 
 ```txt
 📂docs
@@ -141,7 +138,7 @@ The `docs/README.md` file is the Project's [User Documentation](./README.md).
 Plik `docs/TECH-DOC.md` jest [Dokumentacją Techniczną](./TECH-DOC.md) Projektu.  
 The `docs/TECH-DOC.md` file is the Project's [Technical Documentation](./TECH-DOC.md).  
 
-## 5. Struktura folderu hall / Hall directory structure
+## 5. Hall directory structure
 
 ```txt
 📂hall
@@ -151,7 +148,7 @@ The `docs/TECH-DOC.md` file is the Project's [Technical Documentation](./TECH-DO
 Plik `hall/data.csv` jest plikiem przechowującym dane o graczach i ich wynikach.  
 The `hall/data.csv` file is a file which stores data about players and their scores.  
 
-## 6. Struktura folderu maps / Maps directory structure
+## 6. Maps directory structure
 
 ```txt
 📂maps
