@@ -3,7 +3,7 @@
 *Projekt "Sokoban" na Motorola Science Cup 2020*  
 Dokumentacja Użytkownika  
 
-Dokumentacja Techniczna jest w pliku [TECH-DOC.md](./TECH-DOC.md).  
+Dokumentacja Techniczna jest w pliku [TECH-DOC-PL.md](./TECH-DOC.md).  
 English version of the User Documentation is in the [README-EN.md](./README-EN.md) file.  
 
 ## 1. Najnowsza stabilna wersja: <u style="font-size: 2.5rem">3.0.1</u>
