@@ -9,7 +9,7 @@
 import { infobox } from '../infobox.js'
 import { timer } from './timer.js'
 import { levelgen } from './levelgen.js'
-import { save } from './save.js'
+import { saves } from './saves.js'
 
 export const events = {
     main: () => {
@@ -219,7 +219,7 @@ export const events = {
                 nextMap = parseInt(map.split(',')[1], 10) + 1
             }
 
-            save.game(map, nextMap, parseInt(map.split(',')[2]) + score, 0, '00-00-00', false)
+            saves.game(map, nextMap, parseInt(map.split(',')[2]) + score, 0, '00-00-00', false)
 
             infobox.createInfobox('completed', [map, score])
         } else { infobox.createInfobox('completed', map) }

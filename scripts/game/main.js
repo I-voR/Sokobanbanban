@@ -10,7 +10,7 @@ import { controls } from './controls.js'
 import { levelgen } from './levelgen.js'
 import { events } from './events.js'
 import { timer } from './timer.js'
-import { save } from './save.js'
+import { saves } from './saves.js'
 import { infobox } from '../infobox.js'
 
 global.$ = require('jquery')
@@ -42,7 +42,7 @@ $('#undo').on('click', function() {
 
 $('#save').on('click', function() {
     global.pauseGame = true
-    save.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'), true)
+    saves.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'), true)
     infobox.createInfobox('saved')
 })
 

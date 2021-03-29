@@ -156,18 +156,22 @@ to zostanie automatycznie utworzony przy uruchomieniu programu
    ┗ 📜01...07.map
 ```
 
-W folderze `maps/ascending/` przechowywane są mapy (o numerach od `01` do `21`),
-które są wykorzystywane w Drugim Module projektu.  
+W folderze `maps/ascending/` przechowywane są mapy
+(o numerach od `01` do `21`), które są
+wykorzystywane w Drugim Module projektu.  
 
 W folderze `maps/created/` przechowywane są mapy utworzone przez gracza.  
 
-W folderze `maps/easy/` przechowywane są Proste mapy (o numerach od `01` do `07`),
+W folderze `maps/easy/` przechowywane są Proste mapy
+(o numerach od `01` do `07`),
 które są wykorzystywane w Pierwszym Module projektu.  
 
-W folderze `maps/medium/` przechowywane są Średnio Trudne mapy (o numerach od `01` do `07`),
+W folderze `maps/medium/` przechowywane
+są Średnio Trudne mapy (o numerach od `01` do `07`),
 które są wykorzystywane w Pierwszym Module projektu.  
 
-W folderze `maps/hard/` przechowywane są Trudne mapy (o numerach od `01` do `07`),
+W folderze `maps/hard/` przechowywane
+są Trudne mapy (o numerach od `01` do `07`),
 które są wykorzystywane w Pierwszym Module projektu.  
 
 Struktura pliku `.map`:
@@ -282,4 +286,168 @@ na stronie z zapisami (`saves.html`).
 
 ## 10. Struktura folderu menu-bar
 
+```txt
+📂menu-bar
+ ┣ 📜menu-buttons.js
+ ┣ 📜menu-functions.js
+ ┣ 📜menu-preload.js
+ ┗ 📜menu.js
+```
+
 ## 11. Struktura folderu scripts
+
+```txt
+📦scripts
+ ┣ 📂custom
+ ┃ ┗ 📜main.js
+ ┣ 📂game
+ ┃ ┣ 📜controls.js
+ ┃ ┣ 📜events.js
+ ┃ ┣ 📜levelgen.js
+ ┃ ┣ 📜main.js
+ ┃ ┣ 📜save.js
+ ┃ ┣ 📜slot.js
+ ┃ ┣ 📜timer.js
+ ┃ ┗ 📜toHall.js
+ ┣ 📂maker
+ ┃ ┣ 📜delete.js
+ ┃ ┣ 📜load.js
+ ┃ ┣ 📜main.js
+ ┃ ┣ 📜menugen.js
+ ┃ ┣ 📜reset.js
+ ┃ ┣ 📜save.js
+ ┃ ┗ 📜tilepainter.js
+ ┣ 📜datatable.js
+ ┣ 📜funcs.js
+ ┣ 📜infobox.js
+ ┗ 📜init.js
+```
+
+## 12. Funkcje  
+
+<!-- C -->
+
+### `createWindow()`
+
+### `controls.reset()`
+
+### `controls.undo()`
+
+<!-- D -->
+
+### `data.table()`
+
+### `deleteMap.core()`
+
+### `deleteMap.delete()`
+
+<!-- E -->
+
+### `events.main()`
+
+### `events.cell_includes(map, player_pos, x = 0, y = 0, text)`
+
+### `events.game_end_check(map)`
+
+### `events.get_score(map, req)`
+
+### `events.is_air(map, player_pos, x = 0, y = 0)`
+
+### `events.is_level_completed()`
+
+### `events.move_player(bool, map, player, player_pos, x = 0, y = 0)`
+
+### `events.move_crate(bool, map, player_pos, crates_pos, x = 0, y = 0)`
+
+<!-- F -->
+
+### `funcs.cwd()`
+
+<!-- G -->
+
+### `generate_map(e)`  
+
+* Służy do losowania mapy wybranego poziomu trudności.  
+* Parametry:
+  * `e` (`event`): wydarzenie dotyczące naciśniętego przycisku.  
+* Pochodzenie: `difficulty.js`, `custom/main.js`.  
+
+<!-- H -->
+
+### `hall.save(save, userName)`
+
+<!-- I -->
+
+### `initiateFiles()`
+
+* Służy do tworzenia wszystkich brakujących plików i katalogów
+* Pochodzenie: `init.js`
+
+### `infobox.createInfobox(type, text = '')`
+
+<!-- L -->
+
+### `load_maps()`
+
+* Służy do wczytywania listy autorskich map i generowania przycisków na jej podstawie.  
+* Pochodzenie: `custom/main.js`.  
+
+### `levelgen.main(map)`
+
+### `levelgen.get_map_reqs(map)`
+
+### `load.list()`
+
+### `load.load()`
+
+<!-- M -->
+
+### `MenuGen.menugen()`
+
+<!-- R -->
+
+### `randomBetween(min, max)`  
+
+* Służy do losowania liczby z domkniętego zakresu `(min, max)`.
+* Parametry:  
+  * `min`: dolna granica zakresu.  
+  * `max`: górna granica zakresu.  
+* Pochodzenie: `index.html`, `difficulty.js`, `custom/main.js`.  
+
+### `reset.reset()`
+
+<!-- S -->
+
+### `save.main()`
+
+### `save.playerPlace()`
+
+### `save.mapRead()`
+
+### `save.boxCheck()`
+
+### `save.translation()`
+
+### `saves.mapRead(baseMapNumber, savingInGame)`
+
+### `saves.game(saveName, level, stars, moves, time, savingInGame)`
+
+### `slots.main()`
+
+### `slots.loadSelected(selected)`
+
+<!-- T -->
+
+### `timer.main(map)`
+
+### `timer.get_end_time()`
+
+### `timer.time_diff(start)`
+
+### `timer.sleep(time)`
+
+### `timer.set_time(time)`
+
+### `timer.convert_hms_to_milis(hms)`
+
+### `TilePainter.tilepaint(tile)`

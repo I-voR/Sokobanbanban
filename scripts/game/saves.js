@@ -4,7 +4,7 @@ import { funcs } from '../funcs.js'
 
 const fs = require('fs')
 
-export const save = {
+export const saves = {
     game: (saveName, level, stars, moves, time, savingInGame) => {
         let saveFile = funcs.cwd() + 'saves/' + saveName
         //let saves = fs.readdirSync(path)
@@ -13,10 +13,10 @@ export const save = {
             if (err) throw err
         })
         saveName = saveName.charAt(0) + ',' + level + ',' + stars + ',' + moves + ',' + time + '.sav'
-        saveFile = funcs.cwd() + './saves/' + saveName
+        saveFile = funcs.cwd() + 'saves/' + saveName
 
         if (level <= 21) {
-            let saveData = save.mapRead(level, savingInGame)
+            let saveData = saves.mapRead(level, savingInGame)
 
             let file = fs.createWriteStream(saveFile)
             file.on('error', (err) => {

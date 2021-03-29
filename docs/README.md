@@ -6,7 +6,7 @@ Dokumentacja Użytkownika
 Dokumentacja Techniczna jest w pliku [TECH-DOC-PL.md](./TECH-DOC-PL.md).  
 English version of the User Documentation is in the [README-EN.md](./README-EN.md) file.  
 
-## 1. Najnowsza stabilna wersja: <u style="font-size: 2.5rem">3.0.1</u>
+## 1. Najnowsza stabilna wersja: <u style="font-size: 2.5rem">3.0.2</u>
 
 ## 2. Zakon Technomantów
 

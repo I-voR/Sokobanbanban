@@ -10,8 +10,8 @@ export const save = {
     main: () => {
         $('.icons').css('outline', 'rgb(0, 0, 255) solid 0px')
         $('.grid-tile').off('click')
-        if (save.boxCheck()) {
-            infobox.createInfobox('info', 'ERROR! \n Make sure you placed boxes and plates, you have the same amount of plates and boxes and then try again.')
+        if (!save.boxCheck()) {
+            infobox.createInfobox('warn', 'Make sure you placed boxes and plates, you have the same amount of plates and boxes and then try again.')
             return
         }
         infobox.createInfobox('info', 'Select player starting position...')
@@ -125,36 +125,42 @@ export const save = {
         //$('#map-load').val = saveName
     },
     boxCheck: () => {
-        var crateCount = 0
-        var plateCount = 0
+        let temp
+        let crateCount = 0
+        let plateCount = 0
 
-        for (let y = 0; y < 20; y++) {
-            for (let x = 0; x < 30; x++) {
-                let temp = $('#' + y + '-' + x).children()[0].src.split('/')
-                if (save.translation(temp[temp.length - 1]) == '0') { crateCount = crateCount + 1 }
-                if (save.translation(temp[temp.length - 1]) == '3') { plateCount = plateCount + 1 }
-            }
-        }
-        console.log(crateCount + ' ' + plateCount)
-        if ((crateCount == plateCount) && (crateCount != 0) && (plateCount != 0)) { return false } else { return true }
+        $('img').each(function() {
+            temp = $(this).attr('src').split('/')
+            if (save.translation(temp[temp.length - 1]) == '0') { crateCount++ }
+            else if (save.translation(temp[temp.length - 1]) == '3') { plateCount++ }
+            else if (save.translation(temp[temp.length - 1]) == '5') { crateCount++; plateCount++ }
+        })
+
+        return ((crateCount === plateCount) && (crateCount !== 0))
     },
     translation: (filename) => {
         let files = fs.readdirSync(funcs.cwd() + 'assets/map_tiles')
         switch (filename) {
-            case files[0]:
-                return 0
-            case files[1]:
-                return 1
-            case files[2]:
-                return 2
-            case files[3]:
-                return 3
-            case files[4]:
-                return 4
-            case files[5]:
-                return 5
-            default:
-                return 0
+        case files[0]:
+            return 0
+
+        case files[1]:
+            return 1
+
+        case files[2]:
+            return 2
+
+        case files[3]:
+            return 3
+
+        case files[4]:
+            return 4
+
+        case files[5]:
+            return 5
+
+        default:
+            return 0
         }
     }
 }

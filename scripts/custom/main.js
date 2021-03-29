@@ -14,7 +14,7 @@ function load_maps() {
 
 /** 
 * Function used to redirect selected map to map loader
-* @param {Event} e - Brief description of the parameter here. Note: For other notations of data types, please refer to JSDocs: DataTypes command.
+* @param {Event} e - OnClick event
 */
 function generate_map(e) {
     let map = 'created:' + e.target.innerText

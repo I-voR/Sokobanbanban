@@ -12,15 +12,12 @@ export const data = {
     table: () => {
         let data = fs.readFileSync(funcs.cwd() + 'hall/data.csv').toString().split('\n')
 
-
-
         data = data.filter(function (currentLine) {
             return currentLine !== '\n'
         })
         data = data.filter(function (currentLine) {
             return currentLine !== ''
         })
-        console.log(data)
 
         data.forEach((element, index) => {
             data[index] = data[index].split(',')
