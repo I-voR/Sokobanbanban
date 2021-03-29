@@ -6,9 +6,33 @@ Dokumentacja Użytkownika
 Dokumentacja Techniczna jest w pliku [TECH-DOC-PL.md](./TECH-DOC-PL.md).  
 English version of the User Documentation is in the [README-EN.md](./README-EN.md) file.  
 
-## 1. Najnowsza stabilna wersja: <u style="font-size: 2.5rem">3.0.2</u>
+## 1. Najnowsza stabilna wersja
 
-## 2. Zakon Technomantów
+<u style="font-size: 2.5rem">3.0.2</u>
+
+## 2. Spis Treści
+
+* [Sokobanbanban](#sokobanbanban)
+  * [1. Najnowsza stabilna wersja](#1-najnowsza-stabilna-wersja)
+  * [2. Spis Treści](#2-spis-treści)
+  * [3. Zakon Technomantów](#3-zakon-technomantów)
+  * [4. Autorzy](#4-autorzy)
+  * [5. Licencja](#5-licencja)
+  * [6. Podziękowania](#6-podziękowania)
+  * [7. Przygotowywanie środowiska do pracy](#7-przygotowywanie-środowiska-do-pracy)
+  * [8. Praca na kodzie źródłowym](#8-praca-na-kodzie-źródłowym)
+  * [9. Budowanie Projektu](#9-budowanie-projektu)
+  * [10. Rozgrywka](#10-rozgrywka)
+    * [a. Poruszanie się w grze](#a-poruszanie-się-w-grze)
+    * [b. Moduł III - Tworzenie map](#b-moduł-iii---tworzenie-map)
+    * [c. Menu Główne](#c-menu-główne)
+    * [d. Moduł I - Poziomy Trudności](#d-moduł-i---poziomy-trudności)
+    * [e. Moduł II - Rosnący Poziom Trudności](#e-moduł-ii---rosnący-poziom-trudności)
+    * [f. Moduł III - Gra na własnym poziomie](#f-moduł-iii---gra-na-własnym-poziomie)
+    * [g. Moduł II - Hala Sław](#g-moduł-ii---hala-sław)
+    * [h. Podziękowania](#h-podziękowania)
+
+## 3. Zakon Technomantów
 
 * Wielki Mistrz (Kapitan Drużyny): **Iwo Strzeboński**
 * i pozostali Bracia (Członkowie):
@@ -17,7 +41,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
   * **Zbyszko Sobecki**
   * **Wojciech Orłowski**
 
-## 3. Autorzy
+## 4. Autorzy
 
 * **Iwo Strzeboński**:
   * Projektowanie wyglądu interfejsu graficznego
@@ -29,15 +53,15 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
   * Hala Sław
   * Zapisy gier
 
-## 4. Licencja
+## 5. Licencja
 
 [WTFPL by Sam Hocevar](./LICENSE)
 
-## 5. Podziękowania
+## 6. Podziękowania
 
 * **Laura Wheeler** - twórczyni gry *Sokoban Junior 1*, skąd pochodzą mapy
 
-## 6. Przygotowywanie środowiska do pracy
+## 7. Przygotowywanie środowiska do pracy
 
 1. Zainstaluj [Node.js](https://nodejs.org/en/download/)
 2. Pobierz wymagane pakiety za pomocą polecenia:  
@@ -46,7 +70,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 npm install
 ```
 
-## 7. Praca na kodzie źródłowym
+## 8. Praca na kodzie źródłowym
 
 Aby uruchomić program, należy w konsoli wpisać polecenie:
 
@@ -54,7 +78,7 @@ Aby uruchomić program, należy w konsoli wpisać polecenie:
 npm start
 ```
 
-## 8. Budowanie Projektu
+## 9. Budowanie Projektu
 
 Do zbudowania projektu należy użyć pakietu ElectronForge,
 który także jest pobierany jako wymagany pakiet.  
@@ -66,9 +90,9 @@ npm run make
 
 Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!  
 
-## 9. Rozgrywka
+## 10. Rozgrywka
 
-### 1. Poruszanie się w grze
+### a. Poruszanie się w grze
 
 ![Pierwsza mapa trybu o rosnącym poziomie trudności](./screenshots/ascending.png)
 
@@ -105,7 +129,7 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
   * `D` lub `Strzałka w prawo` porusza gracza w prawo.  
   * `R` ustawia gracza i skrzynie na pozycjach pierwotnych.  
 
-### 2. Moduł III - Tworzenie map
+### b. Moduł III - Tworzenie map
 
 ![Kreator Map](./screenshots/levelmaker-1.png)
 
@@ -161,7 +185,7 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
   Gra traktuje to jako `Skrzynię` na `Płytce`, co oznacza,
   że `Skrzynię` z takiej `Płytki` można przesunąć.  
 
-### 3. Menu Główne
+### c. Menu Główne
 
 ![Menu Główne](./screenshots/index.png)
 
@@ -189,7 +213,7 @@ o Autorach oraz podziękowaniach.
 
 * Przycisk `Quit` zamyka grę.  
 
-### 4. Moduł I - Poziomy Trudności
+### d. Moduł I - Poziomy Trudności
 
 ![Menu poziomów trudności](./screenshots/difficulty.png)
 
@@ -209,7 +233,7 @@ o Autorach oraz podziękowaniach.
 
 ![Wylosowana trudna mapa](./screenshots/hard.png)
 
-### 5. Moduł II - Rosnący Poziom Trudności
+### e. Moduł II - Rosnący Poziom Trudności
 
 ![Miejsca zapisu](./screenshots/saves.png)
 
@@ -222,7 +246,7 @@ Gracz ma do dyspozycji wyłącznie trzy miejsca na zapisy.
 
 ![Pierwsza mapa trybu o rosnącym poziomie trudności](./screenshots/ascending.png)
 
-### 6. Moduł III - Gra na własnym poziomie
+### f. Moduł III - Gra na własnym poziomie
 
 ![Menu autorskich map](./screenshots/custom.png)
 
@@ -231,10 +255,10 @@ gry na wybranej, utworzonej przez siebie, mapie.
 
 ![Wybrana autorska mapa](./screenshots/created.png)
 
-### 7. Moduł II - Hala Sław
+### g. Moduł II - Hala Sław
 
 ![Hala Sław](./screenshots/leaderboard.png)
 
-### 8. Podziękowania
+### h. Podziękowania
 
 ![Podziękowania](./screenshots/credits.png)

@@ -7,7 +7,67 @@ Dokumentacja Użytkownika jest w pliku [README.md](./README.md)
 English version of the Technical Documentation
 is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file.  
 
-## 1. Środowisko
+## 1. Spis Treści
+
+* [Sokobanbanban](#sokobanbanban)
+  * [1. Spis Treści](#1-spis-treści)
+  * [2. Środowisko](#2-środowisko)
+  * [3. Struktura Projektu](#3-struktura-projektu)
+  * [4. Struktura folderu assets](#4-struktura-folderu-assets)
+  * [5. Struktura folderu docs](#5-struktura-folderu-docs)
+  * [6. Struktura folderu hall](#6-struktura-folderu-hall)
+  * [7. Struktura folderu maps](#7-struktura-folderu-maps)
+  * [8. Struktura folderu saves](#8-struktura-folderu-saves)
+  * [9. Struktura folderu static](#9-struktura-folderu-static)
+  * [10. Struktura folderu style](#10-struktura-folderu-style)
+  * [11. Struktura folderu menu-bar](#11-struktura-folderu-menu-bar)
+  * [12. Struktura folderu scripts](#12-struktura-folderu-scripts)
+  * [13. Funkcje](#13-funkcje)
+    * [`createWindow()`](#createwindow)
+    * [`controls.reset()`](#controlsreset)
+    * [`controls.undo()`](#controlsundo)
+    * [`data.table()`](#datatable)
+    * [`deleteMap.core()`](#deletemapcore)
+    * [`deleteMap.delete()`](#deletemapdelete)
+    * [`events.main()`](#eventsmain)
+    * [`events.cell_includes(map, player_pos, x = 0, y = 0, text)`](#eventscell_includesmap-player_pos-x--0-y--0-text)
+    * [`events.game_end_check(map)`](#eventsgame_end_checkmap)
+    * [`events.get_score(map, req)`](#eventsget_scoremap-req)
+    * [`events.is_air(map, player_pos, x = 0, y = 0)`](#eventsis_airmap-player_pos-x--0-y--0)
+    * [`events.is_level_completed()`](#eventsis_level_completed)
+    * [`events.move_player(bool, map, player, player_pos, x = 0, y = 0)`](#eventsmove_playerbool-map-player-player_pos-x--0-y--0)
+    * [`events.move_crate(bool, map, player_pos, crates_pos, x = 0, y = 0)`](#eventsmove_cratebool-map-player_pos-crates_pos-x--0-y--0)
+    * [`funcs.cwd()`](#funcscwd)
+    * [`generate_map(e)`](#generate_mape)
+    * [`hall.save(save, userName)`](#hallsavesave-username)
+    * [`initiateFiles()`](#initiatefiles)
+    * [`infobox.createInfobox(type, text = '')`](#infoboxcreateinfoboxtype-text--)
+    * [`load_maps()`](#load_maps)
+    * [`levelgen.main(map)`](#levelgenmainmap)
+    * [`levelgen.get_map_reqs(map)`](#levelgenget_map_reqsmap)
+    * [`load.list()`](#loadlist)
+    * [`load.load()`](#loadload)
+    * [`MenuGen.menugen()`](#menugenmenugen)
+    * [`randomBetween(min, max)`](#randombetweenmin-max)
+    * [`reset.reset()`](#resetreset)
+    * [`save.main()`](#savemain)
+    * [`save.playerPlace()`](#saveplayerplace)
+    * [`save.mapRead()`](#savemapread)
+    * [`save.boxCheck()`](#saveboxcheck)
+    * [`save.translation()`](#savetranslation)
+    * [`saves.mapRead(baseMapNumber, savingInGame)`](#savesmapreadbasemapnumber-savingingame)
+    * [`saves.game(saveName, level, stars, moves, time, savingInGame)`](#savesgamesavename-level-stars-moves-time-savingingame)
+    * [`slots.main()`](#slotsmain)
+    * [`slots.loadSelected(selected)`](#slotsloadselectedselected)
+    * [`timer.main(map)`](#timermainmap)
+    * [`timer.get_end_time()`](#timerget_end_time)
+    * [`timer.time_diff(start)`](#timertime_diffstart)
+    * [`timer.sleep(time)`](#timersleeptime)
+    * [`timer.set_time(time)`](#timerset_timetime)
+    * [`timer.convert_hms_to_milis(hms)`](#timerconvert_hms_to_milishms)
+    * [`TilePainter.tilepaint(tile)`](#tilepaintertilepainttile)
+
+## 2. Środowisko
 
 * JavaScript ES 6
 * HTML 5
@@ -17,7 +77,7 @@ is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file.
 * [jQuery](https://jquery.com/)
 * [DataTables.net](https://datatables.net/)
 
-## 2. Struktura Projektu
+## 3. Struktura Projektu
 
 ```txt
 📦Sokobanbanban
@@ -64,7 +124,7 @@ pakietach, które mają być pobrane po wykonaniu polecenia `npm install`.
 Plik `package.json` przechowuje ogólne informacje o
 projekcie oraz informacje o wymaganych pakietach.  
 
-## 3. Struktura folderu assets
+## 4. Struktura folderu assets
 
 ```txt
 📂assets
@@ -90,7 +150,7 @@ W folderze `assets/spritesheet/` przechowywane są wszystkie grafiki wykorzystyw
 
 Plik `assets/background.png` jest tłem Poziomów oraz Edytora Map.  
 
-## 4. Struktura folderu docs
+## 5. Struktura folderu docs
 
 ```txt
 📂docs
@@ -129,7 +189,7 @@ Plik `docs/TECH-DOC-EN.md` jest
 [Dokumentacją Techniczną](./TECH-DOC-PL.md)
 Projektu w języku angielskim.  
 
-## 5. Struktura folderu hall
+## 6. Struktura folderu hall
 
 ```txt
 📂hall
@@ -140,7 +200,7 @@ Plik `hall/data.csv` jest plikiem przechowującym dane o graczach i ich wynikach
 Jeśli nie ma folderu `hall/` bądź pliku `hall/data.csv`,
 to zostanie automatycznie utworzony przy uruchomieniu programu
 
-## 6. Struktura folderu maps
+## 7. Struktura folderu maps
 
 ```txt
 📂maps
@@ -189,7 +249,7 @@ Struktura pliku `.map`:
   jest to wiersz dodatkowy, który pojawia się w mapach Modułu II,
   znajdujących się w folderze `maps/ascending/`.
 
-## 7. Struktura folderu saves
+## 8. Struktura folderu saves
 
 ```txt
 📂saves
@@ -205,7 +265,7 @@ to zostaną automatycznie utworzony przy uruchomieniu programu
 Struktura nazwy pliku zapisu:  
 `<numer porządkowy zapisu>,<poziom>,<łączny wynik>,<ilość ruchów na mapie>,<czas gry na mapie>.sav`
 
-## 8. Struktura folderu static
+## 9. Struktura folderu static
 
 ```txt
 📂static
@@ -233,7 +293,7 @@ Strona `levelmaker.html` jest stroną, gdzie tworzy się mapy.
 
 Strona `saves.html` jest stroną z zapisami gier trybu o rosnącym poziomie trudności.  
 
-## 9. Struktura folderu style
+## 10. Struktura folderu style
 
 ```txt
 📂style
@@ -284,7 +344,7 @@ na stronie edytora map (`levelmaker.html`).
 Plik `static/saves.css` zawiera style używane
 na stronie z zapisami (`saves.html`).  
 
-## 10. Struktura folderu menu-bar
+## 11. Struktura folderu menu-bar
 
 ```txt
 📂menu-bar
@@ -294,7 +354,7 @@ na stronie z zapisami (`saves.html`).
  ┗ 📜menu.js
 ```
 
-## 11. Struktura folderu scripts
+## 12. Struktura folderu scripts
 
 ```txt
 📦scripts
@@ -323,7 +383,7 @@ na stronie z zapisami (`saves.html`).
  ┗ 📜init.js
 ```
 
-## 12. Funkcje  
+## 13. Funkcje  
 
 <!-- C -->
 
