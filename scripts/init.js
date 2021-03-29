@@ -16,10 +16,10 @@ function initiateFiles() {
     let path = funcs.cwd() + './'
     let dirList = fs.readdirSync(path)
 
-    if (dirList.find(element => element == 'hall') == undefined) {
+    if (dirList.find(element => element === 'hall') === undefined) {
         fs.mkdirSync(path + 'hall')
     }
-    if (dirList.find(element => element == 'saves') == undefined) {
+    if (dirList.find(element => element === 'saves') === undefined) {
         fs.mkdirSync(path + 'saves')
     }
     path = funcs.cwd() + 'saves/'
