@@ -19,6 +19,6 @@ export const funcs = {
             }
         }
 
-        return cwd
+        return escape(cwd).replace('%3A', ':')
     }
 }
