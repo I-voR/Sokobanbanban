@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
 let win
@@ -12,6 +12,7 @@ function createWindow() {
         webPreferences: {
             contextIsolation: false,
             nodeIntegration: true,
+            devTools: false,
             enableRemoteModule: true,
             preload: path.join(__dirname, '/menu-bar/menu-preload.js')
         }
@@ -19,16 +20,6 @@ function createWindow() {
 
     win.loadFile('index.html')
     win.setResizable(false)
-
-    ipcMain.on('display-app-menu', function(e, args) {
-        if (win) {
-            menu.popup({
-                window: win,
-                x: args.x,
-                y: args.y
-            })
-        }
-    })
 }
 
 app.whenReady().then(createWindow)
