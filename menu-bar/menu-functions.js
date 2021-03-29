@@ -1,31 +1,13 @@
-const { remote, ipcRenderer } = require('electron')
-
-function getCurrentWindow() {
-    return remote.getCurrentWindow()
-}
-
-function openMenu(x, y) {
-    ipcRenderer.send('display-app-menu', { x, y })
-}
-
-function minimizeWindow(browserWindow = getCurrentWindow()) {
-    if (browserWindow.minimizable) {
-        browserWindow.minimize()
-    }
-}
-
-function closeWindow(browserWindow = getCurrentWindow()) {
-    browserWindow.close()
-}
-
-function home() {
-    window.location.href='../index.html'
-}
+const { remote } = require('electron')
 
 module.exports = {
-    getCurrentWindow,
-    openMenu,
-    minimizeWindow,
-    closeWindow,
-    home
+    minimizeWindow: function(browserWindow = remote.getCurrentWindow()) {
+        if (browserWindow.minimizable) {
+            browserWindow.minimize()
+        }
+    },
+    closeWindow: function(browserWindow = remote.getCurrentWindow()) {
+        browserWindow.close()
+    },
+    home: function() { window.location.href='../index.html' }
 }

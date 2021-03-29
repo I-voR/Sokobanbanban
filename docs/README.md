@@ -8,7 +8,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 
 ## 1. Najnowsza stabilna wersja
 
-<u style="font-size: 2.5rem">3.0.2</u>
+<u style="font-size: 2.5rem">3.1.0</u>
 
 ## 2. Spis Treści
 
@@ -35,7 +35,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 ## 3. Zakon Technomantów
 
 * Wielki Mistrz (Kapitan Drużyny): **Iwo Strzeboński**
-* i pozostali Bracia (Członkowie):
+* I pozostali Bracia (Członkowie):
   * **Igor Kaliciński**
   * **Jan Krzemień**
   * **Zbyszko Sobecki**
@@ -102,15 +102,17 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
   ![Large Player Back](./screenshots/spritesheet/LARGE-Steve_Back.png)
   ![Large Player Right](./screenshots/spritesheet/LARGE-Steve_Right.png)  
 
-  `Magazynier` może się poruszać **WYŁĄCZNIE** po polu `Podłoga`
-  ![Podłoga](./screenshots/map_tiles/Floor..png).  
-  Nie potrafi przechodzić przez pole `Ściany`
-  ![Ściana](./screenshots/map_tiles/Wall.col.png)
-  ani chodzić po polu `Trawy`
-  ![Trawa](./screenshots/map_tiles/Grass..png).  
-  Może przesuwać skrzynie, jeśli za `Skrzynią`
+  `Magazynier` może się poruszać po polach `Podłoga`
+  ![Podłoga](./screenshots/map_tiles/Floor..png)
+  oraz `Powietrze`
+  ![Powietrze](./screenshots/map_tiles/Grass..png).  
+  Nie potrafi jednak przechodzić przez pole `Ściany`
+  ![Ściana](./screenshots/map_tiles/Wall.col.png).  
+  Niestety `Skrzynie`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png)
-  jest pole `Podłoga` lub pole `Płytka`
+  są zbyt ciężkie, żeby mógł je unieść, więc musi je pchać po `Podłodze`.  
+  Może je przesuwać wtedy i tylko wtedy, gdy za nią jest pole `Podłoga`
+  lub pole `Płytka`
   ![Płytka](./screenshots/map_tiles/Plate..png),
   o ile bezpośrednio za tą `Skrzynią` nie ma innej `Skrzyni`.  
 
