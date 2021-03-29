@@ -8,7 +8,6 @@ import { load } from './load.js'
 
 export const save = {
     main: () => {
-        $('.icons').css('outline', 'rgb(0, 0, 255) solid 0px')
         $('.grid-tile').off('click')
         if (!save.boxCheck()) {
             infobox.createInfobox('warn', 'Make sure you placed boxes and plates, you have the same amount of plates and boxes and then try again.')
