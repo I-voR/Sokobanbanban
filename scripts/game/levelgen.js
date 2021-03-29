@@ -16,8 +16,8 @@ export const levelgen = {
         let map_path = funcs.cwd()
         map_path += map.includes('.sav') ? 'saves/' + map : 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
 
-        let files = fs.readdirSync(assets_path)
-        let array = fs.readFileSync(map_path).toString().split('\n')
+        let files = fs.readdirSync(escape(assets_path).replace(/%3A/g, ':'))
+        let array = fs.readFileSync(escape(map_path).replace(/%3A/g, ':')).toString().split('\n')
 
         let map_bg = []
         let bg_names = []
@@ -134,6 +134,6 @@ export const levelgen = {
         let map_path = funcs.cwd()
         map_path += map.includes('sav') ? 'saves/' + map : 'maps/' + map.substring(0, map.indexOf(':')) + '/' + map.substr(map.indexOf(':') + 1) + '.map'
 
-        return fs.readFileSync(map_path).toString().split('\n')[27].split(':')
+        return fs.readFileSync(escape(map_path).replace(/%3A/g, ':')).toString().split('\n')[27].split(':')
     }
 }

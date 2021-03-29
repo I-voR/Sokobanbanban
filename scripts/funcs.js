@@ -12,8 +12,8 @@ export const funcs = {
     cwd: () => {
         let cwd = process.cwd().replace(/\\/g, '/') + '/'
 
-        for (const key in fs.readdirSync(cwd)) {
-            if (fs.readdirSync(cwd)[key] === 'resources') {
+        for (const key in fs.readdirSync(escape(cwd).replace(/%3A/g, ':'))) {
+            if (fs.readdirSync(escape(cwd).replace(/%3A/g, ':'))[key] === 'resources') {
                 cwd += 'resources/app/'
                 break
             }

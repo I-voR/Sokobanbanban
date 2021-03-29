@@ -7,7 +7,7 @@ const fs = require('fs')
 * Function used to generate list of maps
 */
 function load_maps() {
-    fs.readdirSync(funcs.cwd() + 'maps/created').forEach(map => {
+    fs.readdirSync(escape(funcs.cwd() + 'maps/created').replace(/%3A/g, ':')).forEach(map => {
         $('.container').append('<button class="flex-item custom-level">' + map.replace('.map', '') + '</button>')
     })
 }
@@ -18,7 +18,7 @@ function load_maps() {
 */
 function generate_map(e) {
     let map = 'created:' + e.target.innerText
-    location.href = encodeURI('./level.html?' + map)
+    location.href = escape('./level.html?' + map).replace(/%3A/g, ':').replace(/%3F/g, '?')
 }
 
 load_maps()

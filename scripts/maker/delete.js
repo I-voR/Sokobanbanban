@@ -7,11 +7,11 @@ const fs = require('fs')
 
 export const deleteMap = {
     core: () => {
-        if ($('#load option:selected').text() === 'NEW') {
+        if ($.find('#load option:selected')[0].textContent === 'NEW') {
             location.reload()
             return
         }
-        infobox.createInfobox('remove', $('#load option:selected').text())
+        infobox.createInfobox('remove', $.find('#load option:selected')[0].textContent)
         $('#yes-remove').on('click', function() {
             deleteMap.delete()
         })

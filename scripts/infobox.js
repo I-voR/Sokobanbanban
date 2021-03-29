@@ -197,10 +197,10 @@ export const infobox = {
                 let map = location.href.substr(location.href.indexOf('?') + 1).split(',')
                 let save = map[0]
                 let path = funcs.cwd() + 'saves/'
-                let saves = fs.readdirSync(path)
+                let saves = fs.readdirSync(escape(path).replace(/%3A/g, ':'))
 
                 if (parseInt(map[1]) < 21) {
-                    location.href = encodeURI(location.href.substring(0, location.href.indexOf('?') + 1) + saves[save - 1])
+                    location.href = escape(location.href.substring(0, location.href.indexOf('?') + 1) + saves[save - 1]).replace(/%3A/g, ':').replace(/%3F/g, '?')
                 } else {
                     let map = location.href.substr(location.href.indexOf('?') + 1).split(',')
                     map[2] = $('#total-score').text()
@@ -208,12 +208,12 @@ export const infobox = {
 
                     if ($('input').val().length > 0) {
                         hall.send(map, $('input').val())
-                        location.href = encodeURI('./leaderboard.html')
+                        location.href = escape('./leaderboard.html').replace(/%3A/g, ':').replace(/%3F/g, '?')
                     }
                 }
             })
         } else if ((type === 'completed' && text.length > 2) || (type === 'saved')) {
-            $('.close-infobox').on('click', function() { location.href = encodeURI('../index.html') })
+            $('.close-infobox').on('click', function() { location.href = escape('../index.html').replace(/%3A/g, ':').replace(/%3F/g, '?') })
         } else if (type === 'remove') {
             $('.remove-map-infobox').on('click', function() { document.getElementsByClassName('infobox')[0].remove() })
         } else if (type === 'surrender') {
@@ -224,7 +224,7 @@ export const infobox = {
 
                 if ($('input').val().length > 0) {
                     hall.send(map, $('input').val())
-                    location.href = encodeURI('./leaderboard.html')
+                    location.href = escape('./leaderboard.html').replace(/%3A/g, ':').replace(/%3F/g, '?')
                 }
             })
         } else {

@@ -6,8 +6,10 @@ const fs = require('fs')
 
 export const load = {
     load: () => {
-        if ($('#load option:selected').text() === 'NEW') { return }
-        let map = fs.readFileSync(funcs.cwd() + 'maps/created/' + $('#load option:selected').text()).toString().split('\n')
+        if ($.find('#load option:selected')[0].textContent === 'NEW') { return }
+        let map = fs.readFileSync(
+            escape(funcs.cwd() + 'maps/created/' + $.find('#load option:selected')[0].textContent).replace(/%3A/g, ':')
+        ).toString().split('\n')
 
         map.forEach((element, index) => {
             map[index] = map[index].split(',')
@@ -42,7 +44,7 @@ export const load = {
     list: () => {
         let path = funcs.cwd() + 'maps/created/'
 
-        let files = fs.readdirSync(path)
+        let files = fs.readdirSync(escape(path).replace(/%3A/g, ':'))
         let select = $('<select>')
         select
             .attr('name', 'map-load')
