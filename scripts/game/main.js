@@ -20,7 +20,7 @@ global.pressCount = 0
 global.lastPlayerPos = null
 global.lastCratePos = null
 
-let map = window.location.href.substr(window.location.href.indexOf('?') + 1)
+let map = location.href.substr(location.href.indexOf('?') + 1)
 
 if (map.includes('sav')) {
     $('main').append('<button id="save">Save</button><button id="surrender">Surrender</button>')
