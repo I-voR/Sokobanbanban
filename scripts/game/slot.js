@@ -41,7 +41,7 @@ export const slots = {
     
             break
         }
-        saves = fs.readdirSync(path)
+        saves = fs.readdirSync(escape(path).replace(/%3A/g, ':'))
         //struktura nazwy pliku zapisu: sejw,poziom,gwiazdki,timer mapy.sav
     
         $('#save1').append('<br>').append('Level ' + saves[0].split('.')[0].split(',')[1]).append('<br>').append(saves[0].split('.')[0].split(',')[2] + ' &#11088;')
