@@ -10,8 +10,8 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 
 ## 2. Zakon Technomantów
 
-* Wielki Mistrz (Kapitan) / Grand Master (Team Leader): **Iwo Strzeboński**
-* i pozostali Bracia (Członkowie) / and other Brethren (Members):
+* Wielki Mistrz (Kapitan Drużyny): **Iwo Strzeboński**
+* i pozostali Bracia (Członkowie):
   * **Igor Kaliciński**
   * **Jan Krzemień**
   * **Zbyszko Sobecki**
@@ -74,6 +74,24 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 
 ![Pierwsza mapa trybu o rosnącym poziomie trudności](./screenshots/ascending.png)
 
+* `Magazynier` (`Gracz`):  
+  ![Player Left](./screenshots/spritesheet/Steve_Left.png)
+  ![Player Front](./screenshots/spritesheet/Steve_Front.png)
+  ![Player Back](./screenshots/spritesheet/Steve_Back.png)
+  ![Player Right](./screenshots/spritesheet/Steve_Right.png)  
+
+  `Magazynier` może się poruszać **WYŁĄCZNIE** po polu `Podłoga`
+  ![Podłoga](./screenshots/map_tiles/Floor..png).  
+  Nie potrafi przechodzić przez pole `Ściany`
+  ![Ściana](./screenshots/map_tiles/Wall.col.png)
+  ani chodzić po polu `Trawy`
+  ![Trawa](./screenshots/map_tiles/Grass..png).  
+  Może przesuwać skrzynie, jeśli za `Skrzynią`
+  ![Skrzynia](./screenshots/map_tiles/Crate.col.png)
+  jest pole `Podłoga` lub pole `Płytka`
+  ![Płytka](./screenshots/map_tiles/Plate..png),
+  o ile bezpośrednio za tą `Skrzynią` nie ma innej `Skrzyni`.  
+
 * Przyciski:
   * `Save` zapisuje rozgrywkę (dostępny wyłącznie w II Module).  
   * `Surrender` poddaje rozgrywkę i zapisuje wynik do Hali Sław
@@ -89,10 +107,15 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
   * `D` lub `Strzałka w prawo` porusza gracza w prawo.  
   * `R` ustawia gracza i skrzynie na pozycjach pierwotnych.  
 
-### 2. Tworzenie map
+### 2. Moduł III - Tworzenie map
+
+![Kreator Map](./screenshots/levelmaker-1.png)
 
 * Przyciski:  
   * `Back` cofa do poprzedniej strony.  
+  * `Load` pozwala na wybranie uprzednio utworzonej  mapy i jej edycję.  
+  ![Wczytana utworzona mapa](./screenshots/levelmaker-2.png)  
+
   * `Save` zapisuje utworzoną mapę.  
   Jeśli w polu wyboru `Load` jest wybrana nowa mapa (`NEW`),
   to zostanie utworzona nowa mapa;
@@ -101,7 +124,44 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
   * Przycisk oznaczony symbolem `kosza na śmieci` usuwa wybraną mapę.  
 
 * Elementy mapy:
-  * ![Skrzynia](/assets/map_tiles/Crate.col.png)
+  * `Skrzynia`:  
+  ![Skrzynia](./screenshots/map_tiles/Crate.col.png)  
+  Interaktywny obiekt, który może być przesuwany przez `Magazyniera`
+  ![Player Front](./screenshots/spritesheet/Steve_Front.png).  
+
+  * `Podłoga`:  
+  ![Podłoga](./screenshots/map_tiles/Floor..png)  
+  Statyczny element mapy, po którym może chodzić `Magazynier`
+  ![Player Front](./screenshots/spritesheet/Steve_Front.png)
+  oraz po którym mogą być przesuwane `Skrzynie`
+  ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
+
+  * `Trawa`:  
+  ![Trawa](./screenshots/map_tiles/Grass..png)  
+  Tło mapy.
+
+  * `Płytka`:  
+  ![Płytka](./screenshots/map_tiles/Plate..png)  
+  Interaktywny obiekt mapy, na który `Magazynier`
+  ![Player Front](./screenshots/spritesheet/Steve_Front.png)
+  ma przesunąć `Skrzynię`
+  ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
+
+  * `Ściana`:  
+  ![Ściana](./screenshots/map_tiles/Wall.col.png)  
+  Statyczny element mapy blokujący ruch `Magazyniera`
+  ![Player Front](./screenshots/spritesheet/Steve_Front.png)
+  oraz przesuwanie `Skrzyń`
+  ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
+
+  * `Płytka ze Skrzynią`:  
+  ![Płytka ze Skrzynią](./screenshots/map_tiles/ZCratePlate.col.png)  
+  Jest to obiekt łączący `Skrzynię`
+  ![Skrzynia](./screenshots/map_tiles/Crate.col.png)
+  z `Płytką`
+  ![Płytka](./screenshots/map_tiles/Plate..png).
+  Gra traktuje to jako `Skrzynię` na `Płytce`, co oznacza,
+  że `Skrzynię` z takiej `Płytki` można przesunąć.  
 
 ### 3. Menu Główne
 
@@ -163,3 +223,20 @@ Gracz ma do dyspozycji wyłącznie trzy miejsca na zapisy.
   i jest do niego wczytywana pierwsza mapa Trybu.  
 
 ![Pierwsza mapa trybu o rosnącym poziomie trudności](./screenshots/ascending.png)
+
+### 6. Moduł III - Gra na własnym poziomie
+
+![Menu autorskich map](./screenshots/custom.png)
+
+Przyciski w kolorze fioletowym pozwalająna uruchomienie
+gry na wybranej, utworzonej przez siebie, mapie.
+
+![Wybrana autorska mapa](./screenshots/created.png)
+
+### 7. Moduł II - Hala Sław
+
+![Hala Sław](./screenshots/leaderboard.png)
+
+### 8. Podziękowania
+
+![Podziękowania](./screenshots/credits.png)
