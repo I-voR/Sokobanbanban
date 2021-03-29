@@ -389,23 +389,55 @@ na stronie z zapisami (`saves.html`).
 
 ### `createWindow()`
 
+* Służy do inicjacji okna aplikacji Electrona.  
+* Pochodzenie: `index.js`.  
+
 ### `controls.reset()`
 
+* Służy do zresetowania rozgrywki.  
+* Pochodzenie: `controls.js`.  
+
 ### `controls.undo()`
+
+* Służy do cofnięcia ostatniego ruchu.  
+* Pochodzenie: `controls.js`.  
 
 <!-- D -->
 
 ### `data.table()`
 
+* Służy do utworzenia tabeli z wynikami.  
+* Pochodzenie: `datatable.js`.  
+
 ### `deleteMap.core()`
 
+* Służy do inicjacji usuwania mapy.  
+* Pochodzenie: `delete.js`.  
+
 ### `deleteMap.delete()`
+
+* Służy do usunięcia wybranej mapy.  
+* Pochodzenie: `delete.js`.  
 
 <!-- E -->
 
 ### `events.main()`
 
+* Służy do inicjacji obsługi klawiatury w grze.  
+* Pochodzenie: `events.js`.  
+
 ### `events.cell_includes(map, player_pos, x = 0, y = 0, text)`
+
+* Służy do sprawdzania, czy dane pole jest puste.  
+* Argumenty:
+  * `map`: Nazwa wczytanej mapy.  
+  * `player_pos`: Obecna pozycja gracza.  
+  * `x`: Odsunięcie w osi X. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+  * `y`: Odsunięcie w osi X. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+* Zwraca: `{Boolan}` - Czy dane pole jest puste.  
+* Pochodzenie: `events.js`.  
 
 ### `events.game_end_check(map)`
 
@@ -423,12 +455,17 @@ na stronie z zapisami (`saves.html`).
 
 ### `funcs.cwd()`
 
+* Służy do tworzenia ścieżki absolutnej.  
+  Funkcja ta powstała, aby Projekt mógł poprawnie działać po zbudowaniu.  
+* Zwraca: `{String}` - Ścieżka absolutna katalogu z zasobami Projektu.  
+* Pochodzenie: `funcs.js`.  
+
 <!-- G -->
 
 ### `generate_map(e)`  
 
 * Służy do losowania mapy wybranego poziomu trudności.  
-* Parametry:
+* Argumenty:
   * `e` (`event`): wydarzenie dotyczące naciśniętego przycisku.  
 * Pochodzenie: `difficulty.js`, `custom/main.js`.  
 
@@ -469,10 +506,11 @@ na stronie z zapisami (`saves.html`).
 ### `randomBetween(min, max)`  
 
 * Służy do losowania liczby z domkniętego zakresu `(min, max)`.
-* Parametry:  
+* Argumenty:  
   * `min`: dolna granica zakresu.  
   * `max`: górna granica zakresu.  
-* Pochodzenie: `index.html`, `difficulty.js`, `custom/main.js`.  
+* Zwraca: `{Number}` - Wartość całkowita z akresu.  
+* Pochodzenie: `index.html`, `difficulty.html`, `custom/main.js`.  
 
 ### `reset.reset()`
 

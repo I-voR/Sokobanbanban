@@ -97,10 +97,10 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 ![Pierwsza mapa trybu o rosnącym poziomie trudności](./screenshots/ascending.png)
 
 * `Magazynier` (`Gracz`):  
-  ![Player Left](./screenshots/spritesheet/Steve_Left.png)
-  ![Player Front](./screenshots/spritesheet/Steve_Front.png)
-  ![Player Back](./screenshots/spritesheet/Steve_Back.png)
-  ![Player Right](./screenshots/spritesheet/Steve_Right.png)  
+  ![Large Player Left](./screenshots/spritesheet/LARGE-Steve_Left.png)
+  ![Large Player Front](./screenshots/spritesheet/LARGE-Steve_Front.png)
+  ![Large Player Back](./screenshots/spritesheet/LARGE-Steve_Back.png)
+  ![Large Player Right](./screenshots/spritesheet/LARGE-Steve_Right.png)  
 
   `Magazynier` może się poruszać **WYŁĄCZNIE** po polu `Podłoga`
   ![Podłoga](./screenshots/map_tiles/Floor..png).  
@@ -147,37 +147,37 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 
 * Elementy mapy:
   * `Skrzynia`:  
-  ![Skrzynia](./screenshots/map_tiles/Crate.col.png)  
+  ![Duża Skrzynia](./screenshots/map_tiles/LARGE-Crate.col.png)  
   Interaktywny obiekt, który może być przesuwany przez `Magazyniera`
   ![Player Front](./screenshots/spritesheet/Steve_Front.png).  
 
   * `Podłoga`:  
-  ![Podłoga](./screenshots/map_tiles/Floor..png)  
+  ![Duża Podłoga](./screenshots/map_tiles/LARGE-Floor..png)  
   Statyczny element mapy, po którym może chodzić `Magazynier`
   ![Player Front](./screenshots/spritesheet/Steve_Front.png)
   oraz po którym mogą być przesuwane `Skrzynie`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
 
   * `Trawa`:  
-  ![Trawa](./screenshots/map_tiles/Grass..png)  
+  ![Duża Trawa](./screenshots/map_tiles/LARGE-Grass..png)  
   Tło mapy.
 
   * `Płytka`:  
-  ![Płytka](./screenshots/map_tiles/Plate..png)  
+  ![Duża Płytka](./screenshots/map_tiles/LARGE-Plate..png)  
   Interaktywny obiekt mapy, na który `Magazynier`
   ![Player Front](./screenshots/spritesheet/Steve_Front.png)
   ma przesunąć `Skrzynię`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
 
   * `Ściana`:  
-  ![Ściana](./screenshots/map_tiles/Wall.col.png)  
+  ![Duża Ściana](./screenshots/map_tiles/LARGE-Wall.col.png)  
   Statyczny element mapy blokujący ruch `Magazyniera`
   ![Player Front](./screenshots/spritesheet/Steve_Front.png)
   oraz przesuwanie `Skrzyń`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
 
   * `Płytka ze Skrzynią`:  
-  ![Płytka ze Skrzynią](./screenshots/map_tiles/ZCratePlate.col.png)  
+  ![Duża Płytka ze Skrzynią](./screenshots/map_tiles/LARGE-ZCratePlate.col.png)  
   Jest to obiekt łączący `Skrzynię`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png)
   z `Płytką`

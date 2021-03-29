@@ -1,6 +1,3 @@
-/* eslint-disable require-jsdoc */
-
-// import { table } from 'console'
 import { funcs } from './funcs.js'
 
 const $ = require('jquery')
@@ -12,10 +9,10 @@ export const data = {
     table: () => {
         let data = fs.readFileSync(funcs.cwd() + 'hall/data.csv').toString().split('\n')
 
-        data = data.filter(function (currentLine) {
+        data = data.filter(function(currentLine) {
             return currentLine !== '\n'
         })
-        data = data.filter(function (currentLine) {
+        data = data.filter(function(currentLine) {
             return currentLine !== ''
         })
 
