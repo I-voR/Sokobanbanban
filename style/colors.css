@@ -8,7 +8,7 @@ body * {
 
 button,
 #level-border {
-    background-color: #7D8C93;
+    background-image: url(../assets/button.png);
 }
 
 #menu-bar {
