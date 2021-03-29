@@ -50,7 +50,7 @@ npm install
 
 ## 7. Praca na kodzie źródłowym
 
-Aby uruchomić program, należy w konsoli wpisać polecenie: / To start the program, you need to use that command in the command line:
+Aby uruchomić program, należy w konsoli wpisać polecenie:
 
 ```cmd
 npm start
@@ -58,7 +58,8 @@ npm start
 
 ## 8. Budowanie Projektu
 
-Do zbudowania projektu należy użyć pakietu ElectronForge, który także jest pobierany jako wymagany pakiet.  
+Do zbudowania projektu należy użyć pakietu ElectronForge,
+który także jest pobierany jako wymagany pakiet.  
 
 ```cmd
 npx @electron-forge/cli import
@@ -71,40 +72,45 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 
 ### 1. Poruszanie się w grze
 
-![First Ascending mode map](./screenshots/ascending.png)
+![Pierwsza mapa trybu o rosnącym poziomie trudności](./screenshots/ascending.png)
 
 * Przyciski:
-  * `Save` zapisuje rozgrywkę (dostępny wyłącznie w II Module)  
-
+  * `Save` zapisuje rozgrywkę (dostępny wyłącznie w II Module).  
   * `Surrender` poddaje rozgrywkę i zapisuje wynik do Hali Sław
-  (dostępny wyłącznie w II Module)  
-
-  * `Back` cofa do poprzedniej strony  
-
-  * `Undo Last Move` cofa ostatni ruch
-
-  * `Restart` ustawia gracza i skrzynie na pozycjach pierwotnych
+  (dostępny wyłącznie w II Module).  
+  * `Back` cofa do poprzedniej strony.  
+  * `Undo Last Move` cofa ostatni ruch.  
+  * `Restart` ustawia gracza i skrzynie na pozycjach pierwotnych.  
 
 * Obsługa klawiatury:
-  * `W` lub `Strzałka do góry` porusza gracza do góry
-
-  * `A` lub `Strzałka w lewo` porusza gracza w lewo
-
-  * `S` lub `Strzałka w dół` porusza gracza w dół
-
-  * `D` lub `Strzałka w prawo` porusza gracza w prawo
-
-  * `R` ustawia gracza i skrzynie na pozycjach pierwotnych
+  * `W` lub `Strzałka do góry` porusza gracza do góry.  
+  * `A` lub `Strzałka w lewo` porusza gracza w lewo.  
+  * `S` lub `Strzałka w dół` porusza gracza w dół.  
+  * `D` lub `Strzałka w prawo` porusza gracza w prawo.  
+  * `R` ustawia gracza i skrzynie na pozycjach pierwotnych.  
 
 ### 2. Tworzenie map
 
+* Przyciski:  
+  * `Back` cofa do poprzedniej strony.  
+  * `Save` zapisuje utworzoną mapę.  
+  Jeśli w polu wyboru `Load` jest wybrana nowa mapa (`NEW`),
+  to zostanie utworzona nowa mapa;
+  w innym wypadku mapa o wybranej nazwie zostanie nadpisana.  
+  * `Reset` odświeża stronę, usuwając wszystkie narysowane pola.  
+  * Przycisk oznaczony symbolem `kosza na śmieci` usuwa wybraną mapę.  
+
+* Elementy mapy:
+  * ![Skrzynia](/assets/map_tiles/Crate.col.png)
+
 ### 3. Menu Główne
 
-![Main Menu](./screenshots/index.png)
+![Menu Główne](./screenshots/index.png)
 
-* Przycisk oznaczony pojedynczą poziomą kreską służy do minimalizowania programu.  
+* Przycisk oznaczony `pojedynczą poziomą kreską`
+służy do minimalizowania programu.  
 
-* Przycisk oznaczony symbolem krzyżyka służy do zamykania programu.  
+* Przycisk oznaczony symbolem `krzyżyka` służy do zamykania programu.  
 
 * Przycisk `Play` służy do uruchamiania Modułu I -
 map podzielonych na poziomy trudności.  
@@ -127,7 +133,7 @@ o Autorach oraz podziękowaniach.
 
 ### 4. Moduł I - Poziomy Trudności
 
-![Difficulty Menu](./screenshots/difficulty.png)
+![Menu poziomów trudności](./screenshots/difficulty.png)
 
 * Przycisk oznaczony symbolem domu służy do powrotu na Stronę Główną.  
 
@@ -135,19 +141,19 @@ o Autorach oraz podziękowaniach.
 
 * Przycisk `Easy` uruchamia losową Łatwą mapę.  
 
-![Random Easy map](./screenshots/easy.png)
+![Wylosowana łatwa mapa](./screenshots/easy.png)
 
 * Przycisk `Medium` uruchamia losową Średnio Trudną mapę.  
 
-![Random Medium map](./screenshots/medium.png)
+![Wylosowana średnio trudna mapa](./screenshots/medium.png)
 
 * Przycisk `Hard` uruchamia losową Trudną mapę.  
 
-![Random Hard map](./screenshots/hard.png)
+![Wylosowana trudna mapa](./screenshots/hard.png)
 
 ### 5. Moduł II - Rosnący Poziom Trudności
 
-![Save slots](./screenshots/saves.png)
+![Miejsca zapisu](./screenshots/saves.png)
 
 * Przyciski opisane kolejno `Save 1`, `Save 2` i `Save 3` to kolejne zapisy gry.
 Gracz ma do dyspozycji wyłącznie trzy miejsca na zapisy.  
@@ -156,4 +162,4 @@ Gracz ma do dyspozycji wyłącznie trzy miejsca na zapisy.
   która jest w danym zapisie. Jeśli nie ma pliku zapisu, to jest on tworzony
   i jest do niego wczytywana pierwsza mapa Trybu.  
 
-![First Ascending mode map](./screenshots/ascending.png)
+![Pierwsza mapa trybu o rosnącym poziomie trudności](./screenshots/ascending.png)
