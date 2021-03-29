@@ -1,16 +1,13 @@
 # Sokobanbanban
 
 *Projekt "Sokoban" na Motorola Science Cup 2020*  
-*"Sokoban" Project for Motorola Science Cup 2020*
-
 Dokumentacja Techniczna  
-Technical Documentation
 
-Dokumentacja Użytkownika jest w pliku /
-User Documentation is in file
-[README.md](./README.md)
+Dokumentacja Użytkownika jest w pliku [README.md](./README.md)  
+English version of the Technical Documentation
+is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file.  
 
-## 1. Środowisko / Environment
+## 1. Środowisko
 
 * JavaScript ES 6
 * HTML 5
@@ -20,7 +17,7 @@ User Documentation is in file
 * [jQuery](https://jquery.com/)
 * [DataTables.net](https://datatables.net/)
 
-## 2. Struktura Projektu / Project's Structure
+## 2. Struktura Projektu
 
 ```txt
 📦Sokobanbanban
@@ -40,51 +37,39 @@ User Documentation is in file
 ```
 
 W folderze `assets/` przechowywane są wszystkie grafiki wykorzystywane w projekcie.  
-In the `assets/` directory are stored all graphics used in the project.  
 
 W folderze `docs/` przechowywana jest dokumentacja projektu.  
-In the `docs/` directory is stored the documentation of the project.  
 
 W folderze `hall/` przechowywana jest baza wyników graczy.  
-In the `hall/` directory is stored the player score database.  
 
-W folderze `menu-bar/` przechowywane są skrypty związane z paskiem narzędzi aplikacji Electrona.  
-In the `menu-bar/` directory are stored scripts related to the menu bar of Electron application.  
+W folderze `menu-bar/` przechowywane są skrypty
+związane z paskiem narzędzi aplikacji Electrona.  
 
 W folderze `saves/` przechowywane są zapisy gier.  
-In the `saves/` directory are stored game saves.  
 
 W folderze `scripts/` przechowywane są wszystkie skrypty związane z działaniem programu.  
-In the `scripts/` directory are stored all scripts on which the program depends.  
 
 W folderze `static/` przechowywane są wszystkie strony wykorzystywane przez aplikację.  
-In the `static/` directory are stored all sites used by the application.  
 
-W folderze `style/` przechowywane są wszystkie arkusze stylów wpływające na wygląd aplikacji.  
-In the `style/` directory are stored all stylesheets which are influencing the GUI design.  
+W folderze `style/` przechowywane są wszystkie
+arkusze stylów wpływające na wygląd aplikacji.  
 
 Plik `index.html` jest głównym menu aplikacji.  
-The `index.js` file is the application's main menu.  
 
 Plik `index.js` jest skryptem inicjującym Electrona.  
-The `index.js` file is an initializing script for Electron.  
 
-Plik `package-lock.json` przechowuje informacje o wszystkich wymaganych pakietach, które mają być pobrane po wykonaniu polecenia `npm install`.  
-The `package-lock.json` file stores names and versions of all packages required by the project.  
+Plik `package-lock.json` przechowuje informacje o wszystkich wymaganych
+pakietach, które mają być pobrane po wykonaniu polecenia `npm install`.  
 
-Plik `package.json` przechowuje ogólne informacje o projekcie oraz informacje o wymaganych pakietach.  
-The `package.json` file stores overall information about the project and requirements.
+Plik `package.json` przechowuje ogólne informacje o
+projekcie oraz informacje o wymaganych pakietach.  
 
-## 3. Struktura folderu assets / Assets directory strucure
+## 3. Struktura folderu assets
 
 ```txt
 📂assets
  ┣ 📂bg
- ┃ ┣ 📜1.png
- ┃ ┣ 📜2.png
- ┃ ┣ 📜3.png
- ┃ ┣ 📜4.png
- ┃ ┗ 📜5.png
+ ┃ ┣ 📜1...5.png
  ┣ 📂map_tiles
  ┃ ┣ 📜Crate.col.png
  ┃ ┣ 📜Floor..png
@@ -93,55 +78,58 @@ The `package.json` file stores overall information about the project and require
  ┃ ┣ 📜Wall.col.png
  ┃ ┗ 📜ZCratePlate.col.png
  ┣ 📂spritesheet
- ┃ ┣ 📜player.png
- ┃ ┣ 📜Steve_Back.png
- ┃ ┣ 📜Steve_Front.png
- ┃ ┣ 📜Steve_Left.png
- ┃ ┗ 📜Steve_Right.png
+ ┃ ┗ 📜Steve_[Back, Front, Left, Right].png
  ┗ 📜background.png
 ```
 
 W folderze `assets/bg/` przechowywane są tła używane w menu głównym.  
-In the `assets/bg/` directory are stored backgrounds used in the main menu.  
 
 W folderze `assets/map-tiles/` przechowywane są wszystkie grafiki wykorzystywane jako pola w grze.  
-In the `assets/map-tiles/` directory are stored all graphics used as tiles in the game.  
 
 W folderze `assets/spritesheet/` przechowywane są wszystkie grafiki wykorzystywane jako tekstury gracza.  
-In the `assets/spritesheet/` directory are stored all graphics used as player sprite.  
 
 Plik `assets/background.png` jest tłem Poziomów oraz Edytora Map.  
-The `assets/background.png` file is Levels' and Map Editor's background.  
 
-## 4. Struktura folderu docs / Docs directory structure
+## 4. Struktura folderu docs
 
 ```txt
 📂docs
- ┣ 📂screenshots
- ┃ ┗ 📜*.png
+ ┃ ┣ 📂map_tiles
+ ┃ ┃ ┗ 📜*.png
+ ┃ ┣ 📂spritesheet
+ ┃ ┃ ┗ 📜*.png
+ ┃ ┗📜*.png
  ┣ 📜LICENSE
  ┣ 📜MSC_Zadanie_Sokoban.pdf
+ ┣ 📜README-EN.md
  ┣ 📜README.md
- ┗ 📜TECH-DOC.md
+ ┣ 📜TECH-DOC-EN.md
+ ┗ 📜TECH-DOC-PL.md
 ```
 
 W folderze `docs/screenshots/` są przechowywane wszystkie
 zrzuty ekranu wykorzystywane w Dokumentacji.  
-In the `docs/screenshots/` directory are stored all screenshots used in the Documentation.  
+
+Foldery `docs/screenshots/map_tiles/` oraz `docs/screenshots/spritesheet/`
+są folderami przekopiowanymi z folderu `assets/` w celu pełnej kompatybilności Dokumentacji.
 
 Plik `docs/LICENSE` jest [Licencją](./LICENSE) projektu.  
-The `docs/LICENSE` file is the [Licence](./LICENSE) of the project.  
 
 Plik `docs/MSC_Zadanie_Sokoban.pdf` jest plikiem zawierającym instrukcje dotyczące tego projektu.  
-The `docs/MSC_Zadanie_Sokoban.pdf` file is a file containing instructions concerning this project.  
 
 Plik `docs/README.md` jest [Dokumentacją Użytkownika](./README.md) Projektu.  
-The `docs/README.md` file is the Project's [User Documentation](./README.md).  
 
-Plik `docs/TECH-DOC.md` jest [Dokumentacją Techniczną](./TECH-DOC.md) Projektu.  
-The `docs/TECH-DOC.md` file is the Project's [Technical Documentation](./TECH-DOC.md).  
+Plik `docs/README-EN.md` jest
+[Dokumentacją Użytkownika](./README-EN.md)
+Projektu w języku angielskim.  
 
-## 5. Struktura folderu hall / Hall directory structure
+Plik `docs/TECH-DOC-PL.md` jest [Dokumentacją Techniczną](./TECH-DOC-PL.md) Projektu.  
+
+Plik `docs/TECH-DOC-EN.md` jest
+[Dokumentacją Techniczną](./TECH-DOC-PL.md)
+Projektu w języku angielskim.  
+
+## 5. Struktura folderu hall
 
 ```txt
 📂hall
@@ -149,15 +137,17 @@ The `docs/TECH-DOC.md` file is the Project's [Technical Documentation](./TECH-DO
 ```
 
 Plik `hall/data.csv` jest plikiem przechowującym dane o graczach i ich wynikach.  
-The `hall/data.csv` file is a file which stores data about players and their scores.  
+Jeśli nie ma folderu `hall/` bądź pliku `hall/data.csv`,
+to zostanie automatycznie utworzony przy uruchomieniu programu
 
-## 6. Struktura folderu maps / Maps directory structure
+## 6. Struktura folderu maps
 
 ```txt
 📂maps
  ┣ 📂ascending
  ┃ ┗ 📜01...21.map
  ┣ 📂created
+ ┃ ┗ 📜*.map
  ┣ 📂easy
  ┃ ┗ 📜01...07.map
  ┣ 📂hard
@@ -168,23 +158,128 @@ The `hall/data.csv` file is a file which stores data about players and their sco
 
 W folderze `maps/ascending/` przechowywane są mapy (o numerach od `01` do `21`),
 które są wykorzystywane w Drugim Module projektu.  
-In the `maps/ascending/` are stored maps (with numbers from `01` to `21`)
-which are used by the project's Second Module.  
 
 W folderze `maps/created/` przechowywane są mapy utworzone przez gracza.  
-In the `maps/ascending/` are stored maps wchich were created by the player.  
 
 W folderze `maps/easy/` przechowywane są Proste mapy (o numerach od `01` do `07`),
 które są wykorzystywane w Pierwszym Module projektu.  
-In the `maps/easy/` are stored Easy maps (with numbers from `01` to `07`)
-which are used by the project's Second Module.  
 
 W folderze `maps/medium/` przechowywane są Średnio Trudne mapy (o numerach od `01` do `07`),
 które są wykorzystywane w Pierwszym Module projektu.  
-In the `maps/medium/` are stored Medium maps (with numbers from `01` to `07`)
-which are used by the project's Second Module.  
 
 W folderze `maps/hard/` przechowywane są Trudne mapy (o numerach od `01` do `07`),
 które są wykorzystywane w Pierwszym Module projektu.  
-In the `maps/hard/` are stored Hard maps (with numbers from `01` to `07`)
-which are used by the project's Second Module.  
+
+Struktura pliku `.map`:
+
+* Wiersze `1` - `20`: Informacja o poszczególnych polach mapy.
+  * Pole oznaczone cyfrą `0` oznacza `Skrzynię`.
+  * Pole oznaczone cyfrą `1` oznacza `Podłogę`.
+  * Pole oznaczone cyfrą `2` oznacza `Trawę`.
+  * Pole oznaczone cyfrą `3` oznacza `Płytkę`.
+  * Pole oznaczone cyfrą `4` oznacza `Ścianę`.
+  * Pole oznaczone cyfrą `5` oznacza `Skrzynię na Płytce`.
+* Wiersz `21`: Pozycja gracza.
+* Wiersze `22` - `27`: Informacja o tym, które pole powinno być zamienione na który plik.
+* Wiersz `28`: Informacja o wymaganiach na dodatkowe punkty danej mapy -
+  jest to wiersz dodatkowy, który pojawia się w mapach Modułu II,
+  znajdujących się w folderze `maps/ascending/`.
+
+## 7. Struktura folderu saves
+
+```txt
+📂saves
+ ┣ 📜1,01,0,0,00-00-00.sav
+ ┣ 📜2,01,0,0,00-00-00.sav
+ ┗ 📜3,01,0,0,00-00-00.sav
+```
+
+W folderze `saves/` znajdują się trzy pliki z zapisami gry.  
+Jeśli nie ma folderu `saves/` bądź któregoś z plików zapisu,
+to zostaną automatycznie utworzony przy uruchomieniu programu
+
+Struktura nazwy pliku zapisu:  
+`<numer porządkowy zapisu>,<poziom>,<łączny wynik>,<ilość ruchów na mapie>,<czas gry na mapie>.sav`
+
+## 8. Struktura folderu static
+
+```txt
+📂static
+ ┣ 📜credits.html
+ ┣ 📜custom.html
+ ┣ 📜difficulty.html
+ ┣ 📜leaderboard.html
+ ┣ 📜level.html
+ ┣ 📜levelmaker.html
+ ┗ 📜saves.html
+```
+
+Strona `credits.html` jest stroną informującą o autorach projektu oraz podziękowaniach.  
+
+Strona `custom.html` jest stroną służącą do uruchamiania autorskich map.  
+
+Strona `difficulty.html` jest stroną służącą
+do uruchamiania losowej mapy o wybranym poziomie trudności.  
+
+Strona `leaderboard.html` jest stroną wyświetlającą wyniki graczy.  
+
+Strona `level.html` jest stroną, gracz rozwiązuje mapy.  
+
+Strona `levelmaker.html` jest stroną, gdzie tworzy się mapy.  
+
+Strona `saves.html` jest stroną z zapisami gier trybu o rosnącym poziomie trudności.  
+
+## 9. Struktura folderu style
+
+```txt
+📂style
+ ┣ 📜borders.css
+ ┣ 📜colors.css
+ ┣ 📜credits.css
+ ┣ 📜custom.css
+ ┣ 📜difficulty.css
+ ┣ 📜electronstyles.css
+ ┣ 📜infobox.css
+ ┣ 📜leaderboard.css
+ ┣ 📜level.css
+ ┣ 📜main.css
+ ┣ 📜maker.css
+ ┗ 📜saves.css
+```
+
+Plik `static/borders.css` zawiera style obramowań (borderów) na wszystkich stronach.  
+
+Plik `static/colors.css` zawiera kolory wykorzystywane na wszystkich stronach.  
+
+Plik `static/credits.css` zawiera style używane
+na stronie z podziękowaniami (`credits.html`).  
+
+Plik `static/custom.css` zawiera style używane
+na stronie służącej do uruchamiania autorskich map (`custom.html`).  
+
+Plik `static/difficulty.css` zawiera style używane
+na stronie służącej do uruchamiania losowej
+mapy o wybranym poziomie trudności (`difficulty.html`).  
+
+Plik `static/electronstyles.css` zawiera style
+paska narzędzi, wykorzystywanego na wszystkich stronach.  
+
+Plik `static/infobox.css` zawiera style wszystkich infoboxów.  
+
+Plik `static/leaderboard.css` zawiera style używane
+na stronie z wynikami (`leaderboard.html`).  
+
+Plik `static/level.css` zawiera style używane
+na stronie, gdzie gracz rozwiązuje mapy (`level.html`).  
+
+Plik `static/main.css` zawiera ogólne style używane na wszystkich stronach.  
+
+Plik `static/maker.css` zawiera style używane
+na stronie edytora map (`levelmaker.html`).  
+
+Plik `static/saves.css` zawiera style używane
+na stronie z zapisami (`saves.html`).  
+
+## 10. Struktura folderu menu-bar
+
+## 11. Struktura folderu scripts

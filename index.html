@@ -21,61 +21,16 @@
     <link rel="stylesheet" href="./style/borders.css" />
     <link rel="stylesheet" href="./style/electronstyles.css" />
 
-    <script defer type="module">
+    <script defer type="module" src="./menu-bar/menu-buttons.js"></script>
+    <script defer type="module" src="./scripts/init.js"></script>
+
+    <script type="text/javascript">
         const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1))
         let style = document.createElement('style')
         let css = "body:before{background-image:url('./assets/bg/"+randomBetween(1,5)+".png')};"
         style.type = 'text/css'
         style.appendChild(document.createTextNode(css))
         document.head.appendChild(style)
-
-        import { funcs } from './scripts/funcs.js'
-        const $ = require('jquery')
-        const fs = require('fs')
-
-        let path = funcs.cwd() + './'
-        let dirList = fs.readdirSync(path)
-        if (dirList.find(element => element == 'hall') == undefined) {
-            console.log("hall missing!")
-            fs.mkdirSync(path + 'hall')
-        }
-        if (dirList.find(element => element == 'saves') == undefined) {
-            console.log("saves missing!")
-            fs.mkdirSync(path + 'saves')
-        }
-        path = funcs.cwd() + 'saves/'
-
-        let saves = fs.readdirSync(path)
-        let saveDefault = ',01,0,0,00-00-00.sav'
-        switch (saves.length) {
-        case 0:
-            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
-            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
-            fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
-            break
-        case 1:
-            if (saves[0].charAt(0) == '1') {
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
-            } else if (saves[0].charAt(0) == '2') {
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
-            } else {
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
-            }
-            break
-        case 2:
-            if (saves[0].charAt(0) == '2') {
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 1 + saveDefault, (err) => { if (err) throw err })
-            }else if (saves[1].charAt(0) == '2') {
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 3 + saveDefault, (err) => { if (err) throw err })
-            } else {
-                fs.copyFile(funcs.cwd() + 'maps/ascending/01.map', path + 2 + saveDefault, (err) => { if (err) throw err })
-            }
-
-            break
-        }
     </script>
 </head>
 
@@ -92,8 +47,6 @@
         </div>
     </menu>
     </header>
-
-    <script src="./menu-bar/menu-buttons.js"></script>
 
     <main>
     <nav class="container">
