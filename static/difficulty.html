@@ -28,7 +28,7 @@
 
         function generate_map(e) {
             let map = e.target.id + ':0' + randomBetween(1, 7)
-            window.location.href = './level.html?' + map
+            window.location.href = escape('./level.html?' + map).replace(/%3F/g, '?').replace(/%3A/g, ':')
         }
 
         $('.dif-level').on('click', (e) => {
