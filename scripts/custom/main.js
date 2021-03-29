@@ -18,7 +18,7 @@ function load_maps() {
 */
 function generate_map(e) {
     let map = 'created:' + e.target.innerText
-    window.location.href = './level.html?' + map
+    location.href = encodeURI('./level.html?' + map)
 }
 
 load_maps()
