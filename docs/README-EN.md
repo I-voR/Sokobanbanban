@@ -6,12 +6,14 @@ User Documentation
 The Technical Documentation is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file.  
 Polska wersja Dokumentacji Użytkownika jest w pliku [README.md](./README.md).  
 
-## 1. Newest stable version: <u style="font-size: 2.5rem">3.0.2</u>
+## 1. Newest stable version
+
+<u style="font-size: 2.5rem">3.1.1</u>
 
 ## 2. Zakon Technomantów
 
 * Grand Master (Team Leader): **Iwo Strzeboński**
-* i pozostali Bracia (Członkowie) / and other Brethren (Members):
+* And other Brethren (Members):
   * **Igor Kaliciński**
   * **Jan Krzemień**
   * **Zbyszko Sobecki**

@@ -1,3 +1,13 @@
+<!--
+
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
+
+-->
+
 # Sokobanbanban
 
 *Projekt "Sokoban" na Motorola Science Cup 2020*  
@@ -66,6 +76,9 @@ is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file.
     * [`timer.set_time(time)`](#timerset_timetime)
     * [`timer.convert_hms_to_milis(hms)`](#timerconvert_hms_to_milishms)
     * [`TilePainter.tilepaint(tile)`](#tilepaintertilepainttile)
+    * [`window.closeWindow()`](#windowclosewindow)
+    * [`window.home()`](#windowhome)
+    * [`window.minimizeWindow()`](#windowminimizewindow)
 
 ## 2. Środowisko
 
@@ -389,52 +402,151 @@ na stronie z zapisami (`saves.html`).
 
 ### `createWindow()`
 
+* Służy do inicjacji okna aplikacji Electrona.  
+* Pochodzenie: `index.js`.  
+
 ### `controls.reset()`
 
+* Służy do zresetowania rozgrywki.  
+* Pochodzenie: `controls.js`.  
+
 ### `controls.undo()`
+
+* Służy do cofnięcia ostatniego ruchu.  
+* Pochodzenie: `controls.js`.  
 
 <!-- D -->
 
 ### `data.table()`
 
+* Służy do utworzenia tabeli z wynikami.  
+* Pochodzenie: `datatable.js`.  
+
 ### `deleteMap.core()`
 
+* Służy do inicjacji usuwania mapy.  
+* Pochodzenie: `delete.js`.  
+
 ### `deleteMap.delete()`
+
+* Służy do usunięcia wybranej mapy.  
+* Pochodzenie: `delete.js`.  
 
 <!-- E -->
 
 ### `events.main()`
 
+* Służy do inicjacji obsługi klawiatury w grze.  
+* Pochodzenie: `events.js`.  
+
 ### `events.cell_includes(map, player_pos, x = 0, y = 0, text)`
+
+* Służy do sprawdzania, czy dane pole jest określonym polem.  
+* Argumenty:
+  * `map`: Nazwa wczytanej mapy.  
+  * `player_pos`: Obecna pozycja gracza.  
+  * `x`: Odsunięcie w osi X. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+  * `y`: Odsunięcie w osi Y. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+  * `text`: Typ pola.  
+* Zwraca: `{Boolan}` - Czy dane pole jest określonym.  
+* Pochodzenie: `events.js`.  
 
 ### `events.game_end_check(map)`
 
+* Służy do wywoływania funkcji odpowiadających za sprawdzanie
+  ukończenia mapy oraz wyświetlania odpowiednich komunikatów.  
+* Argumenty:
+  * `map`: Nazwa wczytanej mapy.  
+* Pochodzenie: `events.js`.  
+
 ### `events.get_score(map, req)`
+
+* Służy do obliczania wyniku na danej mapie.  
+* Argumenty:
+  * `map`: Nazwa wczytanej mapy.
+  * `req`: Wymagania na poszczególne gwiazdki.  
+* Zwraca: `{Number}` - Ilość gwiazdek zyskanych na danej mapie.  
+* Pochodzenie: `events.js`.  
 
 ### `events.is_air(map, player_pos, x = 0, y = 0)`
 
+* Służy do sprawdzania, czy dane pole jest `Podłogą`.  
+* Argumenty:
+  * `map`: Nazwa wczytanej mapy.  
+  * `player_pos`: Obecna pozycja gracza.  
+  * `x`: Odsunięcie w osi X. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+  * `y`: Odsunięcie w osi Y. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+* Zwraca: `{Boolean}` - Czy dane pole jest `Podłogą`.  
+* Pochodzenie: `events.js`.  
+
 ### `events.is_level_completed()`
+
+* Służy do sprawdzania, czy wszystkie `Skrzynki` są na `Płytkach`.  
+* Zwraca: `{Boolean}` - Czy wszystkie `Skrzynki` są na `Płytkach`.  
+* Pochodzenie: `events.js`.  
 
 ### `events.move_player(bool, map, player, player_pos, x = 0, y = 0)`
 
+* Służy do przesuwania `Magazyniera`.
+* Funkcja spróbuje przesunąć `Magazyniera`, o ile nie
+  ma przed nim ściany bądź nie zablokuje go skrzynka.  
+* Argumenty:
+  * `bool`: Czy jakakolwiek `Skrzynia` została przesunięta w danym ruchu.  
+  * `map`: Nazwa wczytanej mapy.  
+  * `player`: Element DOM reprezentujący `Magazyniera`.  
+  * `player_pos`: Obecna pozycja `Magazyniera`.  
+  * `x`: Odsunięcie w osi X. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+  * `y`: Odsunięcie w osi Y. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+* Pochodzenie: `events.js`.  
+
 ### `events.move_crate(bool, map, player_pos, crates_pos, x = 0, y = 0)`
+
+* Służy do przesuwania `Skrzyni`.  
+* Argumenty:
+  * `bool`: Czy skrzynia jest blokowana przez inną `Skrzynię`.  
+  * `map`: Nazwa wczytanej mapy.  
+  * `player_pos`: Obecna pozycja `Magazyniera`.  
+  * `crates_pos`: Obecna pozycja wszystkich `Skrzyń`.  
+  * `x`: Odsunięcie w osi X. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+  * `y`: Odsunięcie w osi Y. Może przyjmować wartości
+  ujemne jak i dodatnie. Domyślna wartość to `0`.  
+* Zwraca: `{Boolean}` - Czy `Skrzynia` została przesunięta.  
+* Pochodzenie: `events.js`.  
 
 <!-- F -->
 
 ### `funcs.cwd()`
+
+* Służy do tworzenia ścieżki absolutnej.  
+  Funkcja ta powstała, aby Projekt mógł poprawnie działać po zbudowaniu.  
+* Zwraca: `{String}` - Ścieżka absolutna katalogu z zasobami Projektu.  
+* Pochodzenie: `funcs.js`.  
 
 <!-- G -->
 
 ### `generate_map(e)`  
 
 * Służy do losowania mapy wybranego poziomu trudności.  
-* Parametry:
+* Argumenty:
   * `e` (`event`): wydarzenie dotyczące naciśniętego przycisku.  
 * Pochodzenie: `difficulty.js`, `custom/main.js`.  
 
 <!-- H -->
 
 ### `hall.save(save, userName)`
+
+* Służy do zapisywania wyniku do Hali Sław.  
+* Argumenty:
+  * `save`: Nazwa aktualnej mapy.  
+  * `userName`: Nazwa `Gracza`.  
+* Pochodzenie: `toHall.js`.  
 
 <!-- I -->
 
@@ -445,6 +557,20 @@ na stronie z zapisami (`saves.html`).
 
 ### `infobox.createInfobox(type, text = '')`
 
+* Służy do wyświetlania komunikatów.  
+* Argumenty:
+  * `type`: Rodzaj komunikatu do wyświetlenia.  Obsługiwane komunikaty:
+    * `"info"`: Informacja.  
+    * `"warn"`: Ostrzeżenie.  
+    * `"completed"`: Informacja o ukończeniu gry.  
+    * `"remove"`: Ostrzeżenie o usuwaniu mapy.  
+    * `"saved"`: Informacja o zapisaniu mapy.  
+    * `"surrender"`: Informacja o poddaniu gry.  
+  * `text`: Dodatkowy tekst, który ma być wyświetlony w komunikacie.  
+  Domyślnie jest to pusty łańcuch.  
+* Zwraca: `{}` - .  
+* Pochodzenie: `infobox.js`.  
+
 <!-- L -->
 
 ### `load_maps()`
@@ -454,7 +580,19 @@ na stronie z zapisami (`saves.html`).
 
 ### `levelgen.main(map)`
 
+* Służy do wczytywania mapy.  
+* Argumenty:
+  * `map`: Nazwa wczytanej mapy.  
+* Pochodzenie: `levelgen.js`.  
+
 ### `levelgen.get_map_reqs(map)`
+
+* Służy do pobierania wymagań na poszczególne gwiazdki na wybranej mapie.  
+* Argumenty:
+  * `map`: Nazwa wczytanej mapy. 
+* Zwraca: `{Array}` - Lista wymagań ruchów i czasu
+  na poszczególne gwiazdki danego poziomu.  
+* Pochodzenie: `levelgen.js`.  
 
 ### `load.list()`
 
@@ -469,12 +607,16 @@ na stronie z zapisami (`saves.html`).
 ### `randomBetween(min, max)`  
 
 * Służy do losowania liczby z domkniętego zakresu `(min, max)`.
-* Parametry:  
+* Argumenty:  
   * `min`: dolna granica zakresu.  
   * `max`: górna granica zakresu.  
-* Pochodzenie: `index.html`, `difficulty.js`, `custom/main.js`.  
+* Zwraca: `{Number}` - Wartość całkowita z akresu.  
+* Pochodzenie: `index.html`, `difficulty.html`, `custom/main.js`.  
 
 ### `reset.reset()`
+
+* Służy do resetowania kreatora map.  
+* Pochodzenie: `reset.js`.  
 
 <!-- S -->
 
@@ -500,14 +642,62 @@ na stronie z zapisami (`saves.html`).
 
 ### `timer.main(map)`
 
+* Służy do inicjalizacji odliczania czasu spędzonego na danej mapie.  
+* Argumenty:
+  * `map`: Nazwa wczytanej mapy.  
+* Pochodzenie: `timer.js`.  
+
 ### `timer.get_end_time()`
+
+* Służy do pobierania i zwracania czasu z licznika czasu.  
+* Zwraca: `{String}` - Czas w formacie `hh:mm:ss`.  
+* Pochodzenie: `timer.js`.  
 
 ### `timer.time_diff(start)`
 
+* Służy do obliczania różnicy czasu między czasem obecnym a czasem rozpoczęcia rozgrywki.  
+* Argumenty:
+  * `start`: Czas rozpoczęcia rozgrywki.  
+* Zwraca: `{Number}` - Różnica w czasie (w milisekundach).  
+* Pochodzenie: `timer.js`.  
+
 ### `timer.sleep(time)`
+
+* Służy do zatrzymywania danej funkcji asynchronicznej na określony czas.  
+* Argumenty:
+  * `time`: Czas, na jaki dana funkcja ma zostać wstrzymana (w milisekundach).  
+* Pochodzenie: `timer.js`.  
 
 ### `timer.set_time(time)`
 
+* Służy do zmieniania czasu na wyświetlaczu.  
+* Argumenty:
+  * `time`: Ilość spędzonego na danej mapie czasu (w milisekundach).  
+* Pochodzenie: `timer.js`.  
+
 ### `timer.convert_hms_to_milis(hms)`
 
+* Służy do konwertowania czasu podanego w formacie `hh-mm-ss` na milisekundy.  
+* Argumenty:
+  * `hms`: Czas w formacie `hh-mm-ss`.  
+* Zwraca: `{Number}` - Czas przekonwertowany do milisekund.  
+* Pochodzenie: `timer.js`.  
+
 ### `TilePainter.tilepaint(tile)`
+
+<!-- W -->
+
+### `window.closeWindow()`
+
+* Służy do zamykania programu.  
+* Pochodzenie: `menu-functions.js`.  
+
+### `window.home()`
+
+* Służy do przenoszenia do głównego menu.  
+* Pochodzenie: `menu-functions.js`.  
+
+### `window.minimizeWindow()`
+
+* Służy do minimalizowania programu.  
+* Pochodzenie: `menu-functions.js`.  

@@ -1,5 +1,4 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-const { menu } = require('./menu-bar/menu')
 const path = require('path')
 
 let win

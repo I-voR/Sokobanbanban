@@ -1,5 +1,3 @@
-
-
 import { funcs } from '../funcs.js'
 
 const fs = require('fs')
@@ -24,7 +22,7 @@ export const hall = {
 
         save = save.split(',')
         let timeStamp = new Date().toISOString().slice(0, -5).replace(/:/g, '-').replace('T', '_')
-        let line = userName + ',' + save[2] + ',' + save[1] + ',' + timeStamp + '\n'
+        let line = userName.replace(/,/g, '&comma') + ',' + save[2] + ',' + save[1] + ',' + timeStamp + '\n'
 
         fs.appendFileSync(funcs.cwd() + 'hall/data.csv', line)
     }

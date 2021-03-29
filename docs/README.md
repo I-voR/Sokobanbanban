@@ -8,7 +8,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 
 ## 1. Najnowsza stabilna wersja
 
-<u style="font-size: 2.5rem">3.0.2</u>
+<u style="font-size: 2.5rem">3.1.1</u>
 
 ## 2. Spis Treści
 
@@ -35,7 +35,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 ## 3. Zakon Technomantów
 
 * Wielki Mistrz (Kapitan Drużyny): **Iwo Strzeboński**
-* i pozostali Bracia (Członkowie):
+* I pozostali Bracia (Członkowie):
   * **Igor Kaliciński**
   * **Jan Krzemień**
   * **Zbyszko Sobecki**
@@ -97,20 +97,22 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 ![Pierwsza mapa trybu o rosnącym poziomie trudności](./screenshots/ascending.png)
 
 * `Magazynier` (`Gracz`):  
-  ![Player Left](./screenshots/spritesheet/Steve_Left.png)
-  ![Player Front](./screenshots/spritesheet/Steve_Front.png)
-  ![Player Back](./screenshots/spritesheet/Steve_Back.png)
-  ![Player Right](./screenshots/spritesheet/Steve_Right.png)  
+  ![Large Player Left](./screenshots/spritesheet/LARGE-Steve_Left.png)
+  ![Large Player Front](./screenshots/spritesheet/LARGE-Steve_Front.png)
+  ![Large Player Back](./screenshots/spritesheet/LARGE-Steve_Back.png)
+  ![Large Player Right](./screenshots/spritesheet/LARGE-Steve_Right.png)  
 
-  `Magazynier` może się poruszać **WYŁĄCZNIE** po polu `Podłoga`
-  ![Podłoga](./screenshots/map_tiles/Floor..png).  
-  Nie potrafi przechodzić przez pole `Ściany`
-  ![Ściana](./screenshots/map_tiles/Wall.col.png)
-  ani chodzić po polu `Trawy`
-  ![Trawa](./screenshots/map_tiles/Grass..png).  
-  Może przesuwać skrzynie, jeśli za `Skrzynią`
+  `Magazynier` może się poruszać po polach `Podłoga`
+  ![Podłoga](./screenshots/map_tiles/Floor..png)
+  oraz `Powietrze`
+  ![Powietrze](./screenshots/map_tiles/Grass..png).  
+  Nie potrafi jednak przechodzić przez pole `Ściany`
+  ![Ściana](./screenshots/map_tiles/Wall.col.png).  
+  Niestety `Skrzynie`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png)
-  jest pole `Podłoga` lub pole `Płytka`
+  są zbyt ciężkie, żeby mógł je unieść, więc musi je pchać po `Podłodze`.  
+  Może je przesuwać wtedy i tylko wtedy, gdy za nią jest pole `Podłoga`
+  lub pole `Płytka`
   ![Płytka](./screenshots/map_tiles/Plate..png),
   o ile bezpośrednio za tą `Skrzynią` nie ma innej `Skrzyni`.  
 
@@ -147,37 +149,37 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 
 * Elementy mapy:
   * `Skrzynia`:  
-  ![Skrzynia](./screenshots/map_tiles/Crate.col.png)  
+  ![Duża Skrzynia](./screenshots/map_tiles/LARGE-Crate.col.png)  
   Interaktywny obiekt, który może być przesuwany przez `Magazyniera`
   ![Player Front](./screenshots/spritesheet/Steve_Front.png).  
 
   * `Podłoga`:  
-  ![Podłoga](./screenshots/map_tiles/Floor..png)  
+  ![Duża Podłoga](./screenshots/map_tiles/LARGE-Floor..png)  
   Statyczny element mapy, po którym może chodzić `Magazynier`
   ![Player Front](./screenshots/spritesheet/Steve_Front.png)
   oraz po którym mogą być przesuwane `Skrzynie`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
 
   * `Trawa`:  
-  ![Trawa](./screenshots/map_tiles/Grass..png)  
+  ![Duża Trawa](./screenshots/map_tiles/LARGE-Grass..png)  
   Tło mapy.
 
   * `Płytka`:  
-  ![Płytka](./screenshots/map_tiles/Plate..png)  
+  ![Duża Płytka](./screenshots/map_tiles/LARGE-Plate..png)  
   Interaktywny obiekt mapy, na który `Magazynier`
   ![Player Front](./screenshots/spritesheet/Steve_Front.png)
   ma przesunąć `Skrzynię`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
 
   * `Ściana`:  
-  ![Ściana](./screenshots/map_tiles/Wall.col.png)  
+  ![Duża Ściana](./screenshots/map_tiles/LARGE-Wall.col.png)  
   Statyczny element mapy blokujący ruch `Magazyniera`
   ![Player Front](./screenshots/spritesheet/Steve_Front.png)
   oraz przesuwanie `Skrzyń`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
 
   * `Płytka ze Skrzynią`:  
-  ![Płytka ze Skrzynią](./screenshots/map_tiles/ZCratePlate.col.png)  
+  ![Duża Płytka ze Skrzynią](./screenshots/map_tiles/LARGE-ZCratePlate.col.png)  
   Jest to obiekt łączący `Skrzynię`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png)
   z `Płytką`
