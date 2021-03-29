@@ -131,9 +131,9 @@ export const save = {
 
         $('img').each(function() {
             temp = $(this).attr('src').split('/')
-            if (save.translation(temp[temp.length - 1]) == '0') { crateCount++ }
-            else if (save.translation(temp[temp.length - 1]) == '3') { plateCount++ }
-            else if (save.translation(temp[temp.length - 1]) == '5') { crateCount++; plateCount++ }
+            if (save.translation(temp[temp.length - 1]) === 0) { crateCount++ }
+            else if (save.translation(temp[temp.length - 1]) === 3) { plateCount++ }
+            else if (save.translation(temp[temp.length - 1]) === 5) { crateCount++; plateCount++ }
         })
 
         return ((crateCount === plateCount) && (crateCount !== 0))
