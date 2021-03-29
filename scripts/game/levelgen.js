@@ -46,20 +46,24 @@ export const levelgen = {
                     td.css('background-image', 'url("' + assets_path + 'Floor..png")')
 
                     if (map.includes('sav')) {
-                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #ADD8E6)')
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #E3FBE3)')
                     }
 
                     switch (map.substring(0, map.indexOf(':'))) {
                     case 'easy':
-                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #90EE90)')
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #ADD8E6)')
                         break
 
                     case 'medium':
-                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #FFFFE0)')
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #EDCF18)')
                         break
 
                     case 'hard':
-                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #E97451)')
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #F2AC97)')
+                        break
+
+                    case 'created':
+                        td.css('filter', 'opacity(0.2) drop-shadow(0 0 0 #D4B0F4)')
                         break
                     }
                     break
@@ -68,12 +72,12 @@ export const levelgen = {
                     td.css('background-image', 'url("' + assets_path + 'Grass..png")')
 
                     if (map.includes('sav')) {
-                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #00008B)')
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #013220)')
                     }
 
                     switch (map.substring(0, map.indexOf(':'))) {
                     case 'easy':
-                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #013220)')
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #4EE44E)')
                         break
 
                     case 'medium':
@@ -81,10 +85,11 @@ export const levelgen = {
                         break
 
                     case 'hard':
-                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #8B0000)')
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #DF491C)')
                         break
 
-                    default:
+                    case 'created':
+                        td.css('filter', 'opacity(0.6) drop-shadow(0 0 0 #8A2BE2)')
                         break
                     }
                     break

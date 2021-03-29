@@ -1,79 +1,77 @@
 # Sokobanbanban
 
-*Projekt "Sokoban" na Motorola Science Cup 2020*  
-Dokumentacja Użytkownika  
+*"Sokoban" Project for Motorola Science Cup 2020*
+User Documentation
 
-Dokumentacja Techniczna jest w pliku [TECH-DOC.md](./TECH-DOC.md).  
-English version of the User Documentation is in the [README-EN.md](./README-EN.md) file.  
+The Technical Documentation is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file.  
+Polska wersja Dokumentacji Użytkownika jest w pliku [README.md](./README.md).  
 
-## 1. Najnowsza stabilna wersja: <u style="font-size: 2.5rem">3.0.1</u>
+## 1. Newest stable version: <u style="font-size: 2.5rem">3.0.1</u>
 
 ## 2. Zakon Technomantów
 
-* Wielki Mistrz (Kapitan) / Grand Master (Team Leader): **Iwo Strzeboński**
+* Grand Master (Team Leader): **Iwo Strzeboński**
 * i pozostali Bracia (Członkowie) / and other Brethren (Members):
   * **Igor Kaliciński**
   * **Jan Krzemień**
   * **Zbyszko Sobecki**
   * **Wojciech Orłowski**
 
-## 3. Autorzy
+## 3. Authors
 
 * **Iwo Strzeboński**:
-  * Projektowanie wyglądu interfejsu graficznego / GUI Design
-  * Różne tryby / Level Modes
-  * Poziomy trudności map / Map Difficulty
-  * Dokumentacja / Documentation
+  * GUI Design
+  * Level Modes
+  * Map Difficulty
+  * Documentation
 * **Igor Kaliciński**:
-  * Edytor poziomów / Level Editor
-  * Hala Sław / Hall of Fame
-  * Zapisy gier / Save Slots
+  * Level Editor
+  * Hall of Fame
+  * Save Slots
 
-## 4. Licencja
+## 4. License
 
 [WTFPL by Sam Hocevar](./LICENSE)
 
-## 5. Podziękowania
+## 5. Credits
 
-* **Laura Wheeler** -
-twórczyni gry *Sokoban Junior 1*, skąd pochodzą mapy /
-author of the *Sokoban Junior 1* game, from which maps in this game are from
+* **Laura Wheeler** - author of the *Sokoban Junior 1* game, from which maps in this game are from
 
-## 6. Przygotowywanie środowiska do pracy
+## 6. Preparing the environment to work
 
-1. Zainstaluj [Node.js](https://nodejs.org/en/download/)
-2. Pobierz wymagane pakiety za pomocą polecenia:  
+1. Install [Node.js](https://nodejs.org/en/download/)
+2. Download required packages using:
 
 ```cmd
 npm install
 ```
 
-## 7. Praca na kodzie źródłowym
+## 7. Working on the source code
 
-Aby uruchomić program, należy w konsoli wpisać polecenie: / To start the program, you need to use that command in the command line:
+To start the program, you need to use that command in the command line:
 
 ```cmd
 npm start
 ```
 
-## 8. Budowanie Projektu
+## 8. Building the Project
 
-Do zbudowania projektu należy użyć pakietu ElectronForge, który także jest pobierany jako wymagany pakiet.  
+To build the project you should use the ElectronForge package, which is also downloaded as a required dependency.
 
 ```cmd
 npx @electron-forge/cli import
 npm run make
 ```
 
-Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!  
+Building the Project is **NOT** required in order to launch it!
 
-## 9. Rozgrywka
+## 9. Playing the Game
 
-### 1. Poruszanie się w grze
+### 1. In-game movement
 
 ![First Ascending mode map](./screenshots/ascending.png)
 
-* Przyciski:
+* Buttons:
   * `Save` zapisuje rozgrywkę (dostępny wyłącznie w II Module)  
 
   * `Surrender` poddaje rozgrywkę i zapisuje wynik do Hali Sław
@@ -85,7 +83,7 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 
   * `Restart` ustawia gracza i skrzynie na pozycjach pierwotnych
 
-* Obsługa klawiatury:
+* Keyboard events:
   * `W` lub `Strzałka do góry` porusza gracza do góry
 
   * `A` lub `Strzałka w lewo` porusza gracza w lewo
@@ -96,9 +94,9 @@ Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!
 
   * `R` ustawia gracza i skrzynie na pozycjach pierwotnych
 
-### 2. Tworzenie map
+### 2. Creating levels
 
-### 3. Menu Główne
+### 3. Main Menu
 
 ![Main Menu](./screenshots/index.png)
 
@@ -125,7 +123,7 @@ o Autorach oraz podziękowaniach.
 
 * Przycisk `Quit` zamyka grę.  
 
-### 4. Moduł I - Poziomy Trudności
+### 4. Module I - Difficulty Levels
 
 ![Difficulty Menu](./screenshots/difficulty.png)
 
@@ -145,7 +143,7 @@ o Autorach oraz podziękowaniach.
 
 ![Random Hard map](./screenshots/hard.png)
 
-### 5. Moduł II - Rosnący Poziom Trudności
+### 5. Module II - Ascending Mode
 
 ![Save slots](./screenshots/saves.png)
 
