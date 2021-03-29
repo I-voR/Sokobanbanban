@@ -195,7 +195,7 @@ o Autorach oraz podziękowaniach.
 
 ![Menu poziomów trudności](./screenshots/difficulty.png)
 
-* Przycisk oznaczony symbolem domu służy do powrotu na Stronę Główną.  
+* Przycisk oznaczony symbolem `domu` służy do powrotu na Stronę Główną.  
 
 * Przycisk `Back` cofa do poprzedniej strony.  
 
