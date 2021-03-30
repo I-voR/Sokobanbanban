@@ -664,20 +664,24 @@ na stronie z zapisami (`saves.html`).
 
 ### `saves.mapRead(baseMapNumber, savingInGame)`
 
-* Służy do .  
+* Służy do wczytywania i konwertowania mapy.  
 * Argumenty:
-  * `baseMapNumber`: .  
-  * `savingInGame`: .  
-* Zwraca: `{}` - .  
+  * `baseMapNumber`: Numer mapy bazowej.  
+  * `savingInGame`: Informacja o tym, czy mapa jest zapisywana podczas rozgrywki.  
+* Zwraca: `{map}` - Przekonwertowana mapa.  
 * Pochodzenie: `saves.js`.  
 
 ### `saves.game(saveName, level, stars, moves, time, savingInGame)`
 
-* Służy do .  
+* Służy do zapisywania mapy do pliku zapisu.  
 * Argumenty:
-  * ``: .  
-* Zwraca: `{}` - .  
-* Pochodzenie: ``.  
+  * `saveName`: Nazwa pliku zapisu.  
+  * `level`: Numer porządkowy poziomu.  
+  * `stars`: Łączna liczba gwiazdek.  
+  * `moves`: Liczba ruchów na danej mapie.  
+  * `time`: Czas spędzony na danej mapie.  
+  * `savingInGame`: Informacja o tym, czy mapa jest zapisywana podczas rozgrywki.  
+* Pochodzenie: `saves.js`.  
 
 ### `slots.main()`
 
