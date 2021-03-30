@@ -660,7 +660,7 @@ na stronie z zapisami (`saves.html`).
 * Argumenty:
   * `filename`: Nazwa pliku zasobu.  
 * Zwraca: `{Number}` - .  
-* Pochodzenie: ``.  
+* Pochodzenie: `save.js`.  
 
 ### `saves.mapRead(baseMapNumber, savingInGame)`
 
@@ -668,7 +668,7 @@ na stronie z zapisami (`saves.html`).
 * Argumenty:
   * ``: .  
 * Zwraca: `{}` - .  
-* Pochodzenie: ``.  
+* Pochodzenie: `saves.js`.  
 
 ### `saves.game(saveName, level, stars, moves, time, savingInGame)`
 
