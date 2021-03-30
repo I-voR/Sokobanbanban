@@ -214,8 +214,7 @@ export const events = {
 
             if (map.split(',')[1].charAt(0) == 0) {
                 nextMap = parseInt(map.split(',')[1].charAt(1), 10) + 1
-                if (nextMap.length < 2) { nextMap = '0' + nextMap }
-
+                if (nextMap < 10) { nextMap = '0' + nextMap }
             } else {
                 nextMap = parseInt(map.split(',')[1], 10) + 1
             }
@@ -231,7 +230,7 @@ export const events = {
         if (map.includes('sav')) {
             localScore++
             if (global.pressCount <= req[0]) localScore++
-            if (timer.get_end_time() <= req[1]) localScore++
+            if (timer.convert_hms_to_milis(timer.get_end_time() <= req[1])) localScore++
         }
 
         return localScore

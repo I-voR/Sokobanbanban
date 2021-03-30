@@ -33,6 +33,6 @@ export const timer = {
         return $.find('#timer')[0].textContent
     },
     convert_hms_to_milis: (hms) => {
-        return hms.split('-').reduce((acc,time) => (60 * acc) + +time) * 1000
+        return (' ' + hms).split('-').reduce((acc,time) => (60 * acc) + +time) * 1000
     }
 }
