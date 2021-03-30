@@ -85,7 +85,7 @@ który także jest pobierany jako wymagany pakiet.
 
 ```cmd
 npx @electron-forge/cli import
-npm run make
+npm run package
 ```
 
 Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!  
