@@ -35,7 +35,6 @@
     "jest": "^26.6.3",
     "jquery": "^3.6.0",
     "jsdom": "^16.5.2",
-    "ts-jest": "^26.5.4",
     "webpack": "^5.28.0"
   },
   "config": {
@@ -66,6 +65,17 @@
     }
   },
   "jest": {
+<<<<<<< Updated upstream
     "preset": "jest"
+=======
+    "preset": "jest",
+    "testEnvironment": "node",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ]
+>>>>>>> Stashed changes
   }
 }
