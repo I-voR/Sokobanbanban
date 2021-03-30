@@ -8,7 +8,7 @@ export const load = {
     load: () => {
         if ($.find('#load option:selected')[0].textContent === 'NEW') { return }
         let map = fs.readFileSync(
-            escape(funcs.cwd() + 'maps/created/' + $.find('#load option:selected')[0].textContent).replace(/%3A/g, ':')
+            funcs.cwd() + 'maps/created/' + $.find('#load option:selected')[0].textContent
         ).toString().split('\n')
 
         map.forEach((element, index) => {
@@ -44,7 +44,7 @@ export const load = {
     list: () => {
         let path = funcs.cwd() + 'maps/created/'
 
-        let files = fs.readdirSync(escape(path).replace(/%3A/g, ':'))
+        let files = fs.readdirSync(path)
         let select = $('<select>')
         select
             .attr('name', 'map-load')

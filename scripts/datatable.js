@@ -7,7 +7,7 @@ const fs = require('fs')
 
 export const data = {
     table: () => {
-        let data = fs.readFileSync(escape(funcs.cwd() + 'hall/data.csv').replace(/%3A/g, ':')).toString().split('\n')
+        let data = fs.readFileSync(funcs.cwd() + 'hall/data.csv').toString().split('\n')
 
         data = data.filter(function(currentLine) {
             return currentLine !== '\n'
@@ -39,13 +39,13 @@ export const data = {
     }
 }
 
-let CSVs = fs.readdirSync(escape(funcs.cwd() + 'hall/').replace(/%3A/g, ':'))
+let CSVs = fs.readdirSync(funcs.cwd() + 'hall/')
 if (CSVs.length == 0) {
-    fs.createWriteStream(escape(funcs.cwd() + './hall/data.csv').replace(/%3A/g, ':')).on('error', (err) => {
+    fs.createWriteStream(funcs.cwd() + './hall/data.csv').on('error', (err) => {
         if (err) throw err
     })
-    fs.createWriteStream(escape(funcs.cwd() + './hall/data.csv').replace(/%3A/g, ':')).write('Username,Score,Final Level,Date' + '\n')
-    fs.createWriteStream(escape(funcs.cwd() + './hall/data.csv').replace(/%3A/g, ':')).end()
+    fs.createWriteStream(funcs.cwd() + './hall/data.csv').write('Username,Score,Final Level,Date' + '\n')
+    fs.createWriteStream(funcs.cwd() + './hall/data.csv').end()
 }
 
 data.table()

@@ -27,8 +27,9 @@
         const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1))
 
         function generate_map(e) {
-            let map = e.target.id + ':0' + randomBetween(1, 7)
-            location.href = escape('./level.html?' + map).replace(/%3F/g, '?').replace(/%3A/g, ':')
+            // let map = e.target.id + ':0' + randomBetween(1, 7)
+            let map = e.target.id + ':0' + 3
+            location.href = './level.html?' + map
         }
 
         $('.dif-level').on('click', (e) => {
