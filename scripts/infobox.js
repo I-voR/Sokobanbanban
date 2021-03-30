@@ -153,7 +153,7 @@ export const infobox = {
 
             span
                 .attr('id', 'total-score')
-                .append(totalScore)
+                .append(encodeURI(totalScore))
 
             heading.append('Surrender')
 

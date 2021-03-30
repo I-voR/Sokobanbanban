@@ -8,7 +8,10 @@ const fs = require('fs')
 */
 function load_maps() {
     fs.readdirSync(funcs.cwd() + 'maps/created').forEach(map => {
-        $('.container').append('<button class="flex-item custom-level">' + map.replace('.map', '') + '</button>')
+        let button = $('<button>')
+        button.addClass('flex-item custom-level')
+        button.append(encodeURI(map.replace('.map', '')))
+        $('.container').append(button)
     })
 }
 
