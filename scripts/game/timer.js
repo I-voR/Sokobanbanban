@@ -30,7 +30,7 @@ export const timer = {
         $('#timer').text( new Date(time).toISOString().slice(11,-5) )
     },
     get_end_time: () => {
-        return $('#timer').text()
+        return $.find('#timer')[0].textContent
     },
     convert_hms_to_milis: (hms) => {
         return hms.split('-').reduce((acc,time) => (60 * acc) + +time) * 1000

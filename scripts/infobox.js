@@ -54,7 +54,7 @@ export const infobox = {
         switch (type) {
         case 'info':
             heading.append('Info')
-            textInfobox.append(text)
+            textInfobox.append(encodeURI(text))
             dialog
                 .append(heading)
                 .append(textInfobox)
@@ -63,7 +63,7 @@ export const infobox = {
 
         case 'warn':
             heading.append('Warning!')
-            textInfobox.append(text)
+            textInfobox.append(encodeURI(text))
             dialog
                 .append(heading)
                 .append(textInfobox)
@@ -83,12 +83,12 @@ export const infobox = {
 
                 span
                     .attr('id', 'total-score')
-                    .append(totalScore)
+                    .append(encodeURI(totalScore))
 
                 textInfobox
-                    .append('You completed level ascending:' + text[0].split(',')[1])
+                    .append('You completed level ascending:' + encodeURI(text[0].split(',')[1]))
                     .append($('<br>'))
-                    .append('Score: ' + text[1] + ' ⭐')
+                    .append('Score: ' + encodeURI(text[1]) + ' ⭐')
                     .append($('<br>'))
                     .append('Total score: ')
                     .append(span)
@@ -111,7 +111,7 @@ export const infobox = {
                 }
             } else {
                 textInfobox
-                    .append('You completed level ' + text)
+                    .append('You completed level ' + encodeURI(text))
                     .append($('<br>'))
                     .append('Move count: ' + global.pressCount)
                     .append($('<br>'))
@@ -131,7 +131,7 @@ export const infobox = {
                 .append('No')
 
             heading.append('Attention!')
-            textInfobox.append('Are you sure you want to remove level ' + text + '?')
+            textInfobox.append('Are you sure you want to remove level ' + encodeURI(text) + '?')
             dialog
                 .append(heading)
                 .append(textInfobox)
@@ -153,12 +153,12 @@ export const infobox = {
 
             span
                 .attr('id', 'total-score')
-                .append(totalScore)
+                .append(encodeURI(totalScore))
 
             heading.append('Surrender')
 
             textInfobox
-                .append('You surrendered on level ascending:' + text.split(',')[1])
+                .append('You surrendered on level ascending:' + encodeURI(text.split(',')[1]))
                 .append($('<br>'))
                 .append('Score: 0 ⭐')
                 .append($('<br>'))
@@ -194,37 +194,37 @@ export const infobox = {
 
         if (type === 'completed' && text.length === 2) {
             $('.close-infobox').on('click', function() {
-                let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                let map = location.href.substr(location.href.indexOf('?') + 1).split(',')
                 let save = map[0]
                 let path = funcs.cwd() + 'saves/'
                 let saves = fs.readdirSync(path)
 
                 if (parseInt(map[1]) < 21) {
-                    window.location.href = window.location.href.substring(0, window.location.href.indexOf('?') + 1) + saves[save - 1]
+                    location.href = location.href.substring(0, location.href.indexOf('?') + 1) + saves[save - 1]
                 } else {
-                    let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                    let map = location.href.substr(location.href.indexOf('?') + 1).split(',')
                     map[2] = $('#total-score').text()
                     map = map.join(',')
 
                     if ($('input').val().length > 0) {
                         hall.send(map, $('input').val())
-                        window.location.href = './leaderboard.html'
+                        location.href = './leaderboard.html'
                     }
                 }
             })
         } else if ((type === 'completed' && text.length > 2) || (type === 'saved')) {
-            $('.close-infobox').on('click', function() { window.location.href = '../index.html' })
+            $('.close-infobox').on('click', function() { location.href = '../index.html' })
         } else if (type === 'remove') {
             $('.remove-map-infobox').on('click', function() { document.getElementsByClassName('infobox')[0].remove() })
         } else if (type === 'surrender') {
             $('.close-infobox').on('click', function() {
-                let map = window.location.href.substr(window.location.href.indexOf('?') + 1).split(',')
+                let map = location.href.substr(location.href.indexOf('?') + 1).split(',')
                 map[2] = $('#total-score').text()
                 map = map.join(',')
 
                 if ($('input').val().length > 0) {
                     hall.send(map, $('input').val())
-                    window.location.href = './leaderboard.html'
+                    location.href = './leaderboard.html'
                 }
             })
         } else {

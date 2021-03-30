@@ -106,10 +106,10 @@ export const save = {
             mapData[mapData.length] = i + ',' + files[i]
         }
 
-        if ($('#load option:selected').text() === 'NEW') {
+        if ($.find('#load option:selected')[0].textContent === 'NEW') {
             saveName = new Date().toISOString().slice(0, -5).replace(/:/g, '-').replace('T', '_') + '.map'
         } else {
-            saveName = $('#load option:selected').text()
+            saveName = $.find('#load option:selected')[0].textContent
         }
 
         let file = fs.createWriteStream(funcs.cwd() + 'maps/created/' + saveName)

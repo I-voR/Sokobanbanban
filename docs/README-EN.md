@@ -1,14 +1,14 @@
 # Sokobanbanban
 
 *"Sokoban" Project for Motorola Science Cup 2020*
-User Documentation
+User Documentation [Work in Progress]
 
-The Technical Documentation is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file.  
+The Technical Documentation is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file. [Work in Progress]  
 Polska wersja Dokumentacji Użytkownika jest w pliku [README.md](./README.md).  
 
 ## 1. Newest stable version
 
-<u style="font-size: 2.5rem">3.1.3</u>
+<u style="font-size: 2.5rem">3.2.0</u>
 
 ## 2. Zakon Technomantów
 

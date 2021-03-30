@@ -12,7 +12,7 @@ function createWindow() {
         webPreferences: {
             contextIsolation: false,
             nodeIntegration: true,
-            devTools: false,
+            // devTools: false,
             enableRemoteModule: true,
             preload: path.join(__dirname, '/menu-bar/menu-preload.js')
         }

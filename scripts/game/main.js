@@ -20,7 +20,7 @@ global.pressCount = 0
 global.lastPlayerPos = null
 global.lastCratePos = null
 
-let map = window.location.href.substr(window.location.href.indexOf('?') + 1)
+let map = location.href.substr(location.href.indexOf('?') + 1)
 
 if (map.includes('sav')) {
     $('main').append('<button id="save">Save</button><button id="surrender">Surrender</button>')
@@ -42,7 +42,7 @@ $('#undo').on('click', function() {
 
 $('#save').on('click', function() {
     global.pauseGame = true
-    saves.game(map, map.split(',')[1], 0, global.pressCount, $('#timer').html().replace(':', '-').replace(':', '-'), true)
+    saves.game(map, map.split(',')[1], 0, global.pressCount, timer.get_end_time(), true)
     infobox.createInfobox('saved')
 })
 

@@ -214,7 +214,7 @@ export const events = {
 
             if (map.split(',')[1].charAt(0) == 0) {
                 nextMap = parseInt(map.split(',')[1].charAt(1), 10) + 1
-                nextMap = '0' + nextMap
+                nextMap = nextMap < 10 ? '0' + nextMap : '' + nextMap
             } else {
                 nextMap = parseInt(map.split(',')[1], 10) + 1
             }

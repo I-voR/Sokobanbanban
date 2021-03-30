@@ -1,9 +1,9 @@
 # Sokobanbanban
 
 *"Sokoban" Project for Motorola Science Cup 2020*
-Technical Documentation
+Technical Documentation [Work in Progress]
 
-The User Documentation is in the [README-EN.md](./README-EN.md) file.  
+The User Documentation is in the [README-EN.md](./README-EN.md) file. [Work in Progress]  
 Polska wersja Dokumentacji Technicznej
 jest w pliku [TECH-DOC-PL.md](./TECH-DOC-PL.md) file.  
 
