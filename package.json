@@ -1,15 +1,9 @@
 {
   "name": "sokobanbanban",
   "jest": {
-    "preset": "ts-jest",
+    "preset": "jest",
     "verbose": true,
-    "testEnvironment": "node",
-    "transform": {
-      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!variables/.*)"
-    ]
+    "testEnvironment": "node"
   },
   "version": "3.2.1",
   "description": "\"Sokoban\" Project for Motorola Science Cup 2020",
