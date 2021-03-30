@@ -5,8 +5,6 @@
 /out
 /Output
 
-*.iss
-
 # Custom maps
 /maps/created
 
