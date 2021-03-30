@@ -596,7 +596,13 @@ na stronie z zapisami (`saves.html`).
 
 ### `load.list()`
 
+* Służy do odświeżania listy ładowania map w Kreatorze Map.  
+* Pochodzenie: `load.js`.  
+
 ### `load.load()`
+
+* Służy do ładowania wszystkich utworzonych map do &lt;SELECT&gt; w Kreatorze Map.  
+* Pochodzenie: `load.js`.  
 
 <!-- M -->
 

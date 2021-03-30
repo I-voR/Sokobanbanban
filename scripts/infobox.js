@@ -54,7 +54,7 @@ export const infobox = {
         switch (type) {
         case 'info':
             heading.append('Info')
-            textInfobox.append(encodeURI(text))
+            textInfobox.append(encodeURI(text).replace(/%20/g, ' '))
             dialog
                 .append(heading)
                 .append(textInfobox)
@@ -83,12 +83,12 @@ export const infobox = {
 
                 span
                     .attr('id', 'total-score')
-                    .append(encodeURI(totalScore))
+                    .append(encodeURI(totalScore).replace(/%20/g, ' '))
 
                 textInfobox
-                    .append('You completed level ascending:' + encodeURI(text[0].split(',')[1]))
+                    .append('You completed level ascending:' + encodeURI(text[0].split(',')[1]).replace(/%20/g, ' '))
                     .append($('<br>'))
-                    .append('Score: ' + encodeURI(text[1]) + ' ⭐')
+                    .append('Score: ' + encodeURI(text[1]).replace(/%20/g, ' ') + ' ⭐')
                     .append($('<br>'))
                     .append('Total score: ')
                     .append(span)
@@ -111,7 +111,7 @@ export const infobox = {
                 }
             } else {
                 textInfobox
-                    .append('You completed level ' + encodeURI(text))
+                    .append('You completed level ' + encodeURI(text).replace(/%20/g, ' '))
                     .append($('<br>'))
                     .append('Move count: ' + global.pressCount)
                     .append($('<br>'))
@@ -131,7 +131,7 @@ export const infobox = {
                 .append('No')
 
             heading.append('Attention!')
-            textInfobox.append('Are you sure you want to remove level ' + encodeURI(text) + '?')
+            textInfobox.append('Are you sure you want to remove level ' + encodeURI(text).replace(/%20/g, ' ') + '?')
             dialog
                 .append(heading)
                 .append(textInfobox)
@@ -153,12 +153,12 @@ export const infobox = {
 
             span
                 .attr('id', 'total-score')
-                .append(encodeURI(totalScore))
+                .append(encodeURI(totalScore).replace(/%20/g, ' '))
 
             heading.append('Surrender')
 
             textInfobox
-                .append('You surrendered on level ascending:' + encodeURI(text.split(',')[1]))
+                .append('You surrendered on level ascending:' + encodeURI(text.split(',')[1]).replace(/%20/g, ' '))
                 .append($('<br>'))
                 .append('Score: 0 ⭐')
                 .append($('<br>'))
