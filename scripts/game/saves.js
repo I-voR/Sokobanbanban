@@ -12,6 +12,7 @@ export const saves = {
         fs.unlink(saveFile, (err) => {
             if (err) throw err
         })
+        //if (level.length == 3) { level = level.substring(1) }
         saveName = saveName.charAt(0) + ',' + level + ',' + stars + ',' + moves + ',' + time + '.sav'
         saveFile = funcs.cwd() + 'saves/' + saveName
 
