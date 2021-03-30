@@ -608,6 +608,9 @@ na stronie z zapisami (`saves.html`).
 
 ### `MenuGen.menugen()`
 
+* Służy do generowania ikonek do rysowania pól.  
+* Pochodzenie: `menugen.js`.  
+
 <!-- R -->
 
 ### `randomBetween(min, max)`  
@@ -628,21 +631,72 @@ na stronie z zapisami (`saves.html`).
 
 ### `save.main()`
 
+* Służy do inicjacji zapisu utworzonej mapy.  
+* Pochodzenie: `save.js`.  
+
 ### `save.playerPlace()`
+
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
 
 ### `save.mapRead()`
 
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
+
 ### `save.boxCheck()`
+
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
 
 ### `save.translation()`
 
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
+
 ### `saves.mapRead(baseMapNumber, savingInGame)`
+
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
 
 ### `saves.game(saveName, level, stars, moves, time, savingInGame)`
 
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
+
 ### `slots.main()`
 
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
+
 ### `slots.loadSelected(selected)`
+
+* Służy do .  
+* Argumenty:
+  * ``: .  
+* Zwraca: `{}` - .  
+* Pochodzenie: ``.  
 
 <!-- T -->
 
@@ -690,6 +744,9 @@ na stronie z zapisami (`saves.html`).
 * Pochodzenie: `timer.js`.  
 
 ### `TilePainter.tilepaint(tile)`
+
+* Służy do rysowania pól w Kreatorze Map.  
+* Pochodzenie: `tilepainter.js`.  
 
 <!-- W -->
 

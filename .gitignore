@@ -16,7 +16,6 @@
 
 # Inno Setup Compiler
 *.iss
-tasks.json
 
 # Runtime data
 pids
@@ -53,7 +52,7 @@ bower_components
 
 # IDE - VSCode
 .vscode/*
-!.vscode/tasks.json
+# !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
