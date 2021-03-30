@@ -680,18 +680,15 @@ na stronie z zapisami (`saves.html`).
 
 ### `slots.main()`
 
-* Służy do .  
-* Argumenty:
-  * ``: .  
-* Zwraca: `{}` - .  
-* Pochodzenie: ``.  
+* Służy do inicjacji plików zapisu oraz ekranu ładowania zapisów.  
+* Pochodzenie: `slot.js`.  
 
 ### `slots.loadSelected(selected)`
 
 * Służy do wczytywania wybranego zapisu.  
 * Argumenty:
   * `selected`: .  
-* Pochodzenie: ``.  
+* Pochodzenie: `slot.js`.  
 
 <!-- T -->
 
