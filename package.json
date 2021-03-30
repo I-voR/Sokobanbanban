@@ -3,7 +3,8 @@
   "jest": {
     "preset": "jest",
     "verbose": true,
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testMatch": ["**/scripts/tests/**/*.test.js"]
   },
   "version": "3.2.1",
   "description": "\"Sokoban\" Project for Motorola Science Cup 2020",

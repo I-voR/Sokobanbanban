@@ -666,7 +666,8 @@ na stronie z zapisami (`saves.html`).
 
 * Służy do .  
 * Argumenty:
-  * ``: .  
+  * `baseMapNumber`: .  
+  * `savingInGame`: .  
 * Zwraca: `{}` - .  
 * Pochodzenie: `saves.js`.  
 
@@ -674,8 +675,7 @@ na stronie z zapisami (`saves.html`).
 
 * Służy do .  
 * Argumenty:
-  * `baseMapNumber`: .  
-  * `savingInGame`: .  
+  * ``: .  
 * Zwraca: `{}` - .  
 * Pochodzenie: ``.  
 
