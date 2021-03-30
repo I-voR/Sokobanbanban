@@ -63,7 +63,7 @@ export const infobox = {
 
         case 'warn':
             heading.append('Warning!')
-            textInfobox.append(encodeURI(text))
+            textInfobox.append(encodeURI(text).replace(/%20/g, ' '))
             dialog
                 .append(heading)
                 .append(textInfobox)

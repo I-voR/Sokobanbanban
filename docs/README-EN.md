@@ -8,7 +8,7 @@ Polska wersja Dokumentacji Użytkownika jest w pliku [README.md](./README.md).
 
 ## 1. Newest stable version
 
-<u style="font-size: 2.5rem">3.2.0</u>
+<u style="font-size: 2.5rem">3.2.1</u>
 
 ## 2. Zakon Technomantów
 
