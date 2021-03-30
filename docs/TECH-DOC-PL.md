@@ -61,9 +61,9 @@ is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file. [Work in Progress]
     * [`randomBetween(min, max)`](#randombetweenmin-max)
     * [`reset.reset()`](#resetreset)
     * [`save.main()`](#savemain)
-    * [`save.playerPlace()`](#saveplayerplace)
-    * [`save.mapRead()`](#savemapread)
     * [`save.boxCheck()`](#saveboxcheck)
+    * [`save.mapRead()`](#savemapread)
+    * [`save.playerPlace()`](#saveplayerplace)
     * [`save.translation()`](#savetranslation)
     * [`saves.mapRead(baseMapNumber, savingInGame)`](#savesmapreadbasemapnumber-savingingame)
     * [`saves.game(saveName, level, stars, moves, time, savingInGame)`](#savesgamesavename-level-stars-moves-time-savingingame)
@@ -634,36 +634,32 @@ na stronie z zapisami (`saves.html`).
 * Służy do inicjacji zapisu utworzonej mapy.  
 * Pochodzenie: `save.js`.  
 
-### `save.playerPlace()`
+### `save.boxCheck()`
 
-* Służy do .  
-* Argumenty:
-  * ``: .  
-* Zwraca: `{}` - .  
-* Pochodzenie: ``.  
+* Służy do sprawdzania, czy ilość narysowanych
+  płytek jest równa ilości narysowanych skrzyń.  
+* Zwraca: `{Boolean}` - Informacja o tym, czy ilość
+  narysowanych płytek jest równa ilości narysowanych skrzyń.  
+* Pochodzenie: `save.js`.  
 
 ### `save.mapRead()`
 
-* Służy do .  
+* Służy do zapisywania utworzonej mapy do pliku.  
 * Argumenty:
-  * ``: .  
-* Zwraca: `{}` - .  
-* Pochodzenie: ``.  
+  * `playerPos`: Pozycja startowa gracza.  
+* Pochodzenie: `save.js`.  
 
-### `save.boxCheck()`
+### `save.playerPlace()`
 
-* Służy do .  
-* Argumenty:
-  * ``: .  
-* Zwraca: `{}` - .  
-* Pochodzenie: ``.  
+* Służy do stawiania gracza przed zapisem mapy w Kreatorze Map.  
+* Pochodzenie: `save.js`.  
 
 ### `save.translation()`
 
-* Służy do .  
+* Służy do zamiany nazw plików na numery pól.  
 * Argumenty:
-  * ``: .  
-* Zwraca: `{}` - .  
+  * `filename`: Nazwa pliku zasobu.  
+* Zwraca: `{Number}` - .  
 * Pochodzenie: ``.  
 
 ### `saves.mapRead(baseMapNumber, savingInGame)`
