@@ -44,9 +44,9 @@ export const slots = {
         saves = fs.readdirSync(path)
         //struktura nazwy pliku zapisu: sejw,poziom,gwiazdki,timer mapy.sav
     
-        $('#save1').append('<br>').append(encodeURI('Level ' + saves[0].split('.')[0].split(',')[1])).append('<br>').append(encodeURI(saves[0].split('.')[0].split(',')[2] + ' &#11088;'))
-        $('#save2').append('<br>').append(encodeURI('Level ' + saves[1].split('.')[0].split(',')[1])).append('<br>').append(encodeURI(saves[1].split('.')[0].split(',')[2] + ' &#11088;'))
-        $('#save3').append('<br>').append(encodeURI('Level ' + saves[2].split('.')[0].split(',')[1])).append('<br>').append(encodeURI(saves[2].split('.')[0].split(',')[2] + ' &#11088;'))
+        $('#save1').append('<br>').append(encodeURI('Level ' + saves[0].split('.')[0].split(',')[1]).replace(/%20/g, ' ')).append('<br>').append(encodeURI(saves[0].split('.')[0].split(',')[2] + ' &#11088;').replace(/%20/g, ' '))
+        $('#save2').append('<br>').append(encodeURI('Level ' + saves[1].split('.')[0].split(',')[1]).replace(/%20/g, ' ')).append('<br>').append(encodeURI(saves[1].split('.')[0].split(',')[2] + ' &#11088;').replace(/%20/g, ' '))
+        $('#save3').append('<br>').append(encodeURI('Level ' + saves[2].split('.')[0].split(',')[1]).replace(/%20/g, ' ')).append('<br>').append(encodeURI(saves[2].split('.')[0].split(',')[2] + ' &#11088;').replace(/%20/g, ' '))
     
         $('#save1').on('click', () => {
             slots.loadSelected(0)
