@@ -83,7 +83,7 @@ export const infobox = {
 
                 span
                     .attr('id', 'total-score')
-                    .append(totalScore)
+                    .append(encodeURI(totalScore))
 
                 textInfobox
                     .append('You completed level ascending:' + encodeURI(text[0].split(',')[1]))
@@ -153,7 +153,7 @@ export const infobox = {
 
             span
                 .attr('id', 'total-score')
-                .append(totalScore)
+                .append(encodeURI(totalScore))
 
             heading.append('Surrender')
 

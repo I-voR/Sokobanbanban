@@ -15,7 +15,7 @@ Dokumentacja Techniczna
 
 Dokumentacja Użytkownika jest w pliku [README.md](./README.md)  
 English version of the Technical Documentation
-is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file.  
+is in the [TECH-DOC-EN.md](./TECH-DOC-EN.md) file. [Work in Progress]  
 
 ## 1. Spis Treści
 

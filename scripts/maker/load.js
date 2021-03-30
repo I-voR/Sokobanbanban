@@ -60,7 +60,7 @@ export const load = {
         for (let i = 0; i < files.length; i++) {
             option = $('<option>')
             option.attr('value', files[i])
-            option.append(files[i])
+            option.append(encodeURI(files[i]))
             select.append(option)
         }
         $('#load').append(select)

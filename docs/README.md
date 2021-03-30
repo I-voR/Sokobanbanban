@@ -4,11 +4,11 @@
 Dokumentacja Użytkownika  
 
 Dokumentacja Techniczna jest w pliku [TECH-DOC-PL.md](./TECH-DOC-PL.md).  
-English version of the User Documentation is in the [README-EN.md](./README-EN.md) file.  
+English version of the User Documentation is in the [README-EN.md](./README-EN.md) file. [Work in Progress]  
 
 ## 1. Najnowsza stabilna wersja
 
-<u style="font-size: 2.5rem">3.1.3</u>
+<u style="font-size: 2.5rem">3.2.0</u>
 
 ## 2. Spis Treści
 
