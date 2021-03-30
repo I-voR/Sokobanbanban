@@ -1,0 +1,13 @@
+{
+  "name": "sokobanbanban",
+  "jest": {
+  "verbose": true
+  },
+  "testEnvironment": "node",
+  "transform": {
+    "node_modules/variables/.+\\.(j|t)sx?$": "jest"
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!variables/.*)"
+  ]
+}

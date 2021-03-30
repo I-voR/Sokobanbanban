@@ -659,7 +659,7 @@ na stronie z zapisami (`saves.html`).
 * Służy do zamiany nazw plików na numery pól.  
 * Argumenty:
   * `filename`: Nazwa pliku zasobu.  
-* Zwraca: `{Number}` - .  
+* Zwraca: `{Number}` - Liczba odpowiadająca plikowi.  
 * Pochodzenie: `save.js`.  
 
 ### `saves.mapRead(baseMapNumber, savingInGame)`
@@ -688,10 +688,9 @@ na stronie z zapisami (`saves.html`).
 
 ### `slots.loadSelected(selected)`
 
-* Służy do .  
+* Służy do wczytywania wybranego zapisu.  
 * Argumenty:
-  * ``: .  
-* Zwraca: `{}` - .  
+  * `selected`: .  
 * Pochodzenie: ``.  
 
 <!-- T -->
