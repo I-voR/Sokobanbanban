@@ -674,7 +674,8 @@ na stronie z zapisami (`saves.html`).
 
 * Służy do .  
 * Argumenty:
-  * ``: .  
+  * `baseMapNumber`: .  
+  * `savingInGame`: .  
 * Zwraca: `{}` - .  
 * Pochodzenie: ``.  
 
