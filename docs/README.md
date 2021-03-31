@@ -22,7 +22,8 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
   * [7. Przygotowywanie środowiska do pracy](#7-przygotowywanie-środowiska-do-pracy)
   * [8. Praca na kodzie źródłowym](#8-praca-na-kodzie-źródłowym)
   * [9. Budowanie Projektu](#9-budowanie-projektu)
-  * [10. Rozgrywka](#10-rozgrywka)
+  * [10. Testy automatyczne](#10-testy-automatyczne)
+  * [11. Rozgrywka](#11-rozgrywka)
     * [a. Poruszanie się w grze](#a-poruszanie-się-w-grze)
     * [b. Moduł III - Tworzenie map](#b-moduł-iii---tworzenie-map)
     * [c. Menu Główne](#c-menu-główne)
@@ -90,7 +91,15 @@ npm run package
 
 Zbudowanie Projektu **NIE** jest wymagane do uruchomienia go!  
 
-## 10. Rozgrywka
+## 10. Testy automatyczne
+
+W celu wykonania automatycznych testów jednostkowych, należy wydać polecenie:
+
+```cmd
+npm run test
+```
+
+## 11. Rozgrywka
 
 ### a. Poruszanie się w grze
 

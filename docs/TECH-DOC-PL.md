@@ -1,13 +1,3 @@
-<!--
-
-* Służy do .  
-* Argumenty:
-  * ``: .  
-* Zwraca: `{}` - .  
-* Pochodzenie: ``.  
-
--->
-
 # Sokobanbanban
 
 *Projekt "Sokoban" na Motorola Science Cup 2020*  
@@ -378,7 +368,7 @@ na stronie z zapisami (`saves.html`).
  ┃ ┣ 📜events.js
  ┃ ┣ 📜levelgen.js
  ┃ ┣ 📜main.js
- ┃ ┣ 📜save.js
+ ┃ ┣ 📜saves.js
  ┃ ┣ 📜slot.js
  ┃ ┣ 📜timer.js
  ┃ ┗ 📜toHall.js
@@ -390,6 +380,13 @@ na stronie z zapisami (`saves.html`).
  ┃ ┣ 📜reset.js
  ┃ ┣ 📜save.js
  ┃ ┗ 📜tilepainter.js
+ ┣ 📂tests
+ ┃ ┣ 📜events.test.js
+ ┃ ┣ 📜funcs.test.js
+ ┃ ┣ 📜levelgen.test.js
+ ┃ ┣ 📜save.test.js
+ ┃ ┣ 📜saves.test.js
+ ┃ ┗ 📜timer.test.js
  ┣ 📜datatable.js
  ┣ 📜funcs.js
  ┣ 📜infobox.js
