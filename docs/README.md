@@ -53,6 +53,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
   * Edytor poziomów
   * Hala Sław
   * Zapisy gier
+  * Testy jednostkowe
 
 ## 5. Licencja
 
