@@ -11,6 +11,8 @@ MenuGen.menugen()
 
 load.list()
 
+$('img').on('dragstart', false)
+
 $('.icons').on('click', function() {
     $('.grid-tile').off('mousedown')
     $('.grid-tile').off('mouseup')

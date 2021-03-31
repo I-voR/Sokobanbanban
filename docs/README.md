@@ -2,7 +2,7 @@
 
 ![license](https://img.shields.io/badge/license-WTFPL-green)
 ![GitHub last commit](https://img.shields.io/github/last-commit/zakon-technomantow/sokobanbanban)
-![GitHub release (latest by date)](https://img.shields.io/github/downloads/zakon-technomantow/sokobanbanban/3.2.4/total)
+![GitHub release (latest by date)](https://img.shields.io/github/downloads/zakon-technomantow/sokobanbanban/3.2.5/total)
 
 *Projekt "Sokoban" na Motorola Science Cup 2020*  
 Dokumentacja Użytkownika  
@@ -12,7 +12,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 
 ## 1. Najnowsza stabilna wersja
 
-<u style="font-size: 2.5rem">3.2.4</u>
+<u style="font-size: 2.5rem">3.2.5</u>
 
 ## 2. Spis Treści
 
@@ -174,8 +174,8 @@ npm run test
   oraz po którym mogą być przesuwane `Skrzynie`
   ![Skrzynia](./screenshots/map_tiles/Crate.col.png).  
 
-  * `Trawa`:  
-  ![Duża Trawa](./screenshots/map_tiles/LARGE-Grass..png)  
+  * `Powietrze`:  
+  ![Duże Powietrze](./screenshots/map_tiles/LARGE-Grass..png)  
   Tło mapy.
 
   * `Płytka`:  
