@@ -57,7 +57,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 
 ## 5. Licencja
 
-[WTFPL by Sam Hocevar](./LICENSE)
+[WTFPL by Sam Hocevar](http://www.wtfpl.net/)
 
 ## 6. Podziękowania
 
