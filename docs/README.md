@@ -3,7 +3,6 @@
 ![license](https://img.shields.io/badge/license-WTFPL-green)
 ![GitHub last commit](https://img.shields.io/github/last-commit/zakon-technomantow/sokobanbanban)
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/zakon-technomantow/sokobanbanban/3.2.2/total)
-![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/zakon-technomantow/sokobanbanban)
 
 *Projekt "Sokoban" na Motorola Science Cup 2020*  
 Dokumentacja Użytkownika  
