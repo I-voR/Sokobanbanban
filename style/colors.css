@@ -118,3 +118,27 @@ form *,
 .heading {
     background-color: #808080;
 }
+
+#Crate- {
+    background-image: url(../assets/map_tiles/Crate.col.png);
+}
+
+#Floor {
+    background-image: url(../assets/map_tiles/Floor..png);
+}
+
+#Grass {
+    background-image: url(../assets/map_tiles/Grass..png);
+}
+
+#Plate {
+    background-image: url(../assets/map_tiles/Plate..png);
+}
+
+#Wall- {
+    background-image: url(../assets/map_tiles/Wall.col.png);
+}
+
+#ZCratePlate- {
+    background-image: url(../assets/map_tiles/ZCratePlate.col.png);
+}

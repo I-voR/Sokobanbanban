@@ -63,7 +63,12 @@ img {
 
 #load {
     max-height: 20px;
-    margin-top: 5px;
+    margin-top: 1px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border-radius: 4px;
+    color: gray;
 }
 
 #load > select {

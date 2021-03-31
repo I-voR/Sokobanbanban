@@ -2,7 +2,7 @@
 
 ![license](https://img.shields.io/badge/license-WTFPL-green)
 ![GitHub last commit](https://img.shields.io/github/last-commit/zakon-technomantow/sokobanbanban)
-![GitHub release (latest by date)](https://img.shields.io/github/downloads/zakon-technomantow/sokobanbanban/3.2.2/total)
+![GitHub release (latest by date)](https://img.shields.io/github/downloads/zakon-technomantow/sokobanbanban/3.2.3/total)
 ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/zakon-technomantow/sokobanbanban)
 
 *Projekt "Sokoban" na Motorola Science Cup 2020*  
@@ -13,7 +13,7 @@ English version of the User Documentation is in the [README-EN.md](./README-EN.m
 
 ## 1. Najnowsza stabilna wersja
 
-<u style="font-size: 2.5rem">3.2.2</u>
+<u style="font-size: 2.5rem">3.2.3</u>
 
 ## 2. Spis Treści
 

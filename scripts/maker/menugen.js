@@ -18,7 +18,6 @@ export const MenuGen = {
             tileButton
                 .attr('class', 'icons')
                 .css('outline', '0px blue solid')
-                .css('background', ('url(' + path + files[i] + ')'))
                 .attr('id', files[i].split('.', 2)[0] + (files[i].split('.', 2)[1] == 'col' ? '-' : ''))
             $('#tiles-picker').append(tileButton)
         }

@@ -42,7 +42,7 @@ $('#undo').on('click', function() {
 
 $('#save').on('click', function() {
     global.pauseGame = true
-    saves.game(map, map.split(',')[1], 0, global.pressCount, timer.get_end_time().replace(/:/g, '-'), true)
+    saves.game(map, map.split(',')[1], map.split(',')[2], global.pressCount, timer.get_end_time().replace(/:/g, '-'), true)
     infobox.createInfobox('saved')
 })
 

@@ -219,7 +219,7 @@ export const events = {
                 nextMap = parseInt(map.split(',')[1], 10) + 1
             }
 
-            saves.game(map, nextMap, parseInt(map.split(',')[2]) + score, 0, '00-00-00', false)
+            saves.game(map, nextMap, (parseInt(map.split(',')[2]) + score), 0, '00-00-00', false)
 
             infobox.createInfobox('completed', [map, score])
         } else { infobox.createInfobox('completed', map) }
