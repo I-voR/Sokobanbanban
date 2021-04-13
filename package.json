@@ -39,7 +39,7 @@
     "jquery": "^3.6.0",
     "jsdom": "^16.5.2",
     "lodash": "^4.17.21",
-    "webpack": "^5.31.0"
+    "webpack": "^5.32.0"
   },
   "config": {
     "forge": {
