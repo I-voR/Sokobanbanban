@@ -30,7 +30,7 @@
     "eslint": "^7.25.0"
   },
   "dependencies": {
-    "@babel/core": "^7.13.15",
+    "@babel/core": "^7.13.16",
     "@babel/node": "^7.13.13",
     "datatables.net": "^1.10.24",
     "electron-squirrel-startup": "^1.0.0",
