@@ -27,7 +27,7 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "electron": "^12.0.4",
-    "eslint": "^7.24.0"
+    "eslint": "^7.25.0"
   },
   "dependencies": {
     "@babel/core": "^7.13.15",
